@@ -1,4 +1,14 @@
 __pycache__/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+.idea/
+data/
+outputs/
+.env
 *.pyc
 .env
 venv/

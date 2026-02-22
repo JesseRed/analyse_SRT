@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+statsmodels
+scikit-learn
+matplotlib
+pingouin
+pyarrow
+openpyxl
+jupyterlab
+ipykernel
+rich
