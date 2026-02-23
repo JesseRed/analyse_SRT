@@ -6,8 +6,6 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
-data/
-outputs/
 .env
 *.pyc
 .env
