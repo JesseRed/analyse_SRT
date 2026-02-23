@@ -4,11 +4,12 @@
   "sequence_type": "blue",
   "gamma": 0.9,
   "coupling": 0.03,
-  "n_iter": 2,
-  "n_permutations": 2,
+  "n_iter": 20,
+  "n_permutations": 20,
   "random_state": 42,
-  "limit": 1,
-  "n_files_total": 1,
-  "n_files_success": 1,
-  "n_files_failed": 0
+  "limit": null,
+  "n_files_total": 2067,
+  "n_files_success": 2063,
+  "n_files_failed": 4,
+  "progress_log": "/home/ck/Code/analyse_SRT/outputs/chunking_progress.log"
 }
