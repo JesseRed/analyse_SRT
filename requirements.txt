@@ -10,3 +10,5 @@ openpyxl
 jupyterlab
 ipykernel
 rich
+leidenalg
+python-igraph
