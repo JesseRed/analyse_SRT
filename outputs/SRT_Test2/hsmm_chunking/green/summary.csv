@@ -1,0 +1,10 @@
+source_file,sequence_type,method,n_blocks,mean_n_chunks,n_windows_valid,mean_drift,reliable,participant_id,session,day_index
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,green,hsmm_chunking,24,1.0,6,0.0,True,Egbert_Hausmann,FRA_1,1
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv,green,hsmm_chunking,29,1.0,5,0.0,True,Egbert_Hausmann,FRA_2,2
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv,green,hsmm_chunking,25,1.04,7,0.027777777777777776,True,Egbert_Hausmann,FRA_3,3
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv,green,hsmm_chunking,26,1.0,5,0.0,True,Fritz_Raschke,FRA_1,1
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv,green,hsmm_chunking,31,1.032258064516129,8,0.047619047619047616,True,Fritz_Raschke,FRA_2,2
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv,green,hsmm_chunking,30,1.0,8,0.0,True,Fritz_Raschke,FRA_3,3
+SRT_Test2/VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv,green,hsmm_chunking,14,1.0,0,,False,Liane_Rieger,FRA_1,1
+SRT_Test2/VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv,green,hsmm_chunking,27,1.0,4,0.0,True,Liane_Rieger,FRA_2,2
+SRT_Test2/VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv,green,hsmm_chunking,16,1.0,0,,False,Liane_Rieger,FRA_3,3

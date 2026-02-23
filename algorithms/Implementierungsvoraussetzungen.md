@@ -3,6 +3,10 @@
 Diese Datei dient als **Checkliste und Vertrag** für jede neue Chunking-Methode. Beim Implementieren neuer Methoden die Punkte durchgehen und abhaken.
 
 ---
+## 0. Ziel
+- Es soll eine dynamische Chunking Analyse erfolgen. 
+- Die Veränderung der Chunk Struktur soll über die Blöcke hinweg nach der analyse darstellbar sein
+- Die Chunk Struktur soll für die drei unterschiedlichen Sequenzen (blue, green, yellow) getrennt ausgewertet werden 
 
 ## 1. Eingabedaten
 
@@ -23,6 +27,7 @@ Diese Datei dient als **Checkliste und Vertrag** für jede neue Chunking-Methode
 
 - [ ] **Summary:** mindestens `source_file`, `sequence_type`, `method`, `n_blocks`. Empfohlen: eine Kennzahl „mittlere Chunk-Anzahl“ (`mean_n_chunks`) oder Äquivalent.
 - [ ] **Trials:** mindestens `source_file`, `sequence_type`, `method`, `block_number`, `n_chunks`, `chunk_boundaries`. Format von `chunk_boundaries`: Liste von Grenzpositionen zwischen 1 und 7 (Position nach IKI-Index).
+- [ ] **Optionale Run-Layer-Metadaten:** `participant_id`, `session`, `day_index` können aus `source_file` abgeleitet und in Summary/Trials ergänzt werden. Erwartete Namenskonvention (falls vorhanden): `<prefix>_<YYYYMMDD>_FRA_<day>[_fertig]`.
 - [ ] **Fehler:** fehlgeschlagene Dateien werden in `errors.csv` mit Spalten `source_file`, `error` erfasst (vom Run-Layer geschrieben).
 
 ---

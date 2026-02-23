@@ -12,3 +12,6 @@ ipykernel
 rich
 leidenalg
 python-igraph
+ruptures
+# For hsmm_chunking method: pip install pyhsmm
+pyhsmm

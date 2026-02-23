@@ -1,0 +1,12 @@
+{
+  "method_name": "change_point_pelt",
+  "timestamp": "2026-02-23T21:12:07.100177+00:00",
+  "git_commit": "32767245394a153c4f9e6a4b0af2c58c51cafd12",
+  "input_dir": "/home/ck/Code/analyse_SRT/SRT_Test2",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "n_files_total": 1,
+  "n_files_success": 1,
+  "n_files_failed": 0,
+  "elapsed_seconds": 0.07867264747619629
+}

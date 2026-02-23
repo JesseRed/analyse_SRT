@@ -1,0 +1,8 @@
+{
+  "method_name": "change_point_pelt",
+  "timestamp": "2026-02-23T20:02:35.105906+00:00",
+  "git_commit": "32767245394a153c4f9e6a4b0af2c58c51cafd12",
+  "input_file": "/home/ck/Code/analyse_SRT/SRT/GR_01_Fr_01_20250206_FRA_1_fertig.csv",
+  "sequence_type": "blue",
+  "n_blocks": 42
+}

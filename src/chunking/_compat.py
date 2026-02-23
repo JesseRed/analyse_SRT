@@ -6,7 +6,6 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from . import run_batch
-from .methods import community_network
 
 
 @dataclass(frozen=True)
@@ -26,7 +25,10 @@ def run_full_analysis(
     random_state: int | None = None,
 ) -> dict:
     """Legacy API: Run Wymbs/Mucha analysis; returns old-format dict."""
-    result = community_network.run_analysis(
+    from .methods import get_runner
+
+    community_runner = get_runner("community_network")
+    result = community_runner(
         filepath,
         sequence_type=sequence_type,
         gamma=gamma,

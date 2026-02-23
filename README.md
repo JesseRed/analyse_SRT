@@ -40,7 +40,7 @@ analyse_SRT/
 │   ├── README.md             # Übersicht aller Chunking-Methoden
 │   ├── Implementierungsvoraussetzungen.md   # Checkliste für neue Methoden
 │   ├── community_network.md  # Wymbs/Mucha – Implementierungsplan + Literatur
-│   └── change_point_pelt.md   # PELT/ruptures – Plan (Implementierung offen)
+│   └── change_point_pelt.md   # PELT/ruptures – Methode + Literatur
 │
 ├── src/
 │   └── chunking/             # Chunking-Paket
@@ -53,7 +53,8 @@ analyse_SRT/
 │       ├── benchmark_eval.py  # Auswertung: Vergleichstabelle, ARI
 │       └── methods/
 │           ├── __init__.py    # Methoden-Registry
-│           └── community_network.py   # Einzige aktuell implementierte Methode
+│           ├── community_network.py
+│           └── change_point_pelt.py
 │
 ├── SRT/                      # Eingabe: Teilnehmer-CSVs (z. B. *.csv)
 ├── outputs/                  # Ausgabe pro Lauf (siehe unten)
@@ -93,7 +94,7 @@ python -m src.chunking \
 
 - `--input-dir`: Ordner mit den CSV-Dateien  
 - `--pattern`: Glob für Dateinamen (Standard: `*.csv`)  
-- `--sequence-type`: `blue`, `green` oder `yellow`  
+- `--sequence-type`: `blue`, `green`, `yellow` oder `all` (alle drei getrennt)  
 - `--limit`: optional, maximale Anzahl Dateien (z. B. zum Testen)
 
 Methodenspezifische Optionen (z. B. für Community Network):
@@ -103,6 +104,8 @@ Methodenspezifische Optionen (z. B. für Community Network):
 - `--n-iter 20` (Wiederholungen pro Datei)  
 - `--n-permutations 20` (Nullmodell-Permutationen)  
 - `--seed 42` (Reproduzierbarkeit)
+
+Für **change_point_pelt**: `--penalty-sensitive`, `--short-session`, `--cost-model l2|rbf`, `--rbf-gamma`, `--window-size`, `--step`, `--min-blocks` (siehe `algorithms/change_point_pelt.md`).
 
 ### 3. Benchmark: alle Methoden auf denselben Dateien
 
@@ -119,7 +122,7 @@ python -m src.chunking \
 
 ### 4. Verfügbare Methoden anzeigen
 
-Aktuell ist nur **community_network** implementiert; die CLI zeigt die Liste der Methoden über `--method` mit an (z. B. in der Fehlermeldung bei falschem Namen).
+Aktuell sind **community_network** und **change_point_pelt** implementiert; die CLI zeigt die Liste der Methoden über `--method` mit an (z. B. in der Fehlermeldung bei falschem Namen).
 
 ---
 
@@ -141,6 +144,7 @@ outputs/<dein_output_dir>/<method_name>/
 
 - **Mindestspalten:** `source_file`, `sequence_type`, `method`, `n_blocks`  
 - **Empfohlen/Gemeinsam:** `mean_n_chunks`  
+- **Run-Layer-Metadaten (optional):** `participant_id`, `session`, `day_index` (aus `source_file` abgeleitet)
 - **Methodenspezifisch** (z. B. Community Network): `mean_q_single_trial`, `mean_phi`, `empirical_q_multitrial`, `p_value_permutation`, …
 
 Eine Zeile = eine analysierte Teilnehmerdatei. Ideal für übergreifende Auswertungen (z. B. nach Gruppe, Tag, Bedingung).
@@ -149,6 +153,7 @@ Eine Zeile = eine analysierte Teilnehmerdatei. Ideal für übergreifende Auswert
 
 - **Mindestspalten:** `source_file`, `sequence_type`, `method`, `block_number`, `n_chunks`, `chunk_boundaries`  
 - **chunk_boundaries:** Liste von Grenzpositionen (1–7), einheitliches Format über alle Methoden  
+- **Run-Layer-Metadaten (optional):** `participant_id`, `session`, `day_index`  
 - Zusätzliche Spalten je Methode (z. B. `q_single_trial`, `phi`, `community_labels`, `ikis`)
 
 Eine Zeile = ein Block/Trial. Für trialweise Auswertungen und Methodenvergleiche (z. B. ARI).
@@ -157,6 +162,36 @@ Eine Zeile = ein Block/Trial. Für trialweise Auswertungen und Methodenvergleich
 
 - **Reproduzierbarkeit:** Zeitstempel, optional Git-Commit, Eingabe-Pfad/Pattern, alle Parameter.  
 - Für Methodenpapiere und Supplement: Welche Softwareversion, welche Einstellungen.
+
+### validation.json / artifacts (optional)
+
+- Falls eine Methode `result.validation` liefert, wird sie als JSON persistiert:
+  - Single-File: `validation.json` im Methoden-Output.
+  - Batch: pro Quelldatei unter `artifacts/<source_stem>/validation.json`.
+
+### combined_summary.csv (optional bei `--sequence-type all`)
+
+- Über `--merge-summaries` kann aus `blue/summary.csv`, `green/summary.csv`, `yellow/summary.csv` eine `combined_summary.csv` erzeugt werden (inkl. Delta-Spalten gegen `yellow`).
+
+### Auswerteroutine (Chunking über Tage und Sequenzen)
+
+Nach einem Lauf mit `--sequence-type all` (z. B. `change_point_pelt`) kannst du einen wissenschaftlich aufbereiteten Bericht erzeugen: Verlauf des Chunkings über die Tage (pro Proband und Sequenz) sowie Unterschiede zwischen den Sequenzen (Blue/Green vs. Yellow).
+
+```bash
+python -m src.chunking.output_evaluation outputs/SRT_Test2/change_point_pelt --csv outputs/SRT_Test2/change_point_pelt/evaluation_data.csv
+```
+
+Es werden geschrieben: `evaluation_report.md` (im Methoden-Output-Verzeichnis) und optional eine CSV mit der zusammengeführten Tabelle. Programmgesteuert:
+
+```python
+from src.chunking.output_evaluation import evaluate_outputs, load_merged_summary, build_evaluation_report
+
+result = evaluate_outputs(
+    "outputs/SRT_Test2/change_point_pelt",
+    output_csv_path="outputs/SRT_Test2/change_point_pelt/evaluation_data.csv",
+)
+# result["report_path"], result["csv_path"], result["participants"]
+```
 
 ---
 

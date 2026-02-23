@@ -1,0 +1,12 @@
+{
+  "method_name": "change_point_pelt",
+  "timestamp": "2026-02-23T21:53:23.150532+00:00",
+  "git_commit": "32767245394a153c4f9e6a4b0af2c58c51cafd12",
+  "input_dir": "SRT_Test2",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "n_files_total": 9,
+  "n_files_success": 8,
+  "n_files_failed": 1,
+  "elapsed_seconds": 31.78985571861267
+}

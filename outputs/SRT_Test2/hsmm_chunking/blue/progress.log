@@ -1,0 +1,10 @@
+[2026-02-23 23:31:03 UTC] [1/9] ok file='VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv' success=1 failed=0 elapsed=00:00:04 eta=00:00:37
+[2026-02-23 23:31:10 UTC] [2/9] ok file='VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv' success=2 failed=0 elapsed=00:00:11 eta=00:00:38
+[2026-02-23 23:31:16 UTC] [3/9] ok file='VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv' success=3 failed=0 elapsed=00:00:16 eta=00:00:33
+[2026-02-23 23:31:21 UTC] [4/9] ok file='VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv' success=4 failed=0 elapsed=00:00:22 eta=00:00:27
+[2026-02-23 23:31:26 UTC] [5/9] ok file='VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv' success=5 failed=0 elapsed=00:00:26 eta=00:00:21
+[2026-02-23 23:31:30 UTC] [6/9] ok file='VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv' success=6 failed=0 elapsed=00:00:31 eta=00:00:15
+[2026-02-23 23:31:33 UTC] [7/9] ok file='VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv' success=7 failed=0 elapsed=00:00:33 eta=00:00:09
+[2026-02-23 23:31:36 UTC] [8/9] ok file='VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv' success=8 failed=0 elapsed=00:00:37 eta=00:00:04
+[2026-02-23 23:31:38 UTC] [9/9] ok file='VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv' success=9 failed=0 elapsed=00:00:39 eta=00:00:00
+[2026-02-23 23:31:38 UTC] Batch finished success=9 failed=0 elapsed=00:00:39

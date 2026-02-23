@@ -1,0 +1,15 @@
+{
+  "method_name": "community_network",
+  "input_dir": "/home/ck/Code/analyse_SRT/SRT_Test2",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "limit": 1,
+  "random_state": 42,
+  "n_files_total": 1,
+  "n_files_success": 1,
+  "n_files_failed": 0,
+  "gamma": 0.9,
+  "coupling": 0.03,
+  "n_iter": 5,
+  "n_permutations": 5
+}

@@ -1,0 +1,2 @@
+source_file,sequence_type,method,n_blocks,n_windows_valid,mean_n_chunks,mean_window_n_chunks,mean_bootstrap_n_chunks,mean_boundary_entropy,mean_drift,reliable,penalty_fallback_used,participant_id,session,day_index
+/home/ck/Code/analyse_SRT/SRT_Test2/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,yellow,change_point_pelt,20,1,1.0,1.0,1.1,-1.000088900581841e-12,,False,False,Egbert_Hausmann,FRA_1,1

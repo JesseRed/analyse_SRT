@@ -25,23 +25,39 @@ from .methods import (
     get_runner,
     list_methods,
 )
-from .run import run_single_file, run_batch, run_benchmark
+from .run import run_single_file, run_batch, run_benchmark, merge_sequence_summaries
 from ._compat import (
     ChunkingParameters,
     run_full_analysis,
     run_batch_analysis,
 )
-from .methods import community_network
 
-# Backward compat: expose community_network internals at package level
-build_trial_network = community_network.build_trial_network
-run_multilayer_community_detection = community_network.run_multilayer_community_detection
-compute_single_trial_modularity = community_network.compute_single_trial_modularity
-compute_chunk_metrics = community_network.compute_chunk_metrics
-statistical_validation = community_network.statistical_validation
+
+def _community_network_unavailable(*_: object, **__: object) -> None:
+    raise ImportError(
+        "community_network dependencies are not available in this environment."
+    )
+
+
+# Backward compat: expose community_network internals at package level.
+try:
+    from .methods import community_network
+
+    build_trial_network = community_network.build_trial_network
+    run_multilayer_community_detection = community_network.run_multilayer_community_detection
+    compute_single_trial_modularity = community_network.compute_single_trial_modularity
+    compute_chunk_metrics = community_network.compute_chunk_metrics
+    statistical_validation = community_network.statistical_validation
+except Exception:
+    build_trial_network = _community_network_unavailable
+    run_multilayer_community_detection = _community_network_unavailable
+    compute_single_trial_modularity = _community_network_unavailable
+    compute_chunk_metrics = _community_network_unavailable
+    statistical_validation = _community_network_unavailable
 
 # Benchmark evaluation (optional)
 from . import benchmark_eval  # noqa: F401
+from . import output_evaluation  # noqa: F401
 
 __all__ = [
     "ChunkingResult",
@@ -57,6 +73,7 @@ __all__ = [
     "run_single_file",
     "run_batch",
     "run_benchmark",
+    "merge_sequence_summaries",
     "ChunkingParameters",
     "run_full_analysis",
     "run_batch_analysis",
@@ -66,4 +83,5 @@ __all__ = [
     "compute_chunk_metrics",
     "statistical_validation",
     "benchmark_eval",
+    "output_evaluation",
 ]

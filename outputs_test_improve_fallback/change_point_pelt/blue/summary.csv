@@ -1,0 +1,2 @@
+source_file,sequence_type,method,n_blocks,n_windows_valid,mean_n_chunks,mean_window_n_chunks,mean_bootstrap_n_chunks,mean_boundary_entropy,mean_drift,reliable,penalty_fallback_used,participant_id,session,day_index
+/home/ck/Code/analyse_SRT/SRT_Test2/VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv,blue,change_point_pelt,24,2,1.0,1.0,1.125,-1.000088900581841e-12,0.25,False,False,Liane_Rieger,FRA_1,1

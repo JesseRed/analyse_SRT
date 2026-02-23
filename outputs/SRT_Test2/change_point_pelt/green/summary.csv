@@ -1,0 +1,8 @@
+source_file,sequence_type,method,n_blocks,n_windows_valid,mean_n_chunks,mean_window_n_chunks,mean_bootstrap_n_chunks,mean_boundary_entropy,mean_drift,reliable,penalty_fallback_used,participant_id,session,day_index
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,green,change_point_pelt,24,3,1.0,1.0,1.0686666666666669,-1.000088900581841e-12,0.034,True,False,Egbert_Hausmann,FRA_1,1
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv,green,change_point_pelt,29,9,1.0434782608695652,1.1111111111111112,1.144,-1.000088900581841e-12,0.18625000000000003,True,False,Egbert_Hausmann,FRA_2,2
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv,green,change_point_pelt,25,8,1.0,1.0,1.06,-1.000088900581841e-12,0.031999999999999994,True,False,Egbert_Hausmann,FRA_3,3
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv,green,change_point_pelt,26,3,1.6,1.6666666666666667,1.5693333333333335,-1.000088900581841e-12,0.07599999999999996,True,False,Fritz_Raschke,FRA_1,1
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv,green,change_point_pelt,31,8,1.0,1.0,1.1515,-1.000088900581841e-12,0.1297142857142857,True,False,Fritz_Raschke,FRA_2,2
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv,green,change_point_pelt,30,7,1.0,1.0,1.0282857142857142,-1.000088900581841e-12,0.01966666666666667,True,False,Fritz_Raschke,FRA_3,3
+SRT_Test2/VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv,green,change_point_pelt,27,4,1.0,1.0,1.0035,-1.000088900581841e-12,0.004666666666666667,True,False,Liane_Rieger,FRA_2,2

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import time
 from datetime import datetime, timezone
@@ -10,9 +11,95 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
+from pandas.errors import EmptyDataError
 
 from ._base import ChunkingResult, result_to_summary_row, result_to_trials_df
 from .methods import get_runner, list_methods
+
+
+def _sanitize_name(text: str) -> str:
+    return re.sub(r"[^A-Za-z0-9._-]+", "_", text).strip("_") or "unknown"
+
+
+def _parse_source_file_meta(filepath: str | Path) -> dict[str, Any]:
+    """
+    Parse participant/session metadata from source file names.
+
+    Expected stem pattern (common in this project):
+        <prefix>_<YYYYMMDD>_FRA_<day>[_fertig]
+    """
+    stem = Path(filepath).stem
+    out: dict[str, Any] = {
+        "participant_id": stem,
+        "session": "",
+        "day_index": None,
+    }
+
+    match = re.match(
+        r"^(?P<prefix>.+?)_(?P<date>\d{8})_FRA_(?P<day>\d+)(?:_fertig)?$",
+        stem,
+    )
+    if not match:
+        return out
+
+    prefix = str(match.group("prefix"))
+    day_idx = int(match.group("day"))
+    parts = prefix.split("_")
+    if (
+        len(parts) >= 4
+        and parts[0].isalpha()
+        and parts[1].isalpha()
+        and parts[2].isdigit()
+    ):
+        participant_id = "_".join(parts[3:]) or prefix
+    else:
+        participant_id = prefix
+
+    out["participant_id"] = participant_id
+    out["session"] = f"FRA_{day_idx}"
+    out["day_index"] = day_idx
+    return out
+
+
+def _augment_summary_row_meta(summary_row: dict[str, Any]) -> dict[str, Any]:
+    row = dict(summary_row)
+    source_file = str(row.get("source_file", ""))
+    row.update(_parse_source_file_meta(source_file))
+    return row
+
+
+def _augment_trials_df_meta(trials_df: pd.DataFrame) -> pd.DataFrame:
+    df = trials_df.copy()
+    if "source_file" not in df.columns or df.empty:
+        return df
+
+    source_values = df["source_file"].astype(str)
+    unique_sources = source_values.unique().tolist()
+    meta_map = {src: _parse_source_file_meta(src) for src in unique_sources}
+    df["participant_id"] = source_values.map(
+        lambda s: str(meta_map.get(s, {}).get("participant_id", ""))
+    )
+    df["session"] = source_values.map(lambda s: str(meta_map.get(s, {}).get("session", "")))
+    df["day_index"] = source_values.map(
+        lambda s: meta_map.get(s, {}).get("day_index", None)
+    )
+    return df
+
+
+def _write_validation_artifact(
+    output_dir: Path,
+    source_file: str,
+    validation: dict[str, Any] | None,
+) -> None:
+    if not validation:
+        return
+    stem = _sanitize_name(Path(source_file).stem)
+    target = output_dir / "artifacts" / stem
+    target.mkdir(parents=True, exist_ok=True)
+    (target / "validation.json").write_text(
+        json.dumps(validation, indent=2),
+        encoding="utf-8",
+    )
 
 
 def _format_seconds(seconds: float) -> str:
@@ -62,8 +149,8 @@ def run_single_file(
         **method_params,
     )
 
-    summary_row = result_to_summary_row(result)
-    trials_df = result_to_trials_df(result)
+    summary_row = _augment_summary_row_meta(result_to_summary_row(result))
+    trials_df = _augment_trials_df_meta(result_to_trials_df(result))
 
     meta = {
         "method_name": result.method_name,
@@ -84,6 +171,11 @@ def run_single_file(
     pd.DataFrame(columns=["source_file", "error"]).to_csv(
         out_path / "errors.csv", index=False
     )
+    if result.validation:
+        (out_path / "validation.json").write_text(
+            json.dumps(result.validation, indent=2),
+            encoding="utf-8",
+        )
 
     return result
 
@@ -143,8 +235,13 @@ def run_batch(
                 sequence_type=sequence_type,
                 **params,
             )
-            summary_rows.append(result_to_summary_row(result))
-            trial_frames.append(result_to_trials_df(result))
+            summary_rows.append(_augment_summary_row_meta(result_to_summary_row(result)))
+            trial_frames.append(_augment_trials_df_meta(result_to_trials_df(result)))
+            _write_validation_artifact(
+                output_dir=out_path,
+                source_file=result.source_file,
+                validation=result.validation,
+            )
             status = "ok"
         except Exception as exc:
             error_rows.append({"source_file": str(file_path), "error": str(exc)})
@@ -211,6 +308,62 @@ def run_batch(
         "n_files_success": len(summary_df),
         "n_files_failed": len(errors_df),
     }
+
+
+def merge_sequence_summaries(method_output_dir: str | Path) -> str:
+    """
+    Merge blue/green/yellow summary.csv files and compute structured-vs-yellow deltas.
+
+    Expected structure:
+        <method_output_dir>/blue/summary.csv
+        <method_output_dir>/green/summary.csv
+        <method_output_dir>/yellow/summary.csv
+    """
+    base = Path(method_output_dir)
+    seq_paths = {seq: base / seq / "summary.csv" for seq in ("blue", "green", "yellow")}
+    missing = [seq for seq, path in seq_paths.items() if not path.exists()]
+    if missing:
+        raise FileNotFoundError(
+            f"Missing summary.csv for sequences {missing} in {base}."
+        )
+
+    keys = ["source_file", "participant_id", "session", "day_index"]
+    merged: pd.DataFrame | None = None
+    for seq in ("blue", "green", "yellow"):
+        try:
+            df = pd.read_csv(seq_paths[seq])
+        except EmptyDataError:
+            continue
+        if df.empty:
+            continue
+        for key in keys:
+            if key not in df.columns:
+                df[key] = pd.NA
+        keep_cols = keys
+        metric_cols = [c for c in df.columns if c not in keep_cols + ["sequence_type", "method"]]
+        seq_df = df[keep_cols + metric_cols].copy()
+        rename_map = {col: f"{col}_{seq}" for col in metric_cols}
+        seq_df = seq_df.rename(columns=rename_map)
+        if merged is None:
+            merged = seq_df
+        else:
+            merged = merged.merge(seq_df, on=keep_cols, how="outer")
+
+    if merged is None:
+        raise ValueError(f"No summary rows found in {base}.")
+
+    if "mean_n_chunks_blue" in merged.columns and "mean_n_chunks_yellow" in merged.columns:
+        merged["delta_mean_n_chunks_blue_vs_yellow"] = (
+            merged["mean_n_chunks_blue"] - merged["mean_n_chunks_yellow"]
+        )
+    if "mean_n_chunks_green" in merged.columns and "mean_n_chunks_yellow" in merged.columns:
+        merged["delta_mean_n_chunks_green_vs_yellow"] = (
+            merged["mean_n_chunks_green"] - merged["mean_n_chunks_yellow"]
+        )
+
+    out_path = base / "combined_summary.csv"
+    merged.to_csv(out_path, index=False)
+    return str(out_path)
 
 
 def run_benchmark(

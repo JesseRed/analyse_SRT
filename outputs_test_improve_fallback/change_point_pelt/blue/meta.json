@@ -1,0 +1,8 @@
+{
+  "method_name": "change_point_pelt",
+  "timestamp": "2026-02-23T21:10:47.677959+00:00",
+  "git_commit": "32767245394a153c4f9e6a4b0af2c58c51cafd12",
+  "input_file": "/home/ck/Code/analyse_SRT/SRT_Test2/VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv",
+  "sequence_type": "blue",
+  "n_blocks": 24
+}

@@ -8,6 +8,7 @@ Dieser Ordner enthält ausschließlich **Dokumentation** (kein Code) zu den Chun
 |----------------------|-------------------------|------------------|
 | Community Network    | [community_network.md](community_network.md) | Wymbs/Mucha: temporale Multilayer-Community-Detection (Leiden) auf IKI-Ketten. |
 | Change-Point (PELT)  | [change_point_pelt.md](change_point_pelt.md) | Change-Point-Detection mit PELT (ruptures), positionsbasiertes IKI-Profil. |
+| HSMM Chunking        | [hsmm_chunking.md](hsmm_chunking.md)         | Hidden Semi-Markov Model (hsmmlearn), explizite Zustandsdauern, Fenster-Auswertung. |
 
 ## Geplante / Weitere Methoden
 

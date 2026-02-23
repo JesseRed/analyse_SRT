@@ -1,0 +1,30 @@
+{
+  "window_size": 20,
+  "step": 10,
+  "min_blocks": 3,
+  "n_bootstrap": 20,
+  "fpr_target": 0.05,
+  "mean_cp_target": 0.1,
+  "n_null_splits": 8,
+  "penalty_grid_size": 20,
+  "min_windows_reliable": 3,
+  "allow_fallback_penalty": true,
+  "fallback_penalty": 1.0,
+  "random_state": 42,
+  "penalty_selected": 0.12192735622142807,
+  "penalty_yellow": 0.05058714120367941,
+  "penalty_structured": 0.12192735622142807,
+  "penalty_fallback_used": false,
+  "penalty_calibration_yellow": {
+    "calibration_signal_count": 2.0,
+    "calibration_scale": 0.03516781614401497,
+    "calibration_fpr_observed": 0.0,
+    "calibration_mean_cp_observed": 0.0
+  },
+  "penalty_calibration_structured": {
+    "calibration_signal_count": 16.0,
+    "calibration_scale": 0.08476301970211206,
+    "calibration_fpr_observed": 0.0,
+    "calibration_mean_cp_observed": 0.0
+  }
+}
