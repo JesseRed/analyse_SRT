@@ -1,0 +1,12 @@
+{
+  "method_name": "community_network",
+  "timestamp": "2026-02-23T16:06:50.520727+00:00",
+  "git_commit": "c261b82ca67afaa3804a237d12ef90cf63386abc",
+  "input_dir": "SRT",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "n_files_total": 1,
+  "n_files_success": 1,
+  "n_files_failed": 0,
+  "elapsed_seconds": 4.983493804931641
+}
