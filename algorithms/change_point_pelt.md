@@ -15,6 +15,8 @@ Wir definieren globale Zeitfenster über die Block-Reihenfolge (`BlockNumber`) u
 
 Da die Bedingungen blockweise gemischt sind, repräsentiert jedes Fenster einen vergleichbaren „Tageszustand“ (Warm-up, Fatigue, Aufmerksamkeit) und eignet sich für dynamische Vergleiche.
 
+**Wichtig:** Ergebnisse werden sowohl aggregiert (`trials.csv`) als auch einzeln pro Teilnehmer unter `artifacts/<filename>/trials.csv` gespeichert, um detaillierte Längsschnitt-Analysen zu ermöglichen.
+
 **Default-Parameter** (für 120 Blöcke/Tag gut passend):  
 - Sliding window: \(W = 30\) Blöcke, Schrittweite \(S = 10\)  
 - Mindestanzahl pro Fenster×Bedingung: `min_blocks = 6` (nur korrekte Sequenzen)

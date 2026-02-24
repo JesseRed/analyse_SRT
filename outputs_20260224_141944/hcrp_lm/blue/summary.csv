@@ -1,0 +1,2 @@
+source_file,sequence_type,method,n_blocks,mean_n_chunks,mean_surprisal,mean_boundary_surprisal,participant_id,session,day_index
+SRT_Test/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,hcrp_lm,55,2.9454545454545453,0.4490529238179787,1.1154197524231768,Egbert_Hausmann,FRA_1,1

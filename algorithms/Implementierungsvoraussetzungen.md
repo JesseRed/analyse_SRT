@@ -5,7 +5,7 @@ Diese Datei dient als **Checkliste und Vertrag** für jede neue Chunking-Methode
 ---
 ## 0. Ziel
 - Es soll eine dynamische Chunking Analyse erfolgen. 
-- Die Veränderung der Chunk Struktur soll über die Blöcke hinweg nach der analyse darstellbar sein
+- **Wichtig:** Die Veränderung der Chunk-Struktur muss über die Blöcke hinweg im Detail nachvollziehbar sein. Daher ist für jede Methode die Ausgabe von `n_chunks` und `chunk_boundaries` pro Block (im `trials.csv`) zwingend erforderlich.
 - Die Chunk Struktur soll für die drei unterschiedlichen Sequenzen (blue, green, yellow) getrennt ausgewertet werden 
 
 ## 1. Eingabedaten

@@ -1,0 +1,8 @@
+{
+  "method_name": "rational_chunking",
+  "timestamp": "2026-02-24T13:06:03.225084+00:00",
+  "git_commit": "f77030ceaecb8b45e2ea655e886f12584f726587",
+  "input_file": "SRT_Test/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv",
+  "sequence_type": "blue",
+  "n_blocks": 50
+}

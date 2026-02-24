@@ -10,7 +10,7 @@ from .._base import ChunkingResult
 ChunkingRunner = Callable[..., ChunkingResult]
 
 REGISTRY: dict[str, ChunkingRunner] = {}
-BUILTIN_METHODS = {"community_network", "change_point_pelt", "hsmm_chunking"}
+BUILTIN_METHODS = {"community_network", "change_point_pelt", "hsmm_chunking", "hcrp_lm", "rational_chunking"}
 
 
 def register(name: str) -> Callable[[ChunkingRunner], ChunkingRunner]:
@@ -38,6 +38,14 @@ def get_runner(method_name: str) -> ChunkingRunner:
             from . import hsmm_chunking  # noqa: WPS433
 
             REGISTRY["hsmm_chunking"] = hsmm_chunking.run_analysis
+        elif method_name == "hcrp_lm":
+            from . import hcrp_lm  # noqa: WPS433
+
+            REGISTRY["hcrp_lm"] = hcrp_lm.run_analysis
+        elif method_name == "rational_chunking":
+            from . import rational_chunking  # noqa: WPS433
+
+            REGISTRY["rational_chunking"] = rational_chunking.run_analysis
 
     if method_name not in REGISTRY:
         raise ValueError(

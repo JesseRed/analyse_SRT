@@ -34,31 +34,29 @@ Ohne Aktivierung der venv:
 analyse_SRT/
 ├── README.md                 # Diese Datei
 ├── requirements.txt
+├── methods_config.json       # Standard-Parameter für alle Algorithmen
 ├── infos.md                  # Kontext: SRTT, 60/30/30-Design, Literatur
 │
-├── algorithms/               # Nur Dokumentation (kein Code)
-│   ├── README.md             # Übersicht aller Chunking-Methoden
-│   ├── Implementierungsvoraussetzungen.md   # Checkliste für neue Methoden
-│   ├── community_network.md  # Wymbs/Mucha – Implementierungsplan + Literatur
-│   └── change_point_pelt.md   # PELT/ruptures – Methode + Literatur
+├── algorithms/               # Dokumentation der Methoden
+│   ├── community_network.md
+│   ├── change_point_pelt.md
+│   ├── hsmm_chunking.md
+│   ├── hcrp_lm.md
+│   └── rational_chunking.md   # Neu: Wu et al. (2023)
 │
 ├── src/
-│   └── chunking/             # Chunking-Paket
-│       ├── __init__.py        # Re-Exports, Legacy-API
-│       ├── __main__.py        # CLI (--method, --benchmark, …)
+│   └── chunking/             # Core-Logik
 │       ├── _base.py           # ChunkingResult, Schema
-│       ├── _data.py           # load_srt_file, extract_ikis (gemeinsam)
-│       ├── _compat.py         # run_full_analysis, run_batch_analysis (Legacy)
-│       ├── run.py             # run_single_file, run_batch, run_benchmark
-│       ├── benchmark_eval.py  # Auswertung: Vergleichstabelle, ARI
-│       └── methods/
-│           ├── __init__.py    # Methoden-Registry
+│       ├── run.py             # Single/Batch/Benchmark-Runner
+│       └── methods/           # Implementierung der 5 Methoden
 │           ├── community_network.py
-│           └── change_point_pelt.py
+│           ├── change_point_pelt.py
+│           ├── hsmm_chunking.py
+│           ├── hcrp_lm.py
+│           └── rational_chunking.py
 │
-├── SRT/                      # Eingabe: Teilnehmer-CSVs (z. B. *.csv)
-├── outputs/                  # Ausgabe pro Lauf (siehe unten)
-└── notebooks/                # z. B. chunking_analysis.ipynb
+├── SRT/                      # Eingabedaten
+└── outputs/                  # Analyseergebnisse (automatisch erstellt)
 ```
 
 - **Eingabedaten:** CSV-Dateien im Ordner `SRT/` (oder anderer Pfad) mit Spalten u. a. `BlockNumber`, `EventNumber`, `Time Since Block start`, `isHit`, `sequence`. Details siehe `algorithms/Implementierungsvoraussetzungen.md`.
@@ -97,32 +95,44 @@ python -m src.chunking \
 - `--sequence-type`: `blue`, `green`, `yellow` oder `all` (alle drei getrennt)  
 - `--limit`: optional, maximale Anzahl Dateien (z. B. zum Testen)
 
-Methodenspezifische Optionen (z. B. für Community Network):
+Methodenspezifische Optionen (Beispiele):
 
-- `--gamma 0.9` (Intralayer-Auflösung)  
-- `--coupling 0.03` (Interlayer-Kopplung)  
-- `--n-iter 20` (Wiederholungen pro Datei)  
-- `--n-permutations 20` (Nullmodell-Permutationen)  
-- `--seed 42` (Reproduzierbarkeit)
+- **Community Network:** `--gamma 0.9`, `--coupling 0.03`, `--n-iter 20`
+- **Change Point (PELT):** `--penalty-sensitive`, `--cost-model l2|rbf`
+- **HCRP-LM:** `--n-levels 3`, `--strength 0.5`, `--threshold-z 1.0`
+- **Rational Chunking:** `--lam 1.0`, `--kappa 0.5`, `--beta 5.0`
 
-Für **change_point_pelt**: `--penalty-sensitive`, `--short-session`, `--cost-model l2|rbf`, `--rbf-gamma`, `--window-size`, `--step`, `--min-blocks` (siehe `algorithms/change_point_pelt.md`).
+Für Details zu den Parametern siehe die jeweilige Dokumentation unter `algorithms/`.
 
-### 3. Benchmark: alle Methoden auf denselben Dateien
+### 3. Alle Methoden gleichzeitig (Benchmark / Run-All)
 
+Um alle verfügbaren Methoden auf einmal auszuführen (Benchmark-Modus), gibt es zwei Möglichkeiten:
+
+**Variante A: Einfacher Aufruf aller Methoden**
 ```bash
-python -m src.chunking \
-  --benchmark \
-  --input-dir SRT \
-  --output-dir outputs/benchmark \
-  --limit 5
+python -m src.chunking --method all --input-dir SRT --limit 5
 ```
 
-- Pro registrierte Methode wird ein Unterordner angelegt (`outputs/benchmark/community_network/`, …).  
-- Zusätzlich: `outputs/benchmark/benchmark_summary.csv` – eine Zeile pro **Datei × Methode** (Long-Format) für direkte Vergleiche.
+**Variante B: Mit Konfigurationsdatei (Empfohlen)**
+Erstelle eine `methods_config.json` mit den gewünschten Parametern für jede Methode und übergebe sie mit `--config`:
+```bash
+python -m src.chunking --method all --config methods_config.json --input-dir SRT
+```
+
+- **Output:** Wenn `--output-dir` weggelassen wird, erstellt das Tool automatisch einen Ordner mit dem aktuellen Zeitstempel (z. B. `outputs_20260224_141944`).
+- **Benchmark-Logik:** Pro registrierte Methode wird ein Unterordner angelegt (`outputs_<timestamp>/blue/community_network/`, …).
+- **Zusammenführung:** Die Datei `benchmark_summary.csv` im Output-Verzeichnis enthält eine konsolidierte Tabelle aller Ergebnisse (eine Zeile pro Datei × Methode).
 
 ### 4. Verfügbare Methoden anzeigen
 
-Aktuell sind **community_network** und **change_point_pelt** implementiert; die CLI zeigt die Liste der Methoden über `--method` mit an (z. B. in der Fehlermeldung bei falschem Namen).
+Aktuell sind folgende Methoden implementiert:
+1. **community_network**: Netzwerkbasierte Partitionierung (Wymbs/Mucha).
+2. **change_point_pelt**: Change-Point-Detektion auf IKI-Zeitreihen.
+3. **hcrp_lm**: Hierarchical Chinese Restaurant Process (Action Chunking).
+4. **hsmm_chunking**: Hidden Semi-Markov Modelle zur Chunk-Identifikation.
+5. **rational_chunking**: Normatives Nutzen-Modell (Wu et al. 2023).
+
+Die Liste der Registrierten Methoden kann via `python -m src.chunking --help` eingesehen werden.
 
 ---
 
@@ -143,18 +153,21 @@ outputs/<dein_output_dir>/<method_name>/
 ### summary.csv
 
 - **Mindestspalten:** `source_file`, `sequence_type`, `method`, `n_blocks`  
-- **Empfohlen/Gemeinsam:** `mean_n_chunks`  
-- **Run-Layer-Metadaten (optional):** `participant_id`, `session`, `day_index` (aus `source_file` abgeleitet)
-- **Methodenspezifisch** (z. B. Community Network): `mean_q_single_trial`, `mean_phi`, `empirical_q_multitrial`, `p_value_permutation`, …
+- **Kern-Metriken:** `mean_n_chunks` (Durchschnittliche Anzahl Chunks pro Block).  
+- **Metadaten:** `participant_id`, `session`, `day_index` (automatisch extrahiert).
+- **Methodenspezifisch:** z. B. `avg_boundary_probs` (Vektor der Wahrscheinlichkeiten), `mean_q` (Modulartität), etc.
 
 Eine Zeile = eine analysierte Teilnehmerdatei. Ideal für übergreifende Auswertungen (z. B. nach Gruppe, Tag, Bedingung).
 
 ### trials.csv
 
-- **Mindestspalten:** `source_file`, `sequence_type`, `method`, `block_number`, `n_chunks`, `chunk_boundaries`  
-- **chunk_boundaries:** Liste von Grenzpositionen (1–7), einheitliches Format über alle Methoden  
-- **Run-Layer-Metadaten (optional):** `participant_id`, `session`, `day_index`  
-- Zusätzliche Spalten je Methode (z. B. `q_single_trial`, `phi`, `community_labels`, `ikis`)
+- **Mindestspalten:** `source_file`, `sequence_type`, `method`, `block_number`
+- **Chunking-Ergebnisse:** 
+  - `n_chunks`: Identifizierte Anzahl Chunks (oder Erwartungswert).
+  - `chunk_boundaries`: Liste der Grenz-Indizes (1–7).
+  - `boundary_probs`: Punktweise Wahrscheinlichkeiten f. Grenzen (falls unterstützt).
+- **Metadaten:** `participant_id`, `session`, `day_index`.
+- **Methodenspezifisch:** z. B. `phi`, `community_labels`, `ikis`, `log_likelihood`.
 
 Eine Zeile = ein Block/Trial. Für trialweise Auswertungen und Methodenvergleiche (z. B. ARI).
 
@@ -165,9 +178,10 @@ Eine Zeile = ein Block/Trial. Für trialweise Auswertungen und Methodenvergleich
 
 ### validation.json / artifacts (optional)
 
-- Falls eine Methode `result.validation` liefert, wird sie als JSON persistiert:
-  - Single-File: `validation.json` im Methoden-Output.
-  - Batch: pro Quelldatei unter `artifacts/<source_stem>/validation.json`.
+- Falls eine Methode `result.validation` liefert, wird sie als JSON persistiert.
+- **Detaillierte Artefakte:** Methoden wie `hcrp_lm` und `rational_chunking` speichern pro Quelldatei detaillierte Analysen unter `artifacts/<source_stem>/`:
+  - `trials.csv`: Trial-weise Ergebnisse.
+  - `validation.json`: Diagnostische Informationen (z. B. Modell-Fits).
 
 ### combined_summary.csv (optional bei `--sequence-type all`)
 
@@ -212,7 +226,7 @@ tab = benchmark_eval.comparison_table("outputs/benchmark")
 ari_df = benchmark_eval.ari_per_file(
     "outputs/benchmark",
     method_a="community_network",
-    method_b="change_point_pelt",  # sobald implementiert
+    method_b="rational_chunking",
 )
 ```
 

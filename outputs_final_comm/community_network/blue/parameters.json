@@ -1,0 +1,7 @@
+{
+  "gamma": 0.9,
+  "coupling": 0.03,
+  "n_iter": 2,
+  "n_permutations": 2,
+  "random_state": 42
+}

@@ -1,0 +1,2 @@
+source_file,sequence_type,method,n_blocks,mean_n_chunks,mean_q_single_trial,mean_phi,mean_phi_normalized,empirical_q_multitrial,null_q_multitrial_mean,p_value_permutation,participant_id,session,day_index
+SRT_Test/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,community_network,50,2.42,0.36867005103232664,2.8403564918656268,1.6861512186494565e-16,223.4998833001523,220.974672131232,0.2857142857142857,Egbert_Hausmann,FRA_1,1

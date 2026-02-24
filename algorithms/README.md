@@ -1,6 +1,6 @@
 # Chunking-Methoden: Übersicht
 
-Dieser Ordner enthält ausschließlich **Dokumentation** (kein Code) zu den Chunking-Algorithmen für die SRTT-Analyse.
+Dieses Projekt legt besonderen Wert auf die **dynamische Entwicklung** des Chunkings. Jede Methode liefert daher nicht nur globale Zusammenfassungen, sondern detaillierte Informationen über `n_chunks` und `chunk_boundaries` für jeden einzelnen Block (in der Datei `trials.csv`).
 
 ## Implementierte Methoden
 
@@ -9,6 +9,7 @@ Dieser Ordner enthält ausschließlich **Dokumentation** (kein Code) zu den Chun
 | Community Network    | [community_network.md](community_network.md) | Wymbs/Mucha: temporale Multilayer-Community-Detection (Leiden) auf IKI-Ketten. |
 | Change-Point (PELT)  | [change_point_pelt.md](change_point_pelt.md) | Change-Point-Detection mit PELT (ruptures), positionsbasiertes IKI-Profil. |
 | HSMM Chunking        | [hsmm_chunking.md](hsmm_chunking.md)         | Hidden Semi-Markov Model (hsmmlearn), explizite Zustandsdauern, Fenster-Auswertung. |
+| HCRP-LM              | [hcrp_lm.md](hcrp_lm.md)                   | Hierarchical Chinese Restaurant Process (Eltető 2022): Surprisal-basierte Chunk-Grenz-Detektion. |
 
 ## Geplante / Weitere Methoden
 

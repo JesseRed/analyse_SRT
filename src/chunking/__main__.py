@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import argparse
+import json
+from datetime import datetime
 from pathlib import Path
 
 from . import (
@@ -21,9 +23,9 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--method",
-        choices=methods,
+        choices=methods + ["all"],
         default=methods[0] if methods else None,
-        help="Chunking method to use.",
+        help="Chunking method to use. 'all' runs all methods via benchmark.",
     )
     parser.add_argument(
         "--benchmark",
@@ -43,8 +45,8 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--output-dir",
-        default="outputs",
-        help="Directory for analysis outputs.",
+        default=None,
+        help="Directory for analysis outputs. Defaults to outputs_<timestamp> if not provided.",
     )
     parser.add_argument(
         "--pattern",
@@ -56,6 +58,12 @@ def _build_parser() -> argparse.ArgumentParser:
         default="blue",
         choices=["blue", "green", "yellow", "all"],
         help="Sequence type to analyze (or 'all' for blue/green/yellow).",
+    )
+    parser.add_argument(
+        "--config",
+        type=Path,
+        default=None,
+        help="JSON config file for method parameters.",
     )
     parser.add_argument(
         "--limit",
@@ -218,6 +226,57 @@ def _build_parser() -> argparse.ArgumentParser:
         default=150,
         help="Number of Gibbs sampling iterations for pyhsmm HDP-HSMM (hsmm_chunking).",
     )
+    # Method-specific (hcrp_lm)
+    parser.add_argument(
+        "--hcrp-n-levels",
+        type=int,
+        default=3,
+        help="HCRP hierarchy depth: max context = n_levels−1 previous stimuli (hcrp_lm).",
+    )
+    parser.add_argument(
+        "--hcrp-strength",
+        type=float,
+        default=0.5,
+        help="Uniform α strength parameter across hierarchy levels (hcrp_lm).",
+    )
+    parser.add_argument(
+        "--hcrp-decay",
+        type=float,
+        default=50.0,
+        help="Uniform λ decay constant for distance-dependent CRP; 0 = no decay (hcrp_lm).",
+    )
+    parser.add_argument(
+        "--hcrp-n-samples",
+        type=int,
+        default=5,
+        help="Number of independent HCRP seating-arrangement samples (hcrp_lm).",
+    )
+    parser.add_argument(
+        "--hcrp-threshold-z",
+        type=float,
+        default=1.0,
+        help="Z-score threshold for surprisal → chunk boundary (hcrp_lm).",
+    )
+    # Rational Chunking params
+    parser.add_argument(
+        "--lam",
+        type=float,
+        default=1.0,
+        help="Complexity cost per boundary (rational_chunking).",
+    )
+    parser.add_argument(
+        "--kappa",
+        type=float,
+        default=1.0,
+        help="Accuracy cost weight (rational_chunking).",
+    )
+    parser.add_argument(
+        "--beta",
+        type=float,
+        default=5.0,
+        help="Rationality/inverse temperature (rational_chunking).",
+    )
+
     return parser
 
 
@@ -274,8 +333,41 @@ def main(argv: list[str] | None = None) -> int:
             "random_state": args.seed,
             "n_gibbs_iter": args.n_gibbs_iter,
         }
+    elif args.method == "hcrp_lm":
+        method_params = {
+            "n_levels": args.hcrp_n_levels,
+            "strength": args.hcrp_strength,
+            "decay_constant": args.hcrp_decay if args.hcrp_decay != 0.0 else None,
+            "n_samples": args.hcrp_n_samples,
+            "threshold_z": args.hcrp_threshold_z,
+            "random_state": args.seed,
+        }
+    elif args.method == "rational_chunking":
+        method_params = {
+            "window_size": args.window_size,
+            "step": args.step,
+            "min_blocks": args.min_blocks,
+            "lam": args.lam,
+            "kappa": args.kappa,
+            "beta": args.beta,
+        }
     else:
         method_params = {"random_state": args.seed}
+
+    # Override parameters from config file if provided
+    config_data = {}
+    if args.config:
+        with args.config.open("r", encoding="utf-8") as f:
+            config_data = json.load(f)
+        if args.method != "all" and args.method in config_data:
+            method_params.update(config_data[args.method])
+
+    # Default output directory with timestamp if not given
+    output_dir_str = args.output_dir
+    if output_dir_str is None:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_dir_str = f"outputs/run_{timestamp}"
+    output_dir = Path(output_dir_str)
 
     sequences = (
         ["blue", "green", "yellow"]
@@ -299,32 +391,30 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Combined summary written: {combined}")
         return 0
 
-    if args.benchmark:
+    if args.method == "all" or args.benchmark:
         for seq in sequences:
             result = run_benchmark(
                 input_dir=args.input_dir,
-                output_dir=Path(args.output_dir) / seq,
+                output_dir=output_dir / seq,
                 pattern=args.pattern,
                 sequence_type=seq,
                 limit=args.limit,
                 combine_summary=True,
+                per_method_params=config_data if args.config else None,
                 **method_params,
             )
-            print(f"Benchmark complete ({seq}):")
+            print(f"Analysis complete ({seq}):")
             print(f"  output_dir: {result['output_dir']}")
             print(f"  methods:   {result['methods']}")
             if result.get("benchmark_summary_path"):
                 print(f"  combined:   {result['benchmark_summary_path']}")
-        if args.merge_summaries and args.sequence_type == "all":
-            print("Skipping --merge-summaries for benchmark mode.")
-            print("Use per-method output directories and merge them separately.")
         return 0
 
     for seq in sequences:
         result = run_batch(
             method_name=args.method,
             input_dir=args.input_dir,
-            output_dir=Path(args.output_dir) / args.method / seq,
+            output_dir=output_dir / args.method / seq,
             pattern=args.pattern,
             sequence_type=seq,
             limit=args.limit,

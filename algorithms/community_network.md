@@ -4,6 +4,8 @@
 
 Chunk-Grenzen werden als Community-Struktur in einem **temporal multilayer network** modelliert: Pro Trial (Block) wird aus den IKIs einer 8-Item-Sequenz ein gewichteter Ketten-Graph gebaut (Knoten = IKI-Positionen, Kantengewicht = zeitliche Ähnlichkeit benachbarter IKIs). Über alle Trials hinweg werden die Schichten (Layers) mit Kopplung verbunden; mittels Multilayer-Community-Detection (Leiden, Mucha et al.) werden stabile „Communities“ identifiziert, die Chunks entsprechen. Validierung über Permutations-Nullmodell (shuffled IKIs).
 
+**Wichtig:** Ergebnisse werden sowohl aggregiert (`trials.csv`) als auch einzeln pro Teilnehmer unter `artifacts/<filename>/trials.csv` gespeichert, um detaillierte Längsschnitt-Analysen zu ermöglichen.
+
 ## Schritte der Pipeline
 
 1. **Daten:** `load_srt_file`, `extract_ikis` (gemeinsame Pipeline). Pro Block: 7 IKIs (Differenzen zwischen 8 Zeitpunkten); Outlier-Filter (z. B. 3 SD pro Position).

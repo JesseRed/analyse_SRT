@@ -1,0 +1,4 @@
+source_file,sequence_type,method,n_blocks,mean_n_chunks,mean_q_single_trial,mean_phi,mean_phi_normalized,empirical_q_multitrial,null_q_multitrial_mean,p_value_permutation,participant_id,session,day_index,mean_surprisal,mean_boundary_surprisal,avg_boundary_probs
+SRT_Test/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,community_network,50,2.42,0.3686700510323266,2.8403564918656268,1.6861512186494563e-16,223.4998833001523,220.974672131232,0.2857142857142857,Egbert_Hausmann,FRA_1,1,,,
+SRT_Test/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,hcrp_lm,55,2.981818181818182,,,,,,,Egbert_Hausmann,FRA_1,1,0.4448713191891978,1.115813121596742,
+SRT_Test/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,rational_chunking,50,1.0173295950981671,,,,,,,Egbert_Hausmann,FRA_1,1,,,"[2.7351128360033076e-12, 4.768124679838951e-18, 5.51608718677848e-31, 0.06487423184697606, 0.00021739576495273739, 1.0067935502399e-10, 1.489440072581611e-48]"

@@ -1,0 +1,12 @@
+{
+  "empirical_q_multitrial": 223.49988330015242,
+  "null_q_multitrial_mean": 222.25871092650442,
+  "null_q_multitrial_std": 0.7235792834518264,
+  "null_scores": [
+    221.53513164305258,
+    222.98229020995623
+  ],
+  "p_value_permutation": 0.3333333333333333,
+  "t_statistic": -1.7153232576352937,
+  "p_value_ttest_two_sided": 0.33601501390477767
+}

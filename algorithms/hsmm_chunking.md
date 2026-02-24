@@ -8,6 +8,8 @@ Implementierungsplan und Referenz zur Implementierung in `src/chunking/methods/h
 
 Chunk-Erkennung über ein **Hidden Semi-Markov Model (HSMM)** mit expliziten Zustandsdauern. Jeder 8-Item-Block wird als Beobachtungssequenz der Länge 7 (IKIs) modelliert; Chunk-Grenzen entsprechen Zustandswechseln, Chunk-Längen den Durations. Ein Modell pro Datei×Sequenz (blue/green/yellow); Fenster-Auswertung ohne Re-Fit für dynamische Metriken.
 
+**Wichtig:** Ergebnisse werden sowohl aggregiert (`trials.csv`) als auch einzeln pro Teilnehmer unter `artifacts/<filename>/trials.csv` gespeichert, um detaillierte Längsschnitt-Analysen zu ermöglichen.
+
 ---
 
 ## 1. Datenaufbereitung

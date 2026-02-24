@@ -102,6 +102,18 @@ def _write_validation_artifact(
     )
 
 
+def _write_trials_artifact(
+    output_dir: Path,
+    source_file: str,
+    trials_df: pd.DataFrame,
+) -> None:
+    """Save participant-specific trials CSV for later subject-wise analysis."""
+    stem = _sanitize_name(Path(source_file).stem)
+    target = output_dir / "artifacts" / stem
+    target.mkdir(parents=True, exist_ok=True)
+    trials_df.to_csv(target / "trials.csv", index=False)
+
+
 def _format_seconds(seconds: float) -> str:
     seconds = max(0, int(seconds))
     hours, rem = divmod(seconds, 3600)
@@ -177,6 +189,14 @@ def run_single_file(
             encoding="utf-8",
         )
 
+    # Subject-wise trials (new requirement for better longitudinal analysis)
+    if method_name in {"hcrp_lm", "hsmm_chunking", "community_network", "change_point_pelt", "rational_chunking"}:
+        _write_trials_artifact(
+            output_dir=out_path,
+            source_file=str(filepath),
+            trials_df=trials_df,
+        )
+
     return result
 
 
@@ -242,6 +262,13 @@ def run_batch(
                 source_file=result.source_file,
                 validation=result.validation,
             )
+            # Subject-wise trials (new requirement for better longitudinal analysis)
+            if method_name in {"hcrp_lm", "hsmm_chunking", "community_network", "change_point_pelt", "rational_chunking"}:
+                _write_trials_artifact(
+                    output_dir=out_path,
+                    source_file=result.source_file,
+                    trials_df=trial_frames[-1],
+                )
             status = "ok"
         except Exception as exc:
             error_rows.append({"source_file": str(file_path), "error": str(exc)})
@@ -375,7 +402,8 @@ def run_benchmark(
     limit: int | None = None,
     random_state: int | None = 42,
     combine_summary: bool = True,
-    **method_params: Any,
+    per_method_params: dict[str, dict[str, Any]] | None = None,
+    **common_params: Any,
 ) -> dict[str, Any]:
     """
     Run all (or selected) chunking methods on the same file set.
@@ -397,22 +425,32 @@ def run_benchmark(
 
     for method_name in methods:
         method_out = base_out / method_name
-        result = run_batch(
-            method_name=method_name,
-            input_dir=input_path,
-            output_dir=method_out,
-            pattern=pattern,
-            sequence_type=sequence_type,
-            limit=limit,
-            random_state=random_state,
-            progress_log=True,
-            **method_params,
-        )
-        run_results[method_name] = result
+        
+        # Merge common params with method-specific config
+        params = dict(common_params)
+        if per_method_params and method_name in per_method_params:
+            params.update(per_method_params[method_name])
+            
+        try:
+            result = run_batch(
+                method_name=method_name,
+                input_dir=input_path,
+                output_dir=method_out,
+                pattern=pattern,
+                sequence_type=sequence_type,
+                limit=limit,
+                random_state=random_state,
+                progress_log=True,
+                **params,
+            )
+            run_results[method_name] = result
 
-        if combine_summary:
-            summary_df = pd.read_csv(result["summary_path"])
-            all_summary_rows.append(summary_df)
+            if combine_summary:
+                summary_df = pd.read_csv(result["summary_path"])
+                all_summary_rows.append(summary_df)
+        except Exception as exc:
+            print(f"Warning: Failed to run method '{method_name}': {exc}")
+            run_results[method_name] = {"error": str(exc)}
 
     if combine_summary and all_summary_rows:
         combined = pd.concat(all_summary_rows, ignore_index=True)

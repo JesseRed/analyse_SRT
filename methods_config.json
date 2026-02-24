@@ -1,0 +1,45 @@
+{
+    "community_network": {
+        "gamma": 0.9,
+        "coupling": 0.03,
+        "n_iter": 20,
+        "n_permutations": 20
+    },
+    "change_point_pelt": {
+        "window_size": 30,
+        "step": 10,
+        "min_blocks": 6,
+        "n_bootstrap": 500,
+        "fpr_target": 0.05,
+        "mean_cp_target": 0.1,
+        "n_null_splits": 32,
+        "penalty_grid_size": 80,
+        "min_windows_reliable": 3,
+        "cost_model": "l2"
+    },
+    "hsmm_chunking": {
+        "n_states": null,
+        "max_duration": 7,
+        "window_size": 30,
+        "step": 10,
+        "min_blocks": 6,
+        "min_windows_reliable": 3,
+        "baseline_correction": true,
+        "n_gibbs_iter": 150
+    },
+    "hcrp_lm": {
+        "n_levels": 3,
+        "strength": 0.5,
+        "decay_constant": 50.0,
+        "n_samples": 5,
+        "threshold_z": 1.0
+    },
+    "rational_chunking": {
+        "window_size": 30,
+        "step": 10,
+        "min_blocks": 6,
+        "lam": 1.0,
+        "kappa": 1.0,
+        "beta": 5.0
+    }
+}
