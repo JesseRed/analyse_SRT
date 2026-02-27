@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  analyse-srt:
+    build: .
+    volumes:
+      - ./SRT:/app/SRT
+      - ./outputs:/app/outputs
+      - ./methods_config.json:/app/methods_config.json
+    environment:
+      - PYTHONUNBUFFERED=1

@@ -1,0 +1,2 @@
+source_file,sequence_type,method,n_blocks,mean_n_chunks,mean_surprisal,mean_boundary_surprisal,empirical_neg_mean_surprisal,null_neg_mean_surprisal_mean,p_value,z_score,participant_id,session,day_index
+/app/input/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,hcrp_lm,55,2.963636363636364,0.4410714524711285,1.1169822520566524,-0.442253877093975,-2.344933401966238,0.009900990099009901,41.818814323894365,Egbert_Hausmann,FRA_1,1
