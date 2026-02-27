@@ -311,3 +311,51 @@ Notebooks können weiterhin `run_full_analysis` aus `src.chunking` verwenden (Le
 | Ausgabe verstehen | Siehe Abschnitt „Ausgabe“ (summary.csv, trials.csv, meta.json) |
 | Neue Methode einbauen | `algorithms/Implementierungsvoraussetzungen.md` + `methods/<name>.py` + Registry |
 | Algorithmen & Literatur | `algorithms/README.md`, `algorithms/community_network.md`, … |
+
+---
+
+## Docker & Portabilität
+
+Das Projekt ist vollständig dockerisiert, um eine konsistente Umgebung zu gewährleisten und die notwendigen Patches für Legacy-Abhängigkeiten (`pyhsmm`, `pybasicbayes`) automatisch anzuwenden.
+
+### 1. Einrichtung mit Docker
+```bash
+# Image bauen
+docker build -t analyse-srt .
+```
+
+### 2. Ausführung
+Am einfachsten über `docker compose` (nutzt die `docker-compose.yml` für Volume-Mounts):
+```bash
+docker compose run analyse-srt --method hcrp_lm --limit 5
+```
+*Hinweis: Lokale Ordner `SRT` und `outputs` werden automatisch in den Container gemountet.*
+
+### 3. Transfer auf einen anderen Rechner
+Es gibt zwei empfohlene Wege, das Projekt zu übertragen:
+
+**A. Quellcode-Transfer (Empfohlen für Entwicklung)**
+1. Kopiere den gesamten Projektordner (inkl. `Dockerfile`, `pyhsmm/`, `pybasicbayes/`, etc.) auf den Zielrechner.
+2. Führe dort `docker build -t analyse-srt .` aus.
+
+**B. Image-Export (Schnellstart ohne Build)**
+Hierbei wird das fertig gebaute und gepatchte Image als Datei übertragen:
+1. **Auf dem Quellrechner:**
+   ```bash
+   docker save analyse-srt | gzip > analyse-srt-image.tar.gz
+   ```
+2. **Datei übertragen** (per USB, SCP, etc.).
+3. **Auf dem Zielrechner:**
+   ```bash
+   docker load < analyse-srt-image.tar.gz
+   ```
+
+### 4. Troubleshooting
+Falls `docker compose` Plugins in deiner Umgebung (z. B. WSL2) fehlen, nutze den direkten `docker run` Befehl:
+```bash
+docker run --rm \
+  -v $(pwd)/SRT:/app/input \
+  -v $(pwd)/outputs:/app/outputs \
+  analyse-srt \
+  --method hcrp_lm --input-dir /app/input --output-dir /app/outputs/run1
+```
