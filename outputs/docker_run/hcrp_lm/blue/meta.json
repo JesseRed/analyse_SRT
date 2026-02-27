@@ -1,0 +1,12 @@
+{
+  "method_name": "hcrp_lm",
+  "timestamp": "2026-02-27T14:26:55.923416+00:00",
+  "git_commit": null,
+  "input_dir": "/app/SRT_Test2",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "n_files_total": 5,
+  "n_files_success": 5,
+  "n_files_failed": 0,
+  "elapsed_seconds": 104.92923331260681
+}
