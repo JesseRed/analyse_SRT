@@ -16,3 +16,4 @@ venv/
 .vscode/
 pybasicbayes/
 pyhsmm/
+.venv_hsmm/
