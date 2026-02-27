@@ -1,0 +1,9 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+85,7,82,101,91,2,[5],SRT/VR_ML_096_Ute_Sack_20250407_FRA_7_fertig.csv,blue,change_point_pelt,Ute_Sack,FRA_7,7
+88,7,82,101,91,2,[5],SRT/VR_ML_096_Ute_Sack_20250407_FRA_7_fertig.csv,blue,change_point_pelt,Ute_Sack,FRA_7,7
+92,7,82,101,91,2,[5],SRT/VR_ML_096_Ute_Sack_20250407_FRA_7_fertig.csv,blue,change_point_pelt,Ute_Sack,FRA_7,7
+94,7,82,101,91,2,[5],SRT/VR_ML_096_Ute_Sack_20250407_FRA_7_fertig.csv,blue,change_point_pelt,Ute_Sack,FRA_7,7
+96,7,82,101,91,2,[5],SRT/VR_ML_096_Ute_Sack_20250407_FRA_7_fertig.csv,blue,change_point_pelt,Ute_Sack,FRA_7,7
+98,7,82,101,91,2,[5],SRT/VR_ML_096_Ute_Sack_20250407_FRA_7_fertig.csv,blue,change_point_pelt,Ute_Sack,FRA_7,7
+100,7,82,101,91,2,[5],SRT/VR_ML_096_Ute_Sack_20250407_FRA_7_fertig.csv,blue,change_point_pelt,Ute_Sack,FRA_7,7
+101,7,82,101,91,2,[5],SRT/VR_ML_096_Ute_Sack_20250407_FRA_7_fertig.csv,blue,change_point_pelt,Ute_Sack,FRA_7,7

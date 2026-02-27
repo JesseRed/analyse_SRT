@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+133,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+136,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+138,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+140,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+141,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+143,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+144,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+147,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+149,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+151,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1
+153,9,126,155,140,1,[],SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Wolfgang _Eisenberg,FRA_1,1

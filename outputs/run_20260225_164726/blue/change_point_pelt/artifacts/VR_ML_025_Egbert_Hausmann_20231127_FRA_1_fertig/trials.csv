@@ -1,0 +1,11 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+115,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+117,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+120,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+122,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+123,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+134,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+135,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+136,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+140,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1
+141,11,114,143,128,1,[],SRT/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,change_point_pelt,Egbert_Hausmann,FRA_1,1

@@ -1,0 +1,22 @@
+source_file,error
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT_Test2/VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT_Test2/VR_ML_026_Anja_Thomsen_20230911_FRA_1_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_026_Anja_Thomsen_20230912_FRA_2_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_026_Anja_Thomsen_20230913_FRA_3_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_026_Frank_Dittel_20231211_FRA_1_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_026_Frank_Dittel_20231213_FRA_3_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_026_Kathy_Thümmig_20240513_FRA_1_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT_Test2/VR_ML_026_Kathy_Thümmig_20240514_FRA_2_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_027_Liska_Seidel_20231211_FRA_1_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT_Test2/VR_ML_027_Liska_Seidel_20231212_FRA_2_fertig.csv,name '_compute_entropy' is not defined
+SRT_Test2/VR_ML_027_Liska_Seidel_20231213_FRA_3_fertig.csv,name '_compute_entropy' is not defined

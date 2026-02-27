@@ -1,0 +1,16 @@
+[2026-02-25 13:32:33 UTC] [1/2067] failed file='GR_01_Fr_01_20250206_FRA_1_fertig.csv' success=0 failed=1 elapsed=00:00:00 eta=00:28:32
+[2026-02-25 13:32:34 UTC] [2/2067] failed file='GR_01_Fr_01_20250207_FRA_2_fertig.csv' success=0 failed=2 elapsed=00:00:01 eta=00:25:42
+[2026-02-25 13:32:34 UTC] [3/2067] failed file='GR_03_Hr_03_20250211_FRA_1_fertig.csv' success=0 failed=3 elapsed=00:00:02 eta=00:25:24
+[2026-02-25 13:32:35 UTC] [4/2067] failed file='GR_03_Hr_03_20250212_FRA_2_fertig.csv' success=0 failed=4 elapsed=00:00:02 eta=00:22:13
+[2026-02-25 13:32:36 UTC] [5/2067] failed file='GR_04_Fr_04_20250630_FRA_1_fertig.csv' success=0 failed=5 elapsed=00:00:03 eta=00:24:43
+[2026-02-25 13:32:37 UTC] [6/2067] failed file='GR_04_Fr_04_20250701_FRA_2_fertig.csv' success=0 failed=6 elapsed=00:00:04 eta=00:26:30
+[2026-02-25 13:32:38 UTC] [7/2067] failed file='GR_05_Hr_05_20250510_FRA_1_fertig.csv' success=0 failed=7 elapsed=00:00:05 eta=00:26:36
+[2026-02-25 13:32:38 UTC] [8/2067] failed file='GR_05_Hr_05_20250512_FRA_2_fertig.csv' success=0 failed=8 elapsed=00:00:06 eta=00:26:40
+[2026-02-25 13:32:39 UTC] [9/2067] failed file='GR_06_Hr_06_20250303_FRA_1_fertig.csv' success=0 failed=9 elapsed=00:00:06 eta=00:25:54
+[2026-02-25 13:32:39 UTC] [10/2067] failed file='GR_06_Hr_06_20250304_FRA_2_fertig.csv' success=0 failed=10 elapsed=00:00:06 eta=00:23:21
+[2026-02-25 13:32:39 UTC] [11/2067] failed file='GR_08_Hr_08_20250924_FRA_1_fertig.csv' success=0 failed=11 elapsed=00:00:07 eta=00:22:59
+[2026-02-25 13:32:40 UTC] [12/2067] failed file='GR_08_Hr_08_20250925_FRA_2_fertig.csv' success=0 failed=12 elapsed=00:00:08 eta=00:23:15
+[2026-02-25 13:32:40 UTC] [13/2067] failed file='GR_09_Hr_09_20250309_FRA_1_fertig.csv' success=0 failed=13 elapsed=00:00:08 eta=00:21:33
+[2026-02-25 13:32:40 UTC] [14/2067] failed file='GR_09_Hr_09_20250310_FRA_2_fertig.csv' success=0 failed=14 elapsed=00:00:08 eta=00:20:01
+[2026-02-25 13:32:41 UTC] [15/2067] failed file='GR_10_Hr_10_20250316_FRA_1_fertig.csv' success=0 failed=15 elapsed=00:00:08 eta=00:19:59
+[2026-02-25 13:32:42 UTC] [16/2067] failed file='GR_10_Hr_10_20250320_FRA_2_fertig.csv' success=0 failed=16 elapsed=00:00:09 eta=00:20:23

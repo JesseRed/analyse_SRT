@@ -13,14 +13,39 @@ from typing import Any
 import pandas as pd
 
 
-def load_benchmark_summary(benchmark_dir: str | Path) -> pd.DataFrame:
+def load_benchmark_summary(benchmark_dir: str | Path, auto_merge: bool = True) -> pd.DataFrame:
     """
-    Load benchmark_summary.csv from a benchmark run (one row per source_file × method).
+    Load benchmark_summary.csv from a benchmark run.
+    If missing and auto_merge is True, attempts to build it from subdirectories.
     """
     path = Path(benchmark_dir) / "benchmark_summary.csv"
-    if not path.exists():
-        raise FileNotFoundError(f"Not found: {path}. Run with --benchmark first.")
-    return pd.read_csv(path)
+    if path.exists():
+        return pd.read_csv(path)
+
+    if not auto_merge:
+        raise FileNotFoundError(f"Not found: {path}. Run with --benchmark or enable auto_merge.")
+
+    # Auto-merge logic
+    base = Path(benchmark_dir)
+    all_summaries = []
+    # Look for subdirectories that contain summary.csv
+    for item in base.iterdir():
+        if item.is_dir():
+            sum_path = item / "summary.csv"
+            if sum_path.exists():
+                try:
+                    df = pd.read_csv(sum_path)
+                    if not df.empty:
+                        all_summaries.append(df)
+                except Exception:
+                    continue
+
+    if not all_summaries:
+        raise FileNotFoundError(f"No summary.csv files found in subdirectories of {base}.")
+
+    combined = pd.concat(all_summaries, ignore_index=True)
+    combined.to_csv(path, index=False)
+    return combined
 
 
 def load_method_trials(benchmark_dir: str | Path, method_name: str) -> pd.DataFrame:
@@ -143,10 +168,38 @@ def ari_per_file(
     return agg
 
 
-__all__ = [
-    "load_benchmark_summary",
-    "load_method_trials",
-    "comparison_table",
-    "ari_per_file",
-    "adjusted_rand_index",
-]
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+    parser = argparse.ArgumentParser(description="Benchmark evaluation tools.")
+    parser.add_argument("benchmark_dir", type=Path, help="Directory containing method subfolders.")
+    parser.add_argument("--ari", nargs=2, metavar=("METHOD_A", "METHOD_B"), help="Compute ARI between two methods.")
+    parser.add_argument("--output", type=Path, help="Optional CSV path for ARI results.")
+
+    args = parser.parse_args(argv)
+
+    try:
+        df = load_benchmark_summary(args.benchmark_dir)
+        print(f"Loaded benchmark summary with {len(df)} rows.")
+        print(f"Methods found: {df['method'].unique().tolist()}")
+
+        if args.ari:
+            m_a, m_b = args.ari
+            print(f"Computing ARI between '{m_a}' and '{m_b}'...")
+            ari_df = ari_per_file(args.benchmark_dir, m_a, m_b)
+            print("\nARI results (mean):")
+            print(ari_df[["source_file", "n_blocks", "ari_mean"]].to_string(index=False))
+
+            if args.output:
+                ari_df.to_csv(args.output, index=False)
+                print(f"\nARI results saved to {args.output}")
+
+    except Exception as exc:
+        print(f"Error: {exc}")
+        return 1
+
+    return 0
+
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(main())

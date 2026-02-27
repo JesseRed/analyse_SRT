@@ -1,0 +1,4 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+75,5,67,81,74,2,[5],SRT/VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv,blue,change_point_pelt,Liane_Rieger,FRA_1,1
+76,5,67,81,74,2,[5],SRT/VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv,blue,change_point_pelt,Liane_Rieger,FRA_1,1
+81,5,67,81,74,2,[5],SRT/VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv,blue,change_point_pelt,Liane_Rieger,FRA_1,1

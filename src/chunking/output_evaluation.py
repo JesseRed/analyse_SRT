@@ -56,7 +56,7 @@ def _section_change_over_days(merged: pd.DataFrame) -> str:
             if vals.empty:
                 lines.append(f"- **{pid}**: keine Daten")
             else:
-                traj = ", ".join([f"Tag {int(d)}: {v:.2f}" for d, v in vals.values])
+                traj = ", ".join([f"Tag {d if pd.isna(d) else int(d)}: {v:.2f}" for d, v in vals.values])
                 lines.append(f"- **{pid}**: {traj}")
         lines.append("")
 
@@ -171,13 +171,16 @@ def build_evaluation_report(merged: pd.DataFrame) -> str:
     # merged hat pro Zeile einen Messzeitpunkt (participant_id, session, day_index) mit mean_n_chunks_blue/green/yellow
     # Für "Verlauf über Tage" brauchen wir pro Proband und Sequenz die Zeitreihe. Dazu long-format pro Sequenz:
     # Wir haben bereits pro Zeile alle drei Sequenzen. Verlauf = Zeilen pro Proband sortiert nach day_index.
+    active_seqs = [s for s in ("blue", "green", "yellow") if f"mean_n_chunks_{s}" in merged.columns]
+    seq_desc = ", ".join([s.capitalize() for s in active_seqs])
+
     intro = [
         "# Auswertung: Chunking über Tage und Sequenzen",
         "",
-        "Dieser Bericht fasst die Change-Point-basierte Chunk-Analyse (PELT) für die Sequenztypen "
-        "Blue, Green und Yellow zusammen. Untersucht werden (1) die Veränderung des Chunkings über "
+        f"Dieser Bericht fasst die Chunk-Analyse für die Sequenztypen {seq_desc} zusammen. ",
+        "Untersucht werden (1) die Veränderung des Chunkings über "
         "die Messzeitpunkte (Tage) pro Sequenz und Proband sowie (2) die Unterschiede zwischen "
-        "den Sequenzen (strukturierte Sequenzen Blue/Green vs. Null-Bedingung Yellow).",
+        "den Sequenzen (strukturierte Sequenzen Blue/Green vs. Null-Bedingung Yellow), sofern verfügbar.",
         "",
     ]
 
@@ -202,7 +205,11 @@ def evaluate_outputs(
     - output_csv_path: optional, Pfad für evaluation_data.csv (merged + Deltas)
     """
     base = Path(method_output_dir)
-    merged = load_merged_summary(base)
+    try:
+        merged = load_merged_summary(base)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"Warning: Skipping {method_output_dir}: {exc}")
+        return {"error": str(exc), "report_path": None}
 
     # Für Verlauf über Tage: long-format pro Sequenz erzeugen (für einheitliche Darstellung)
     # merged ist bereits one row per (source_file / participant, session, day) mit blue/green/yellow Spalten
@@ -256,10 +263,13 @@ def main(argv: list[str] | None = None) -> int:
         output_report_path=args.report,
         output_csv_path=args.csv,
     )
-    print(f"Report: {result['report_path']}")
+    if result['report_path']:
+        print(f"Report: {result['report_path']}")
+        print(f"Zeilen: {result['merged_rows']}, Probanden: {result['participants']}")
+    else:
+        print(f"Aborted: {result.get('error')}")
     if result.get("csv_path"):
         print(f"CSV:   {result['csv_path']}")
-    print(f"Zeilen: {result['merged_rows']}, Probanden: {result['participants']}")
     return 0
 
 

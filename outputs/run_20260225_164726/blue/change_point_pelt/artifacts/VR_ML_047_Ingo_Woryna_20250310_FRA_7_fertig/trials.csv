@@ -1,0 +1,15 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+14,1,14,43,28,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+21,1,14,43,28,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+32,1,14,43,28,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+34,2,24,53,38,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+36,2,24,53,38,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+38,2,24,53,38,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+40,2,24,53,38,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+44,3,34,63,48,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+45,3,34,63,48,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+52,3,34,63,48,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+55,3,34,63,48,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+59,3,34,63,48,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+60,3,34,63,48,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7
+61,3,34,63,48,1,[],SRT/VR_ML_047_Ingo_Woryna_20250310_FRA_7_fertig.csv,blue,change_point_pelt,Ingo_Woryna,FRA_7,7

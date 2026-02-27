@@ -1,0 +1,11 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+82,7,73,102,87,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+88,7,73,102,87,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+90,7,73,102,87,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+92,7,73,102,87,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+96,8,83,112,97,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+98,8,83,112,97,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+106,8,83,112,97,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+109,8,83,112,97,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+110,8,83,112,97,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3
+112,8,83,112,97,1,[],SRT/VR_ML_125_Bernd_Daniel_20250716_FRA_3_fertig.csv,blue,change_point_pelt,Bernd_Daniel,FRA_3,3

@@ -1,0 +1,2 @@
+source_file,sequence_type,method,n_blocks,mean_n_chunks,n_windows_valid,mean_drift,reliable,log_likelihood,empirical_log_likelihood,null_log_likelihood_mean,p_value,z_score,participant_id,session,day_index
+SRT_Test/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,hsmm_chunking,50,1.0,13,0.0,True,-153.0170378049568,-152.77041505029095,-189.81750950758223,0.039603960396039604,1.8006883655548265,Egbert_Hausmann,FRA_1,1

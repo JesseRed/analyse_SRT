@@ -1,0 +1,11 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+76,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+78,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+79,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+80,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+84,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+85,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+86,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+88,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+92,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2
+101,7,74,103,88,1,[],SRT_Test2/VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv,blue,change_point_pelt,Frank_Dittel,FRA_2,2

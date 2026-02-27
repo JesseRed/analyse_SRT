@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+71,7,71,100,85,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+73,7,71,100,85,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+84,7,71,100,85,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+85,7,71,100,85,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+86,7,71,100,85,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+88,7,71,100,85,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+92,8,81,110,95,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+95,8,81,110,95,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+99,8,81,110,95,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+101,8,81,110,95,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2
+109,8,81,110,95,1,[],SRT/VR_ML_005_Henrik_Karbannek_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Henrik_Karbannek,FRA_2,2

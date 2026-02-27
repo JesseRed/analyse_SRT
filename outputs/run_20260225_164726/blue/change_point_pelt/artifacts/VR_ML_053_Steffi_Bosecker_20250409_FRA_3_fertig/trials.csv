@@ -1,0 +1,11 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+58,5,54,83,68,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+65,5,54,83,68,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+70,5,54,83,68,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+72,5,54,83,68,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+76,5,54,83,68,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+77,5,54,83,68,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+82,7,74,103,88,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+91,7,74,103,88,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+96,7,74,103,88,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3
+97,7,74,103,88,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_3,3

@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+33,2,25,54,39,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+35,2,25,54,39,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+37,2,25,54,39,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+38,2,25,54,39,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+43,2,25,54,39,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+44,2,25,54,39,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+45,3,35,64,49,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+51,3,35,64,49,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+54,3,35,64,49,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+59,3,35,64,49,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+60,3,35,64,49,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2
+64,3,35,64,49,1,[],SRT/VR_ML_093_Wolfgang_Harnisch_20250325_FRA_2_fertig.csv,blue,change_point_pelt,Wolfgang_Harnisch,FRA_2,2

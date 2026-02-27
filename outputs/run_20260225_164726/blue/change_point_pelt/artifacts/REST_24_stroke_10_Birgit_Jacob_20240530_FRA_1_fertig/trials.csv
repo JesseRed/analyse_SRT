@@ -1,0 +1,6 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+51,4,44,68,56,1,[],SRT/REST_24_stroke_10_Birgit_Jacob_20240530_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_10_Birgit_Jacob,FRA_1,1
+52,4,44,68,56,1,[],SRT/REST_24_stroke_10_Birgit_Jacob_20240530_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_10_Birgit_Jacob,FRA_1,1
+56,4,44,68,56,1,[],SRT/REST_24_stroke_10_Birgit_Jacob_20240530_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_10_Birgit_Jacob,FRA_1,1
+60,4,44,68,56,1,[],SRT/REST_24_stroke_10_Birgit_Jacob_20240530_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_10_Birgit_Jacob,FRA_1,1
+61,4,44,68,56,1,[],SRT/REST_24_stroke_10_Birgit_Jacob_20240530_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_10_Birgit_Jacob,FRA_1,1

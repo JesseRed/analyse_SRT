@@ -1,0 +1,36 @@
+[2026-02-25 14:48:12] INFO: [1/21] ok file='VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv' success=1 failed=0 elapsed=00:00:11 eta=00:03:40
+[2026-02-25 14:49:36] INFO: [2/21] ok file='VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv' success=2 failed=0 elapsed=00:01:35 eta=00:15:04
+[2026-02-25 14:50:28] INFO: [3/21] ok file='VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv' success=3 failed=0 elapsed=00:02:26 eta=00:14:41
+[2026-02-25 14:50:58] INFO: [4/21] ok file='VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv' success=4 failed=0 elapsed=00:02:57 eta=00:12:32
+[2026-02-25 14:52:03] INFO: [5/21] ok file='VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv' success=5 failed=0 elapsed=00:04:02 eta=00:12:54
+[2026-02-25 14:52:45] INFO: [6/21] ok file='VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv' success=6 failed=0 elapsed=00:04:44 eta=00:11:50
+[2026-02-25 14:52:45] ERROR: Failed file='VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv': No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+[2026-02-25 14:52:45] INFO: [7/21] failed file='VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv' success=6 failed=1 elapsed=00:04:44 eta=00:09:28
+[2026-02-25 14:53:21] INFO: [8/21] ok file='VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv' success=7 failed=1 elapsed=00:05:20 eta=00:08:40
+[2026-02-25 14:53:22] ERROR: Failed file='VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv': No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+[2026-02-25 14:53:22] INFO: [9/21] failed file='VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv' success=7 failed=2 elapsed=00:05:20 eta=00:07:07
+[2026-02-25 14:54:24] INFO: [10/21] ok file='VR_ML_026_Anja_Thomsen_20230911_FRA_1_fertig.csv' success=8 failed=2 elapsed=00:06:22 eta=00:07:00
+[2026-02-25 14:55:35] INFO: [11/21] ok file='VR_ML_026_Anja_Thomsen_20230912_FRA_2_fertig.csv' success=9 failed=2 elapsed=00:07:33 eta=00:06:52
+[2026-02-25 14:56:58] INFO: [12/21] ok file='VR_ML_026_Anja_Thomsen_20230913_FRA_3_fertig.csv' success=10 failed=2 elapsed=00:08:57 eta=00:06:42
+[2026-02-25 14:57:32] INFO: [13/21] ok file='VR_ML_026_Frank_Dittel_20231211_FRA_1_fertig.csv' success=11 failed=2 elapsed=00:09:31 eta=00:05:51
+[2026-02-25 14:57:43] INFO: [14/21] ok file='VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv' success=12 failed=2 elapsed=00:09:42 eta=00:04:51
+[2026-02-25 14:59:14] INFO: [15/21] ok file='VR_ML_026_Frank_Dittel_20231213_FRA_3_fertig.csv' success=13 failed=2 elapsed=00:11:12 eta=00:04:29
+[2026-02-25 14:59:14] ERROR: Failed file='VR_ML_026_Kathy_Thümmig_20240513_FRA_1_fertig.csv': No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+[2026-02-25 14:59:14] INFO: [16/21] failed file='VR_ML_026_Kathy_Thümmig_20240513_FRA_1_fertig.csv' success=13 failed=3 elapsed=00:11:12 eta=00:03:30
+[2026-02-25 14:59:35] INFO: [17/21] ok file='VR_ML_026_Kathy_Thümmig_20240514_FRA_2_fertig.csv' success=14 failed=3 elapsed=00:11:34 eta=00:02:43
+[2026-02-25 14:59:53] INFO: [18/21] ok file='VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv' success=15 failed=3 elapsed=00:11:52 eta=00:01:58
+[2026-02-25 14:59:53] ERROR: Failed file='VR_ML_027_Liska_Seidel_20231211_FRA_1_fertig.csv': No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+[2026-02-25 14:59:53] INFO: [19/21] failed file='VR_ML_027_Liska_Seidel_20231211_FRA_1_fertig.csv' success=15 failed=4 elapsed=00:11:52 eta=00:01:14
+[2026-02-25 15:00:27] INFO: [20/21] ok file='VR_ML_027_Liska_Seidel_20231212_FRA_2_fertig.csv' success=16 failed=4 elapsed=00:12:25 eta=00:00:37
+[2026-02-25 15:01:33] INFO: [21/21] ok file='VR_ML_027_Liska_Seidel_20231213_FRA_3_fertig.csv' success=17 failed=4 elapsed=00:13:31 eta=00:00:00
+[2026-02-25 15:01:33] ERROR: Failed to run method 'change_point_pelt': name 'log' is not defined
+[2026-02-25 15:01:33] ERROR: Traceback (most recent call last):
+  File "/home/ck/Code/analyse_SRT/src/chunking/run.py", line 480, in run_benchmark
+    result = run_batch(
+             ^^^^^^^^^^
+  File "/home/ck/Code/analyse_SRT/src/chunking/run.py", line 366, in run_batch
+    log(
+    ^^^
+NameError: name 'log' is not defined
+
+[2026-02-25 15:01:33] INFO: Running method: community_network

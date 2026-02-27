@@ -1,0 +1,34 @@
+{
+  "window_indices": [
+    4
+  ],
+  "window_bounds": [
+    [
+      43,
+      57,
+      50
+    ]
+  ],
+  "window_chunk_boundaries": [
+    []
+  ],
+  "window_n_chunks": [
+    1
+  ],
+  "boundary_heatmap": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.064,
+      0.0
+    ]
+  ],
+  "drift": [],
+  "entropy_by_window": [
+    0.05718715122309159
+  ],
+  "penalty_yellow": 0.04632133720182007,
+  "penalty_structured": 0.36593151716935474
+}

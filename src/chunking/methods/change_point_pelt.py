@@ -5,11 +5,14 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
+import logging
 import numpy as np
 import pandas as pd
 
-from .._base import ChunkingResult
-from .._data import extract_ikis, load_srt_file
+from .._base import ChunkingResult, StatisticalValidation
+from .._data import extract_ikis, load_srt_file, shuffle_ikis
+
+logger = logging.getLogger("chunking")
 
 try:
     import ruptures as rpt
@@ -386,14 +389,75 @@ def _compute_drift(boundary_prob_matrix: np.ndarray) -> list[float]:
     return drift_values
 
 
-def _compute_entropy(prob_vector: np.ndarray) -> float:
-    p = np.asarray(prob_vector, dtype=float)
-    total = float(np.sum(p))
-    if total <= 0:
-        return float("nan")
-    p = p / total
-    eps = 1e-12
-    return float(-np.sum(p * np.log(p + eps)))
+def _compute_entropy(probs: np.ndarray) -> float:
+    """Compute binary entropy of a boundary probability profile."""
+    if probs.size == 0:
+        return 0.0
+    p = np.clip(probs, 1e-12, 1.0 - 1e-12)
+    h = -p * np.log2(p) - (1 - p) * np.log2(1 - p)
+    return float(np.mean(h))
+
+
+def statistical_validation(
+    filepath: str | Path,
+    sequence_type: str,
+    target_ikis: dict[int, np.ndarray],
+    yellow_ikis: dict[int, np.ndarray] | None,
+    n_null_runs: int = 100,
+    random_state: int | None = None,
+    **window_settings: Any,
+) -> StatisticalValidation:
+    """Compare empirical mean_n_chunks to null model (shuffled IKI order)."""
+    # Run empirical first to get the baseline mean_n_chunks
+    # (Actually we already have the summary_row in run_analysis, but stand-alone is safer)
+    empirical_res = run_analysis(
+        filepath,
+        sequence_type,
+        _ikis_dict=target_ikis,
+        _yellow_ikis_dict=yellow_ikis,
+        random_state=random_state,
+        **window_settings
+    )
+    empirical_val = float(empirical_res.summary_row["mean_n_chunks"])
+
+    null_scores = []
+    for i in range(n_null_runs):
+        run_seed = None if random_state is None else random_state + i + 1000
+        shuffled_target = shuffle_ikis(target_ikis, random_state=run_seed)
+        # Note: we usually don't shuffle the baseline (yellow) as it's already a null condition
+        # but the prompt says shuffle the participant's IKIs.
+        # If we shuffle both, we destroy structure in both. 
+        # Usually, null-model means comparing structured to non-structured.
+        null_res = run_analysis(
+            filepath,
+            sequence_type,
+            _ikis_dict=shuffled_target,
+            _yellow_ikis_dict=yellow_ikis,
+            random_state=run_seed,
+            **window_settings
+        )
+        null_scores.append(float(null_res.summary_row["mean_n_chunks"]))
+
+    null_array = np.asarray(null_scores, dtype=float)
+    null_mean = float(np.mean(null_array))
+    null_std = float(np.std(null_array, ddof=0))
+    # For PELT, we expect mean_n_chunks to be HIGHER in structured than in random?
+    # Actually, in random data, PELT might find many or zero spurious boundaries depending on penalty.
+    # Wymbs/Mucha use Q (modularity). For PELT, let's use mean_n_chunks.
+    # If the user says "signifikant höher", then we check null_array <= empirical_val.
+    p_val = float((np.sum(null_array >= empirical_val) + 1) / (null_array.size + 1))
+    z_score = 0.0 if null_std == 0 else (empirical_val - null_mean) / null_std
+
+    return StatisticalValidation(
+        empirical_metric=empirical_val,
+        null_metric_mean=null_mean,
+        null_metric_std=null_std,
+        p_value=p_val,
+        z_score=z_score,
+        n_null_runs=n_null_runs,
+        metric_name="mean_n_chunks",
+        null_values=null_scores,
+    )
 
 
 def run_analysis(
@@ -413,9 +477,103 @@ def run_analysis(
     fallback_penalty: float | None = None,
     cost_model: str = "l2",
     rbf_gamma: float | None = None,
+    n_null_runs: int = 100,
     random_state: int | None = None,
+    _ikis_dict: dict[int, np.ndarray] | None = None,
+    _yellow_ikis_dict: dict[int, np.ndarray] | None = None,
 ) -> ChunkingResult:
-    """Run PELT-based change-point chunking for one sequence type."""
+    """
+    Run PELT-based change-point chunking with automatic parameter adaptation.
+    If calibration fails, it retries with reduced window_size and min_blocks.
+    """
+    current_window_size = window_size
+    current_min_blocks = min_blocks
+    
+    # Pre-load data once to avoid repeated IO in the retry loop
+    if _ikis_dict is not None:
+        target_ikis = _ikis_dict
+        yellow_ikis = _yellow_ikis_dict
+        input_file = str(filepath)
+    else:
+        df = load_srt_file(filepath)
+        seq = _validate_sequence_type(sequence_type)
+        target_ikis = extract_ikis(df, sequence_type=seq)
+        yellow_ikis = extract_ikis(df, sequence_type="yellow") if seq != "yellow" else None
+        input_file = str(filepath)
+
+    while True:
+        try:
+            return _run_analysis_single_attempt(
+                filepath=input_file,
+                sequence_type=sequence_type,
+                window_size=current_window_size,
+                step=step,
+                min_blocks=current_min_blocks,
+                n_bootstrap=n_bootstrap,
+                fpr_target=fpr_target,
+                mean_cp_target=mean_cp_target,
+                n_null_splits=n_null_splits,
+                penalty_grid_size=penalty_grid_size,
+                min_windows_reliable=min_windows_reliable,
+                allow_fallback_penalty=allow_fallback_penalty,
+                fallback_penalty=fallback_penalty,
+                cost_model=cost_model,
+                rbf_gamma=rbf_gamma,
+                n_null_runs=n_null_runs,
+                random_state=random_state,
+                _ikis_dict=target_ikis,
+                _yellow_ikis_dict=yellow_ikis,
+            )
+        except ValueError as exc:
+            msg = str(exc)
+            if "No valid windows" in msg or "No valid yellow windows" in msg or "No sliding windows possible" in msg:
+                can_reduce = False
+                new_ws = current_window_size
+                new_mb = current_min_blocks
+                
+                if current_window_size > 10:
+                    new_ws = max(10, current_window_size - 5)
+                    can_reduce = True
+                if current_min_blocks > 2:
+                    new_mb = max(2, current_min_blocks - 1)
+                    can_reduce = True
+                
+                if can_reduce:
+                    logger.warning(
+                        f"PELT failed for {Path(input_file).name} with ws={current_window_size}, mb={current_min_blocks}. "
+                        f"Retrying with ws={new_ws}, mb={new_mb}. Error: {msg}"
+                    )
+                    current_window_size = new_ws
+                    current_min_blocks = new_mb
+                    continue
+            
+            # If we can't reduce further or it's a different error, re-raise
+            raise
+
+
+def _run_analysis_single_attempt(
+    filepath: str | Path,
+    sequence_type: str = "blue",
+    *,
+    window_size: int = DEFAULT_WINDOW_SIZE,
+    step: int = DEFAULT_STEP,
+    min_blocks: int = DEFAULT_MIN_BLOCKS,
+    n_bootstrap: int = DEFAULT_N_BOOTSTRAP,
+    fpr_target: float = DEFAULT_FPR_TARGET,
+    mean_cp_target: float = DEFAULT_MEAN_CP_TARGET,
+    n_null_splits: int = DEFAULT_N_NULL_SPLITS,
+    penalty_grid_size: int = DEFAULT_PENALTY_GRID_SIZE,
+    min_windows_reliable: int = DEFAULT_MIN_WINDOWS_RELIABLE,
+    allow_fallback_penalty: bool = False,
+    fallback_penalty: float | None = None,
+    cost_model: str = "l2",
+    rbf_gamma: float | None = None,
+    n_null_runs: int = 100,
+    random_state: int | None = None,
+    _ikis_dict: dict[int, np.ndarray] | None = None,
+    _yellow_ikis_dict: dict[int, np.ndarray] | None = None,
+) -> ChunkingResult:
+    """Core PELT analysis logic for a single set of parameters."""
     filepath = Path(filepath)
     seq = _validate_sequence_type(sequence_type)
     if cost_model not in ("l2", "rbf"):
@@ -423,14 +581,28 @@ def run_analysis(
     if min_blocks < 2:
         raise ValueError("min_blocks must be >= 2.")
 
-    df = load_srt_file(filepath)
-    target_ikis = extract_ikis(df, sequence_type=seq)
+    if _ikis_dict is not None:
+        target_ikis = _ikis_dict
+    else:
+        df = load_srt_file(filepath)
+        target_ikis = extract_ikis(df, sequence_type=seq)
+
     if not target_ikis:
         raise ValueError(f"No valid blocks found for sequence='{seq}'.")
 
     yellow_ikis: dict[int, np.ndarray] | None = None
     if seq != "yellow":
-        yellow_ikis = extract_ikis(df, sequence_type="yellow")
+        if _yellow_ikis_dict is not None:
+            yellow_ikis = _yellow_ikis_dict
+        else:
+            if _ikis_dict is None:
+                # df already loaded
+                yellow_ikis = extract_ikis(df, sequence_type="yellow")
+            else:
+                # Need to load df for yellow if not provided
+                df = load_srt_file(filepath)
+                yellow_ikis = extract_ikis(df, sequence_type="yellow")
+        
         if not yellow_ikis:
             raise ValueError("No valid yellow blocks found for baseline correction.")
 
@@ -554,6 +726,23 @@ def run_analysis(
         cost_model=cost_model,
         rbf_gamma=rbf_gamma,
     )
+
+    # Perform statistical validation if this is the empirical run (not called by validation)
+    validation_res: StatisticalValidation | None = None
+    if _ikis_dict is None and n_null_runs > 0:
+        validation_res = statistical_validation(
+            filepath, seq, target_ikis, yellow_ikis,
+            n_null_runs=n_null_runs,
+            random_state=random_state,
+            window_size=window_size, step=step, min_blocks=min_blocks,
+            n_bootstrap=n_bootstrap, fpr_target=fpr_target,
+            mean_cp_target=mean_cp_target, n_null_splits=n_null_splits,
+            penalty_grid_size=penalty_grid_size,
+            min_windows_reliable=min_windows_reliable,
+            allow_fallback_penalty=allow_fallback_penalty,
+            fallback_penalty=fallback_penalty, cost_model=cost_model,
+            rbf_gamma=rbf_gamma
+        )
     if not windows:
         raise ValueError(
             "No valid windows for the selected sequence under current settings "
@@ -586,7 +775,16 @@ def run_analysis(
         "mean_drift": float(np.mean(drift_values)) if drift_values else float("nan"),
         "reliable": bool(len(windows) >= int(min_windows_reliable)),
         "penalty_fallback_used": bool(penalty_fallback_used),
+        "used_window_size": int(window_size),
+        "used_min_blocks": int(min_blocks),
     }
+    if validation_res:
+        summary_row.update({
+            "empirical_mean_n_chunks": validation_res.empirical_metric,
+            "null_mean_n_chunks": validation_res.null_metric_mean,
+            "p_value": validation_res.p_value,
+            "z_score": validation_res.z_score,
+        })
 
     trials = trials.copy()
     trials["source_file"] = str(filepath)
@@ -639,6 +837,6 @@ def run_analysis(
         summary_row=summary_row,
         trials_df=trials,
         parameters=parameters,
-        validation=validation,
+        validation=validation_res.__dict__ if validation_res else validation,
         algorithm_doc="algorithms/change_point_pelt.md",
     )

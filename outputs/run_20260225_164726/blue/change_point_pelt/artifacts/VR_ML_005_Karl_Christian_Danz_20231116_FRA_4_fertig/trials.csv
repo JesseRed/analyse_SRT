@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+101,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4
+114,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4
+115,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4
+116,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4
+121,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4
+123,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4
+124,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4
+125,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4
+129,10,101,130,115,1,[],SRT/VR_ML_005_Karl_Christian_Danz_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Karl_Christian_Danz,FRA_4,4

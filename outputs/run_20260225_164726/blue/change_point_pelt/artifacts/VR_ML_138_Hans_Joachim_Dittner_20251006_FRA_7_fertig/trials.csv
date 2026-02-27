@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+22,2,22,51,36,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+30,2,22,51,36,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+34,2,22,51,36,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+39,2,22,51,36,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+40,2,22,51,36,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+44,3,32,61,46,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+45,3,32,61,46,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+46,3,32,61,46,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+59,4,42,71,56,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+61,4,42,71,56,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+69,4,42,71,56,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7
+70,4,42,71,56,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251006_FRA_7_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_7,7

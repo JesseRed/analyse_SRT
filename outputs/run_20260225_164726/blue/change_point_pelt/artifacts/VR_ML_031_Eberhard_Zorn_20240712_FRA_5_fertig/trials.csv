@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+114,11,112,141,126,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+122,11,112,141,126,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+123,11,112,141,126,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+124,11,112,141,126,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+126,11,112,141,126,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+127,11,112,141,126,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+131,11,112,141,126,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+133,12,122,151,136,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+140,12,122,151,136,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+142,12,122,151,136,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+146,12,122,151,136,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5
+147,12,122,151,136,1,[],SRT/VR_ML_031_Eberhard_Zorn_20240712_FRA_5_fertig.csv,blue,change_point_pelt,Eberhard_Zorn,FRA_5,5

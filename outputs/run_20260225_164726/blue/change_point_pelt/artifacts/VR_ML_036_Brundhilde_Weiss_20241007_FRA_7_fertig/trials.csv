@@ -1,0 +1,7 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+46,3,36,65,50,1,[],SRT/VR_ML_036_Brundhilde_Weiss_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Brundhilde_Weiss,FRA_7,7
+52,3,36,65,50,1,[],SRT/VR_ML_036_Brundhilde_Weiss_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Brundhilde_Weiss,FRA_7,7
+55,3,36,65,50,1,[],SRT/VR_ML_036_Brundhilde_Weiss_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Brundhilde_Weiss,FRA_7,7
+60,3,36,65,50,1,[],SRT/VR_ML_036_Brundhilde_Weiss_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Brundhilde_Weiss,FRA_7,7
+61,3,36,65,50,1,[],SRT/VR_ML_036_Brundhilde_Weiss_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Brundhilde_Weiss,FRA_7,7
+65,3,36,65,50,1,[],SRT/VR_ML_036_Brundhilde_Weiss_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Brundhilde_Weiss,FRA_7,7

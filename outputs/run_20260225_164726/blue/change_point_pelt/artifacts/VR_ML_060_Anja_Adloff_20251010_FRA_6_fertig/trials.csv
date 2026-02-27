@@ -1,0 +1,15 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+31,3,31,60,45,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+32,3,31,60,45,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+33,3,31,60,45,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+34,3,31,60,45,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+36,3,31,60,45,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+39,3,31,60,45,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+44,3,31,60,45,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+45,3,31,60,45,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+52,4,41,70,55,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+55,4,41,70,55,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+60,4,41,70,55,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+61,4,41,70,55,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+65,4,41,70,55,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6
+69,4,41,70,55,2,[5],SRT/VR_ML_060_Anja_Adloff_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Anja_Adloff,FRA_6,6

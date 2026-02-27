@@ -1,0 +1,26 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+61,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+62,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+63,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+70,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+71,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+73,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+76,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+78,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+79,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+80,6,61,90,75,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+84,7,71,100,85,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+85,7,71,100,85,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+86,7,71,100,85,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+92,8,81,110,95,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+99,8,81,110,95,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+100,8,81,110,95,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+101,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+105,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+108,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+109,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+111,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+114,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+118,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+119,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2
+120,9,91,120,105,1,[],SRT/VR_ML_004_Martina_van Boekel_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Martina_van Boekel,FRA_2,2

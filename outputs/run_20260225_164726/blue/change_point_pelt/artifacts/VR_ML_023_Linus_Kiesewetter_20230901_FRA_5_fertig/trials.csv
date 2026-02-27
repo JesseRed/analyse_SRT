@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+13,1,12,41,26,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+14,1,12,41,26,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+17,1,12,41,26,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+19,1,12,41,26,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+26,1,12,41,26,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+28,1,12,41,26,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+30,1,12,41,26,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+38,2,22,51,36,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+39,2,22,51,36,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+44,2,22,51,36,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5
+45,2,22,51,36,1,[],SRT/VR_ML_023_Linus_Kiesewetter_20230901_FRA_5_fertig.csv,blue,change_point_pelt,Linus_Kiesewetter,FRA_5,5

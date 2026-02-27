@@ -1,0 +1,17 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+41,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+45,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+47,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+49,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+50,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+52,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+53,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+56,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+58,4,41,70,55,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+63,5,51,80,65,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+65,5,51,80,65,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+69,5,51,80,65,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+70,5,51,80,65,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+71,5,51,80,65,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+72,5,51,80,65,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3
+76,5,51,80,65,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250507_FRA_3_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_3,3

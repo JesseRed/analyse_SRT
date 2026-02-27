@@ -1,0 +1,7 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+38,3,33,62,47,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_7,7
+39,3,33,62,47,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_7,7
+45,3,33,62,47,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_7,7
+52,3,33,62,47,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_7,7
+55,3,33,62,47,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_7,7
+61,3,33,62,47,1,[],SRT/VR_ML_106_Matthias_Buchwald_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Matthias_Buchwald,FRA_7,7

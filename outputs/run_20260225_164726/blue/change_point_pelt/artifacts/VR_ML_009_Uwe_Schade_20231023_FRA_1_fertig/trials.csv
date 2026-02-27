@@ -1,0 +1,8 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+76,6,73,82,77,1,[],SRT/VR_ML_009_Uwe_Schade_20231023_FRA_1_fertig.csv,blue,change_point_pelt,Uwe_Schade,FRA_1,1
+77,6,73,82,77,1,[],SRT/VR_ML_009_Uwe_Schade_20231023_FRA_1_fertig.csv,blue,change_point_pelt,Uwe_Schade,FRA_1,1
+81,6,73,82,77,1,[],SRT/VR_ML_009_Uwe_Schade_20231023_FRA_1_fertig.csv,blue,change_point_pelt,Uwe_Schade,FRA_1,1
+113,10,113,122,117,1,[],SRT/VR_ML_009_Uwe_Schade_20231023_FRA_1_fertig.csv,blue,change_point_pelt,Uwe_Schade,FRA_1,1
+115,10,113,122,117,1,[],SRT/VR_ML_009_Uwe_Schade_20231023_FRA_1_fertig.csv,blue,change_point_pelt,Uwe_Schade,FRA_1,1
+117,10,113,122,117,1,[],SRT/VR_ML_009_Uwe_Schade_20231023_FRA_1_fertig.csv,blue,change_point_pelt,Uwe_Schade,FRA_1,1
+122,10,113,122,117,1,[],SRT/VR_ML_009_Uwe_Schade_20231023_FRA_1_fertig.csv,blue,change_point_pelt,Uwe_Schade,FRA_1,1

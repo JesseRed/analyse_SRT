@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+32,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+33,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+38,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+39,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+40,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+44,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+45,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+52,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+55,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+59,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6
+60,3,32,61,46,1,[],SRT/VR_ML_136_Ines_Schmidt_20250926_FRA_6_fertig.csv,blue,change_point_pelt,Ines_Schmidt,FRA_6,6

@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+94,9,92,121,106,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+96,9,92,121,106,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+97,9,92,121,106,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+98,9,92,121,106,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+101,9,92,121,106,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+104,9,92,121,106,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+107,9,92,121,106,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+108,9,92,121,106,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+118,10,102,131,116,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+123,10,102,131,116,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+124,10,102,131,116,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5
+127,10,102,131,116,1,[],SRT/VR_ML_020_Maximilia_Schinner_20230804_FRA_5_fertig.csv,blue,change_point_pelt,Maximilia_Schinner,FRA_5,5

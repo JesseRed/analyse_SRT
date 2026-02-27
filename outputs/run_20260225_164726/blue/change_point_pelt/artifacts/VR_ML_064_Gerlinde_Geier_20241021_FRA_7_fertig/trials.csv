@@ -1,0 +1,6 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+96,9,94,103,98,2,[5],SRT/VR_ML_064_Gerlinde_Geier_20241021_FRA_7_fertig.csv,blue,change_point_pelt,Gerlinde_Geier,FRA_7,7
+98,9,94,103,98,2,[5],SRT/VR_ML_064_Gerlinde_Geier_20241021_FRA_7_fertig.csv,blue,change_point_pelt,Gerlinde_Geier,FRA_7,7
+100,9,94,103,98,2,[5],SRT/VR_ML_064_Gerlinde_Geier_20241021_FRA_7_fertig.csv,blue,change_point_pelt,Gerlinde_Geier,FRA_7,7
+101,9,94,103,98,2,[5],SRT/VR_ML_064_Gerlinde_Geier_20241021_FRA_7_fertig.csv,blue,change_point_pelt,Gerlinde_Geier,FRA_7,7
+102,9,94,103,98,2,[5],SRT/VR_ML_064_Gerlinde_Geier_20241021_FRA_7_fertig.csv,blue,change_point_pelt,Gerlinde_Geier,FRA_7,7

@@ -1,0 +1,7 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+13,1,12,31,21,1,[],SRT/VR_ML_082_Christine_Glueck_20250114_FRA_2_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_2,2
+16,1,12,31,21,1,[],SRT/VR_ML_082_Christine_Glueck_20250114_FRA_2_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_2,2
+21,1,12,31,21,1,[],SRT/VR_ML_082_Christine_Glueck_20250114_FRA_2_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_2,2
+22,1,12,31,21,1,[],SRT/VR_ML_082_Christine_Glueck_20250114_FRA_2_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_2,2
+29,1,12,31,21,1,[],SRT/VR_ML_082_Christine_Glueck_20250114_FRA_2_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_2,2
+31,1,12,31,21,1,[],SRT/VR_ML_082_Christine_Glueck_20250114_FRA_2_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_2,2

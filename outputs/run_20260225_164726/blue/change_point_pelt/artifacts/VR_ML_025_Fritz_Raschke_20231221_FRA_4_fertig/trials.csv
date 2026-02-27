@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+52,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4
+53,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4
+54,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4
+63,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4
+65,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4
+67,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4
+68,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4
+70,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4
+71,4,42,71,56,2,[5],SRT/VR_ML_025_Fritz_Raschke_20231221_FRA_4_fertig.csv,blue,change_point_pelt,Fritz_Raschke,FRA_4,4

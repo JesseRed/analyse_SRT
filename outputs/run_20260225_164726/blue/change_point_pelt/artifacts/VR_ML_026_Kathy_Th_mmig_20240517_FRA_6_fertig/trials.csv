@@ -1,0 +1,16 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+104,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+108,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+109,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+110,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+112,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+113,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+115,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+117,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+120,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+122,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+123,10,104,133,118,2,[5],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+126,11,114,143,128,1,[],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+133,11,114,143,128,1,[],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+140,11,114,143,128,1,[],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6
+143,11,114,143,128,1,[],SRT/VR_ML_026_Kathy_Thümmig_20240517_FRA_6_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_6,6

@@ -19,17 +19,14 @@ def load_srt_file(filepath: str | Path) -> pd.DataFrame:
     df = pd.read_csv(path, sep=";", decimal=",")
     df.columns = [str(c).strip() for c in df.columns]
 
-    required_cols = [
-        "BlockNumber",
-        "EventNumber",
-        "Time Since Block start",
-        "isHit",
-        "target",
-        "pressed",
-        "sequence",
-    ]
-    if missing := [c for c in required_cols if c not in df.columns]:
-        raise ValueError(f"Missing required columns: {missing}")
+    REQUIRED_COLUMNS = ["BlockNumber", "EventNumber", "isHit", "sequence"]
+    missing = [c for c in REQUIRED_COLUMNS if c not in df.columns]
+    if missing:
+        found_cols = sorted(df.columns.tolist())
+        raise ValueError(
+            f"Missing required columns {missing} in file '{filepath}'. "
+            f"Found: {found_cols}. Expected at least: {REQUIRED_COLUMNS}"
+        )
 
     numeric_cols = [
         "BlockNumber",
@@ -97,3 +94,15 @@ def extract_ikis(
         for keep, block_id in zip(keep_rows, block_ids)
         if keep
     }
+
+
+def shuffle_ikis(ikis_dict: dict[int, np.ndarray], random_state: int | None = None) -> dict[int, np.ndarray]:
+    """
+    Randomly shuffle the temporal sequence of IKIs within each block.
+    Maintains the distribution of IKIs for that participant/block but destroys temporal structure.
+    """
+    rng = np.random.default_rng(random_state)
+    shuffled_dict = {}
+    for block_id, ikis in ikis_dict.items():
+        shuffled_dict[block_id] = rng.permutation(ikis)
+    return shuffled_dict

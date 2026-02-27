@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+92,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6
+98,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6
+100,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6
+101,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6
+102,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6
+104,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6
+107,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6
+109,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6
+115,9,91,115,103,1,[],SRT/VR_ML_132_Regina_Lobenstein_20250912_FRA_6_fertig.csv,blue,change_point_pelt,Regina_Lobenstein,FRA_6,6

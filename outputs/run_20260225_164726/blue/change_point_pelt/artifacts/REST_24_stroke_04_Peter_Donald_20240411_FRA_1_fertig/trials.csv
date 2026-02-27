@@ -1,0 +1,11 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+117,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+122,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+123,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+133,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+135,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+136,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+138,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+140,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+141,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1
+142,11,116,145,130,1,[],SRT/REST_24_stroke_04_Peter_Donald_20240411_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_stroke_04_Peter_Donald,FRA_1,1

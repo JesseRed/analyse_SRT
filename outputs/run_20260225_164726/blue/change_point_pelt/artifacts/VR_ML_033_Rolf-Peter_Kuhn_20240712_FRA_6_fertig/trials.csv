@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+69,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+73,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+75,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+76,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+77,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+81,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+82,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+83,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+85,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+89,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+90,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6
+91,6,67,96,81,1,[],SRT/VR_ML_033_Rolf-Peter_Kuhn_20240712_FRA_6_fertig.csv,blue,change_point_pelt,Rolf-Peter_Kuhn,FRA_6,6

@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from .._base import ChunkingResult
-from .._data import extract_ikis, load_srt_file
+from .._base import ChunkingResult, StatisticalValidation
+from .._data import extract_ikis, load_srt_file, shuffle_ikis
 
 try:
     import igraph as ig
@@ -199,11 +199,11 @@ def compute_chunk_metrics(
 
 def statistical_validation(
     ikis_dict: dict[int, np.ndarray],
-    n_permutations: int = 100,
+    n_null_runs: int = 100,
     gamma: float = DEFAULT_GAMMA,
     C: float = DEFAULT_COUPLING,
     random_state: int | None = None,
-) -> dict:
+) -> StatisticalValidation:
     """Compare empirical multilayer modularity to null model (shuffled IKI order)."""
     block_ids = sorted(ikis_dict)
     if not block_ids:
@@ -219,36 +219,39 @@ def statistical_validation(
     )
     empirical_q = float(empirical["best_quality"])
 
-    rng = np.random.default_rng(random_state)
     null_scores = []
-    for _ in range(n_permutations):
-        shuffled_graphs = [
-            build_trial_network(rng.permutation(ikis_dict[b])) for b in block_ids
-        ]
+    for i in range(n_null_runs):
+        # Use child random states for reproducibility
+        run_seed = None if random_state is None else random_state + i + 1000
+        shuffled_ikis = shuffle_ikis(ikis_dict, random_state=run_seed)
+        shuffled_graphs = [build_trial_network(shuffled_ikis[b]) for b in block_ids]
+        
         null_result = run_multilayer_community_detection(
             shuffled_graphs,
             gamma=gamma,
             C=C,
             n_iter=1,
-            random_state=int(rng.integers(0, 2**31 - 1)),
+            random_state=run_seed,
         )
         null_scores.append(float(null_result["best_quality"]))
 
     null_array = np.asarray(null_scores, dtype=float)
-    p_permutation = float(
-        (np.sum(null_array >= empirical_q) + 1) / (null_array.size + 1)
-    )
-    t_stat, p_two_sided = stats.ttest_1samp(null_array, popmean=empirical_q)
+    null_mean = float(np.mean(null_array))
+    null_std = float(np.std(null_array, ddof=0))
+    p_permutation = float((np.sum(null_array >= empirical_q) + 1) / (null_array.size + 1))
+    
+    z_score = 0.0 if null_std == 0 else (empirical_q - null_mean) / null_std
 
-    return {
-        "empirical_q_multitrial": empirical_q,
-        "null_q_multitrial_mean": float(np.mean(null_array)),
-        "null_q_multitrial_std": float(np.std(null_array, ddof=0)),
-        "null_scores": null_scores,
-        "p_value_permutation": p_permutation,
-        "t_statistic": float(t_stat),
-        "p_value_ttest_two_sided": float(p_two_sided),
-    }
+    return StatisticalValidation(
+        empirical_metric=empirical_q,
+        null_metric_mean=null_mean,
+        null_metric_std=null_std,
+        p_value=p_permutation,
+        z_score=z_score,
+        n_null_runs=n_null_runs,
+        metric_name="multitrial_modularity_q",
+        null_values=null_scores,
+    )
 
 
 def run_analysis(
@@ -258,7 +261,7 @@ def run_analysis(
     gamma: float = DEFAULT_GAMMA,
     coupling: float = DEFAULT_COUPLING,
     n_iter: int = 100,
-    n_permutations: int = 100,
+    n_null_runs: int = 100,
     random_state: int | None = None,
 ) -> ChunkingResult:
     """Run full Wymbs/Mucha chunking analysis on one participant file."""
@@ -283,7 +286,7 @@ def run_analysis(
     metrics = compute_chunk_metrics(ikis_dict, partition_map)
     validation = statistical_validation(
         ikis_dict,
-        n_permutations=n_permutations,
+        n_null_runs=n_null_runs,
         gamma=gamma,
         C=coupling,
         random_state=random_state,
@@ -298,9 +301,11 @@ def run_analysis(
         "mean_q_single_trial": float(metrics["q_single_trial"].mean()),
         "mean_phi": float(metrics["phi"].replace([np.inf, -np.inf], np.nan).mean()),
         "mean_phi_normalized": float(metrics["phi_normalized"].mean()),
-        "empirical_q_multitrial": validation["empirical_q_multitrial"],
-        "null_q_multitrial_mean": validation["null_q_multitrial_mean"],
-        "p_value_permutation": validation["p_value_permutation"],
+        "empirical_q": validation.empirical_metric,
+        "null_q_mean": validation.null_metric_mean,
+        "null_q_std": validation.null_metric_std,
+        "p_value": validation.p_value,
+        "z_score": validation.z_score,
     }
 
     trials = metrics.copy()
@@ -320,9 +325,9 @@ def run_analysis(
             "gamma": gamma,
             "coupling": coupling,
             "n_iter": n_iter,
-            "n_permutations": n_permutations,
+            "n_null_runs": n_null_runs,
             "random_state": random_state,
         },
-        validation=validation,
+        validation=pd.io.json.build_table_schema(pd.DataFrame([validation.__dict__])) if False else validation.__dict__, # Placeholder for conversion if needed, but keeping it as dict for Run.py
         algorithm_doc="algorithms/community_network.md",
     )

@@ -1,0 +1,5 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+44,4,43,57,50,1,[],SRT/VR_ML_066_Kornelia_Haus_20241011_FRA_6_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_6,6
+45,4,43,57,50,1,[],SRT/VR_ML_066_Kornelia_Haus_20241011_FRA_6_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_6,6
+46,4,43,57,50,1,[],SRT/VR_ML_066_Kornelia_Haus_20241011_FRA_6_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_6,6
+52,4,43,57,50,1,[],SRT/VR_ML_066_Kornelia_Haus_20241011_FRA_6_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_6,6

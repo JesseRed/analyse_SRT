@@ -17,6 +17,20 @@ import pandas as pd
 
 
 @dataclass
+class StatisticalValidation:
+    """Standardized results for statistical validation against null models."""
+
+    empirical_metric: float
+    null_metric_mean: float
+    null_metric_std: float
+    p_value: float
+    z_score: float
+    n_null_runs: int
+    metric_name: str
+    null_values: list[float] = field(default_factory=list)
+
+
+@dataclass
 class ChunkingResult:
     """
     Unified result of a chunking analysis on one participant file.

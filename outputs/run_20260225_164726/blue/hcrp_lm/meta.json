@@ -1,0 +1,12 @@
+{
+  "method_name": "hcrp_lm",
+  "timestamp": "2026-02-26T02:34:11.069043+00:00",
+  "git_commit": "6e1a8bd472c03f2dd7ed3e679c3a689da8c3cf72",
+  "input_dir": "SRT",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "n_files_total": 2067,
+  "n_files_success": 2063,
+  "n_files_failed": 4,
+  "elapsed_seconds": 36795.609202861786
+}

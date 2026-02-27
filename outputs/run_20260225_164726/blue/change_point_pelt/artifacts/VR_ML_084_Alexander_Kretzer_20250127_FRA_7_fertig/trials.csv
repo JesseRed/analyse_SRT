@@ -1,0 +1,8 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+85,8,82,106,94,1,[],SRT/VR_ML_084_Alexander_Kretzer_20250127_FRA_7_fertig.csv,blue,change_point_pelt,Alexander_Kretzer,FRA_7,7
+87,8,82,106,94,1,[],SRT/VR_ML_084_Alexander_Kretzer_20250127_FRA_7_fertig.csv,blue,change_point_pelt,Alexander_Kretzer,FRA_7,7
+88,8,82,106,94,1,[],SRT/VR_ML_084_Alexander_Kretzer_20250127_FRA_7_fertig.csv,blue,change_point_pelt,Alexander_Kretzer,FRA_7,7
+92,8,82,106,94,1,[],SRT/VR_ML_084_Alexander_Kretzer_20250127_FRA_7_fertig.csv,blue,change_point_pelt,Alexander_Kretzer,FRA_7,7
+98,8,82,106,94,1,[],SRT/VR_ML_084_Alexander_Kretzer_20250127_FRA_7_fertig.csv,blue,change_point_pelt,Alexander_Kretzer,FRA_7,7
+101,8,82,106,94,1,[],SRT/VR_ML_084_Alexander_Kretzer_20250127_FRA_7_fertig.csv,blue,change_point_pelt,Alexander_Kretzer,FRA_7,7
+102,8,82,106,94,1,[],SRT/VR_ML_084_Alexander_Kretzer_20250127_FRA_7_fertig.csv,blue,change_point_pelt,Alexander_Kretzer,FRA_7,7

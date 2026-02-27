@@ -1,0 +1,18 @@
+{
+  "method_name": "rational_chunking",
+  "input_dir": "SRT_Test2",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "limit": null,
+  "random_state": 42,
+  "n_files_total": 21,
+  "n_files_success": 21,
+  "n_files_failed": 0,
+  "window_size": 30,
+  "step": 10,
+  "min_blocks": 6,
+  "lam": 1.0,
+  "kappa": 1.0,
+  "beta": 5.0,
+  "n_null_runs": 100
+}

@@ -119,11 +119,25 @@ Erstelle eine `methods_config.json` mit den gewünschten Parametern für jede Me
 python -m src.chunking --method all --config methods_config.json --input-dir SRT
 ```
 
-- **Output:** Wenn `--output-dir` weggelassen wird, erstellt das Tool automatisch einen Ordner mit dem aktuellen Zeitstempel (z. B. `outputs_20260224_141944`).
-- **Benchmark-Logik:** Pro registrierte Methode wird ein Unterordner angelegt (`outputs_<timestamp>/blue/community_network/`, …).
 - **Zusammenführung:** Die Datei `benchmark_summary.csv` im Output-Verzeichnis enthält eine konsolidierte Tabelle aller Ergebnisse (eine Zeile pro Datei × Methode).
+- **Validierung im Benchmark:** Du kannst `--n-null-runs` auch im Benchmark-Modus verwenden, um alle Methoden gegen Null-Modelle zu prüfen.
 
-### 4. Verfügbare Methoden anzeigen
+### 4. Statistische Validierung (Null-Modelle)
+
+Alle Methoden unterstützen nun einen Vergleich gegen ein **Null-Modell** (zufällig permutierte IKIs). Dabei werden $p$-Werte und $z$-Scores berechnet, um zu zeigen, dass die gefundene Struktur (z. B. Modularität $Q$) signifikant über dem Zufallsniveau liegt.
+
+```bash
+python -m src.chunking \
+  --method community_network \
+  --input-file SRT/Beispiel.csv \
+  --n-null-runs 100 \
+  --output-dir outputs/validation_run
+```
+
+- `--n-null-runs`: Anzahl der Randomisierungen (Standard: 100). Setze auf 0, um die Validierung zu deaktivieren.
+- **Ergebnisse:** Die Metriken (`p_value`, `z_score`, `null_mean`, etc.) erscheinen in der `summary.csv` und detailliert in `validation.json` im Artefakt-Ordner des Probanden.
+
+### 5. Verfügbare Methoden anzeigen
 
 Aktuell sind folgende Methoden implementiert:
 1. **community_network**: Netzwerkbasierte Partitionierung (Wymbs/Mucha).

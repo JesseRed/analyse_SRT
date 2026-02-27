@@ -8,8 +8,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from .._base import ChunkingResult
-from .._data import extract_ikis, load_srt_file
+from .._base import ChunkingResult, StatisticalValidation
+from .._data import extract_ikis, load_srt_file, shuffle_ikis
 
 try:
     import pyhsmm
@@ -194,6 +194,58 @@ def _select_blocks_in_window(
     return out_ids, out_seqs
 
 
+def statistical_validation(
+    filepath: str | Path,
+    sequence_type: str,
+    target_ikis: dict[int, np.ndarray],
+    n_null_runs: int = 100,
+    random_state: int | None = None,
+    **settings: Any,
+) -> StatisticalValidation:
+    """Compare empirical log-likelihood to null model (shuffled IKI order)."""
+    empirical_res = run_analysis(
+        filepath,
+        sequence_type,
+        _ikis_dict=target_ikis,
+        random_state=random_state,
+        **settings
+    )
+    # We need to extract log-likelihood from the model. 
+    # Current run_analysis doesn't return it in summary_row. 
+    # Let's update run_analysis first.
+    empirical_ll = float(empirical_res.summary_row.get("log_likelihood", 0.0))
+
+    null_scores = []
+    for i in range(n_null_runs):
+        run_seed = None if random_state is None else random_state + i + 1000
+        shuffled_target = shuffle_ikis(target_ikis, random_state=run_seed)
+        null_res = run_analysis(
+            filepath,
+            sequence_type,
+            _ikis_dict=shuffled_target,
+            random_state=run_seed,
+            **settings
+        )
+        null_scores.append(float(null_res.summary_row.get("log_likelihood", 0.0)))
+
+    null_array = np.asarray(null_scores, dtype=float)
+    null_mean = float(np.mean(null_array))
+    null_std = float(np.std(null_array, ddof=0))
+    p_val = float((np.sum(null_array >= empirical_ll) + 1) / (null_array.size + 1))
+    z_score = 0.0 if null_std == 0 else (empirical_ll - null_mean) / null_std
+
+    return StatisticalValidation(
+        empirical_metric=empirical_ll,
+        null_metric_mean=null_mean,
+        null_metric_std=null_std,
+        p_value=p_val,
+        z_score=z_score,
+        n_null_runs=n_null_runs,
+        metric_name="log_likelihood",
+        null_values=null_scores,
+    )
+
+
 def run_analysis(
     filepath: str | Path,
     sequence_type: str = "blue",
@@ -205,8 +257,10 @@ def run_analysis(
     min_blocks: int = DEFAULT_MIN_BLOCKS,
     min_windows_reliable: int = DEFAULT_MIN_WINDOWS_RELIABLE,
     baseline_correction: bool = True,
-    random_state: int | None = None,
     n_gibbs_iter: int = DEFAULT_N_GIBBS_ITER,
+    n_null_runs: int = 100,
+    random_state: int | None = None,
+    _ikis_dict: dict[int, np.ndarray] | None = None,
 ) -> ChunkingResult:
     """Run HSMM-based chunking for one sequence type (blue/green/yellow) using pyhsmm HDP-HSMM."""
     filepath = Path(filepath)
@@ -216,14 +270,18 @@ def run_analysis(
     if n_states < 2 or max_duration < 1:
         raise ValueError("n_states >= 2 and max_duration >= 1 required.")
 
-    df = load_srt_file(filepath)
-    target_ikis = extract_ikis(df, sequence_type=seq)
+    if _ikis_dict is not None:
+        target_ikis = _ikis_dict
+    else:
+        df = load_srt_file(filepath)
+        target_ikis = extract_ikis(df, sequence_type=seq)
+
     if not target_ikis:
         raise ValueError(f"No valid blocks found for sequence='{seq}'.")
 
     yellow_median: np.ndarray | None = None
     if baseline_correction and seq != "yellow":
-        yellow_ikis = extract_ikis(df, sequence_type="yellow")
+        yellow_ikis = extract_ikis(df if _ikis_dict is None else load_srt_file(filepath), sequence_type="yellow")
         if yellow_ikis:
             yellow_median = _yellow_median_per_position(yellow_ikis)
 
@@ -257,6 +315,23 @@ def run_analysis(
         )
         for _ in range(n_gibbs_iter):
             model.resample_model()
+
+    # Empirical log-likelihood
+    log_likelihood = float(model.log_likelihood())
+
+    # Perform statistical validation if this is the empirical run
+    validation_res: StatisticalValidation | None = None
+    if _ikis_dict is None and n_null_runs > 0:
+        validation_res = statistical_validation(
+            filepath, seq, target_ikis,
+            n_null_runs=n_null_runs,
+            random_state=random_state,
+            n_states=n_states, max_duration=max_duration,
+            window_size=window_size, step=step, min_blocks=min_blocks,
+            min_windows_reliable=min_windows_reliable,
+            baseline_correction=baseline_correction,
+            n_gibbs_iter=n_gibbs_iter
+        )
 
     # State sequence per block -> chunk_boundaries per block
     trial_rows: list[dict] = []
@@ -331,7 +406,16 @@ def run_analysis(
         "n_windows_valid": n_windows_valid,
         "mean_drift": mean_drift,
         "reliable": reliable,
+        "log_likelihood": log_likelihood,
     }
+
+    if validation_res:
+        summary_row.update({
+            "empirical_log_likelihood": validation_res.empirical_metric,
+            "null_log_likelihood_mean": validation_res.null_metric_mean,
+            "p_value": validation_res.p_value,
+            "z_score": validation_res.z_score,
+        })
 
     validation: dict[str, object] = {
         "window_indices": list(range(n_windows_valid)),
@@ -363,6 +447,6 @@ def run_analysis(
         summary_row=summary_row,
         trials_df=trials_df,
         parameters=parameters,
-        validation=validation,
+        validation=validation_res.__dict__ if validation_res else validation,
         algorithm_doc="algorithms/hsmm_chunking.md",
     )

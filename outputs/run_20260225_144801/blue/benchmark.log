@@ -1,0 +1,2 @@
+[2026-02-25 14:48:01] INFO: Starting benchmark: input_dir=SRT_Test2 methods=['change_point_pelt', 'community_network', 'hcrp_lm', 'hsmm_chunking', 'rational_chunking']
+[2026-02-25 14:48:01] INFO: Running method: change_point_pelt

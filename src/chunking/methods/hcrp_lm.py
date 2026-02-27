@@ -18,8 +18,8 @@ from typing import Optional, List, Dict, Any
 import numpy as np
 import pandas as pd
 
-from .._base import ChunkingResult
-from .._data import load_srt_file
+from .._base import ChunkingResult, StatisticalValidation
+from .._data import load_srt_file, shuffle_ikis
 
 # ---------------------------------------------------------------------------
 # Vendored HCRP_LM class (adapted from ddHCRP_LM.py)
@@ -383,6 +383,69 @@ def _detect_boundaries(
 # Public run_analysis
 # ---------------------------------------------------------------------------
 
+def statistical_validation(
+    filepath: str | Path,
+    sequence_type: str,
+    sequences: Dict[int, List[int]],
+    n_null_runs: int = 100,
+    random_state: int | None = None,
+    **settings: Any,
+) -> StatisticalValidation:
+    """Compare empirical mean surprisal to null model (shuffled order)."""
+    empirical_res = run_analysis(
+        filepath,
+        sequence_type,
+        _sequences=sequences,
+        random_state=random_state,
+        **settings
+    )
+    # Higher structure = lower surprisal, so use -mean_surprisal as metric
+    empirical_metric = -float(empirical_res.summary_row.get("mean_surprisal", 0.0))
+
+    null_scores = []
+    # For hCRP-LM, we shuffle the sequence of targets. 
+    # Since we don't have IKIs here, we shuffle the target keys themselves within block?
+    # Or shuffle the temporal order of trials? 
+    # Usually it's shuffling the IKI sequence, but hCRP uses targets.
+    # To maintain key distribution, we shuffle target positions 1..7 (0 is prompt).
+    
+    rng = np.random.default_rng(random_state)
+    for i in range(n_null_runs):
+        shuffled_sequences = {}
+        for bid, targets in sequences.items():
+            # Keep index 0 (stimulus) as is, shuffle the rest? 
+            # Actually, standard is to shuffle the whole sequence or IKIs.
+            # Let's shuffle the whole target sequence for the blocks.
+            t_arr = np.array(targets)
+            shuffled_sequences[bid] = rng.permutation(t_arr).tolist()
+            
+        null_res = run_analysis(
+            filepath,
+            sequence_type,
+            _sequences=shuffled_sequences,
+            random_state=None if random_state is None else random_state + i + 1000,
+            **settings
+        )
+        null_scores.append(-float(null_res.summary_row.get("mean_surprisal", 0.0)))
+
+    null_array = np.asarray(null_scores, dtype=float)
+    null_mean = float(np.mean(null_array))
+    null_std = float(np.std(null_array, ddof=0))
+    p_val = float((np.sum(null_array >= empirical_metric) + 1) / (null_array.size + 1))
+    z_score = 0.0 if null_std == 0 else (empirical_metric - null_mean) / null_std
+
+    return StatisticalValidation(
+        empirical_metric=empirical_metric,
+        null_metric_mean=null_mean,
+        null_metric_std=null_std,
+        p_value=p_val,
+        z_score=z_score,
+        n_null_runs=n_null_runs,
+        metric_name="negative_mean_surprisal",
+        null_values=null_scores,
+    )
+
+
 def run_analysis(
     filepath: str | Path,
     sequence_type: str = "blue",
@@ -392,7 +455,9 @@ def run_analysis(
     decay_constant: float | List[float] | None = 50.0,
     n_samples: int = 5,
     threshold_z: float = 1.0,
+    n_null_runs: int = 100,
     random_state: Optional[int] = None,
+    _sequences: Dict[int, List[int]] | None = None,
 ) -> ChunkingResult:
     """Run HCRP-LM surprisal-based chunking on one participant file.
 
@@ -440,7 +505,11 @@ def run_analysis(
         decay_list = dc if any(v > 0 for v in dc) else None
 
     # --- load and extract sequences -------------------------------------------
-    sequences = _extract_target_sequences(df, sequence_type)
+    if _sequences is not None:
+        sequences = _sequences
+    else:
+        sequences = _extract_target_sequences(df, sequence_type)
+    
     if not sequences:
         raise ValueError(f"No valid 8-hit blocks found for sequence='{sequence_type}'.")
 
@@ -455,6 +524,20 @@ def run_analysis(
         random_state=random_state,
     )
     surprisal_by_block = _parse_and_surprisal(sequences, model)
+
+    # Perform statistical validation if this is the empirical run
+    validation_res: StatisticalValidation | None = None
+    if _sequences is None and n_null_runs > 0:
+        validation_res = statistical_validation(
+            filepath, sequence_type, sequences,
+            n_null_runs=n_null_runs,
+            random_state=random_state,
+            n_levels=n_levels,
+            strength=strength,
+            decay_constant=decay_constant,
+            n_samples=n_samples,
+            threshold_z=threshold_z
+        )
 
     # --- chunk boundary detection per block -----------------------------------
     trials_rows = []
@@ -501,6 +584,14 @@ def run_analysis(
         "mean_boundary_surprisal": mean_boundary_surprisal,
     }
 
+    if validation_res:
+        summary_row.update({
+            "empirical_neg_mean_surprisal": validation_res.empirical_metric,
+            "null_neg_mean_surprisal_mean": validation_res.null_metric_mean,
+            "p_value": validation_res.p_value,
+            "z_score": validation_res.z_score,
+        })
+
     parameters: Dict[str, Any] = {
         "n_levels": n_levels,
         "strength": strength_list,
@@ -519,6 +610,6 @@ def run_analysis(
         summary_row=summary_row,
         trials_df=trials_df,
         parameters=parameters,
-        validation=None,
+        validation=validation_res.__dict__ if validation_res else None,
         algorithm_doc="algorithms/hcrp_lm.md",
     )

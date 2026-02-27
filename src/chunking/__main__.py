@@ -97,10 +97,10 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Community-detection repeats per file (community_network).",
     )
     parser.add_argument(
-        "--n-permutations",
+        "--n-null-runs",
         type=int,
-        default=20,
-        help="Null-model permutations per file (community_network).",
+        default=100,
+        help="Number of null-model permutations for statistical validation (all methods).",
     )
     # Method-specific (change_point_pelt)
     parser.add_argument(
@@ -289,7 +289,7 @@ def main(argv: list[str] | None = None) -> int:
             "gamma": args.gamma,
             "coupling": args.coupling,
             "n_iter": args.n_iter,
-            "n_permutations": args.n_permutations,
+            "n_null_runs": args.n_null_runs,
             "random_state": args.seed,
         }
     elif args.method == "change_point_pelt":
@@ -319,6 +319,7 @@ def main(argv: list[str] | None = None) -> int:
             "fallback_penalty": args.fallback_penalty,
             "cost_model": args.cost_model,
             "rbf_gamma": args.rbf_gamma,
+            "n_null_runs": args.n_null_runs,
             "random_state": args.seed,
         }
     elif args.method == "hsmm_chunking":
@@ -332,6 +333,7 @@ def main(argv: list[str] | None = None) -> int:
             "baseline_correction": args.baseline_correction,
             "random_state": args.seed,
             "n_gibbs_iter": args.n_gibbs_iter,
+            "n_null_runs": args.n_null_runs,
         }
     elif args.method == "hcrp_lm":
         method_params = {
@@ -340,6 +342,7 @@ def main(argv: list[str] | None = None) -> int:
             "decay_constant": args.hcrp_decay if args.hcrp_decay != 0.0 else None,
             "n_samples": args.hcrp_n_samples,
             "threshold_z": args.hcrp_threshold_z,
+            "n_null_runs": args.n_null_runs,
             "random_state": args.seed,
         }
     elif args.method == "rational_chunking":
@@ -350,6 +353,8 @@ def main(argv: list[str] | None = None) -> int:
             "lam": args.lam,
             "kappa": args.kappa,
             "beta": args.beta,
+            "n_null_runs": args.n_null_runs,
+            "random_state": args.seed,
         }
     else:
         method_params = {"random_state": args.seed}

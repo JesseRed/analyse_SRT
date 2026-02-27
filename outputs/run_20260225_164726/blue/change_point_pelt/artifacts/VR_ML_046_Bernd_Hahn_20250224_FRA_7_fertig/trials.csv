@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+55,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+61,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+68,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+69,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+70,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+71,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+76,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+78,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+79,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+80,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7
+81,5,54,83,68,1,[],SRT/VR_ML_046_Bernd_Hahn_20250224_FRA_7_fertig.csv,blue,change_point_pelt,Bernd_Hahn,FRA_7,7

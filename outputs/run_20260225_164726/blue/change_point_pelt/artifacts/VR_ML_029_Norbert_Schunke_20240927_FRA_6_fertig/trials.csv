@@ -1,0 +1,3 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+23,1,22,31,26,2,[5],SRT/VR_ML_029_Norbert_Schunke_20240927_FRA_6_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_6,6
+29,1,22,31,26,2,[5],SRT/VR_ML_029_Norbert_Schunke_20240927_FRA_6_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_6,6

@@ -1,0 +1,14 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+104,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+107,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+108,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+110,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+111,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+112,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+113,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+117,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+120,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+122,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+123,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+126,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1
+133,9,104,133,118,1,[],SRT/VR_ML_054_Rainer_Spaude_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Rainer_Spaude,FRA_1,1

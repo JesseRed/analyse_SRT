@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+23,2,22,51,36,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+26,2,22,51,36,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+27,2,22,51,36,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+32,2,22,51,36,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+34,2,22,51,36,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+44,3,32,61,46,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+52,4,42,71,56,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+54,4,42,71,56,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+58,4,42,71,56,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+60,4,42,71,56,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4
+67,4,42,71,56,1,[],SRT/VR_ML_008_Valentin_Wilkens_20230603_FRA_4_fertig.csv,blue,change_point_pelt,Valentin_Wilkens,FRA_4,4

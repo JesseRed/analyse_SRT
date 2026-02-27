@@ -1,0 +1,6 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+38,3,38,47,42,1,[],SRT/VR_ML_063_Hansjoerg_Werner_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Hansjoerg_Werner,FRA_2,2
+39,3,38,47,42,1,[],SRT/VR_ML_063_Hansjoerg_Werner_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Hansjoerg_Werner,FRA_2,2
+45,3,38,47,42,1,[],SRT/VR_ML_063_Hansjoerg_Werner_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Hansjoerg_Werner,FRA_2,2
+108,10,108,117,112,1,[],SRT/VR_ML_063_Hansjoerg_Werner_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Hansjoerg_Werner,FRA_2,2
+113,10,108,117,112,1,[],SRT/VR_ML_063_Hansjoerg_Werner_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Hansjoerg_Werner,FRA_2,2
