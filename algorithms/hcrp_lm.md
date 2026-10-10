@@ -99,6 +99,6 @@ Pro Block (8 Stimuli, Positionen 1–8):
 
 ## Literatur
 
-- Eltető, N., Sen, K., Bhaskaran-Nair, K., & Bhattacharya, B. (2022). Tracking human skill learning with a hierarchical Bayesian sequence model. *bioRxiv*. https://doi.org/10.1101/2022.01.27.477977
+- Éltető, N., Nemeth, D., Janacsek, K., & Dayan, P. (2022). Tracking human skill learning with a hierarchical Bayesian sequence model. *PLoS Computational Biology, 18*(11), e1009866. https://doi.org/10.1371/journal.pcbi.1009866
 - Teh, Y. W. (2006). A hierarchical Bayesian language model based on Pitman-Yor processes. *ACL 2006*.
 - Blei, D. M., & Frazier, P. I. (2011). Distance dependent Chinese restaurant processes. *JMLR*, 12, 2461–2488.
