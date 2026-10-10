@@ -1,0 +1,18 @@
+[2026-02-25 14:43:16] ERROR: Failed file='VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv': name '_compute_entropy' is not defined
+[2026-02-25 14:43:16] INFO: [1/21] failed file='VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv' success=0 failed=1 elapsed=00:00:00 eta=00:00:04
+[2026-02-25 14:43:18] ERROR: Failed file='VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv': name '_compute_entropy' is not defined
+[2026-02-25 14:43:18] INFO: [2/21] failed file='VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv' success=0 failed=2 elapsed=00:00:02 eta=00:00:19
+[2026-02-25 14:43:19] ERROR: Failed file='VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv': name '_compute_entropy' is not defined
+[2026-02-25 14:43:19] INFO: [3/21] failed file='VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv' success=0 failed=3 elapsed=00:00:03 eta=00:00:18
+[2026-02-25 14:43:19] ERROR: Failed file='VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv': name '_compute_entropy' is not defined
+[2026-02-25 14:43:19] INFO: [4/21] failed file='VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv' success=0 failed=4 elapsed=00:00:03 eta=00:00:15
+[2026-02-25 14:43:20] ERROR: Failed file='VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv': name '_compute_entropy' is not defined
+[2026-02-25 14:43:20] INFO: [5/21] failed file='VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv' success=0 failed=5 elapsed=00:00:04 eta=00:00:15
+[2026-02-25 14:43:21] ERROR: Failed file='VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv': name '_compute_entropy' is not defined
+[2026-02-25 14:43:21] INFO: [6/21] failed file='VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv' success=0 failed=6 elapsed=00:00:05 eta=00:00:14
+[2026-02-25 14:43:21] ERROR: Failed file='VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv': No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+[2026-02-25 14:43:21] INFO: [7/21] failed file='VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv' success=0 failed=7 elapsed=00:00:05 eta=00:00:11
+[2026-02-25 14:43:22] ERROR: Failed file='VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv': name '_compute_entropy' is not defined
+[2026-02-25 14:43:22] INFO: [8/21] failed file='VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv' success=0 failed=8 elapsed=00:00:06 eta=00:00:10
+[2026-02-25 14:43:22] ERROR: Failed file='VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv': No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+[2026-02-25 14:43:22] INFO: [9/21] failed file='VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv' success=0 failed=9 elapsed=00:00:06 eta=00:00:08

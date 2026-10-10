@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+51,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+52,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+53,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+56,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+60,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+61,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+62,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+66,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+73,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+75,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1
+77,5,51,80,65,1,[],SRT/VR_ML_033_Melanie_Bomm _20230925_FRA_1_fertig.csv,blue,change_point_pelt,Melanie_Bomm ,FRA_1,1

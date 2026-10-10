@@ -1,0 +1,15 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+44,4,41,65,53,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+45,4,41,65,53,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+46,4,41,65,53,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+48,4,41,65,53,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+52,4,41,65,53,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+55,4,41,65,53,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+59,5,51,75,63,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+60,5,51,75,63,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+61,5,51,75,63,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+65,5,51,75,63,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+69,5,51,75,63,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+70,5,51,75,63,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+71,5,51,75,63,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6
+74,5,51,75,63,1,[],SRT/VR_ML_138_Hans_Joachim_Dittner_20251010_FRA_6_fertig.csv,blue,change_point_pelt,Hans_Joachim_Dittner,FRA_6,6

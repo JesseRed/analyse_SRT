@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+45,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+52,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+53,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+55,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+60,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+62,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+63,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+64,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+67,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+69,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+70,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5
+71,4,42,71,56,1,[],SRT/VR_ML_044_Manfred_Scheffler_20240531_FRA_5_fertig.csv,blue,change_point_pelt,Manfred_Scheffler,FRA_5,5

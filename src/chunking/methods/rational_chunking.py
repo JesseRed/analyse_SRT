@@ -10,8 +10,8 @@ from scipy.special import logsumexp
 
 from typing import Any
 
-from .._base import ChunkingResult
-from .._data import extract_ikis, load_srt_file
+from .._base import ChunkingResult, StatisticalValidation
+from .._data import extract_ikis, load_srt_file, shuffle_ikis
 
 
 def _get_all_partitions() -> np.ndarray:
@@ -87,6 +87,55 @@ def _compute_utility(
     return nll + error_cost + complexity_costs
 
 
+def statistical_validation(
+    filepath: str | Path,
+    sequence_type: str,
+    target_ikis: dict[int, np.ndarray],
+    n_null_runs: int = 100,
+    random_state: int | None = None,
+    **settings: Any,
+) -> StatisticalValidation:
+    """Compare empirical MAP log-probability to null model (shuffled IKI order)."""
+    empirical_res = run_analysis(
+        filepath,
+        sequence_type,
+        _ikis_dict=target_ikis,
+        random_state=random_state,
+        **settings
+    )
+    empirical_metric = float(empirical_res.summary_row.get("map_log_prob", 0.0))
+
+    null_scores = []
+    for i in range(n_null_runs):
+        run_seed = None if random_state is None else random_state + i + 1000
+        shuffled_target = shuffle_ikis(target_ikis, random_state=run_seed)
+        null_res = run_analysis(
+            filepath,
+            sequence_type,
+            _ikis_dict=shuffled_target,
+            random_state=run_seed,
+            **settings
+        )
+        null_scores.append(float(null_res.summary_row.get("map_log_prob", 0.0)))
+
+    null_array = np.asarray(null_scores, dtype=float)
+    null_mean = float(np.mean(null_array))
+    null_std = float(np.std(null_array, ddof=0))
+    p_val = float((np.sum(null_array >= empirical_metric) + 1) / (null_array.size + 1))
+    z_score = 0.0 if null_std == 0 else (empirical_metric - null_mean) / null_std
+
+    return StatisticalValidation(
+        empirical_metric=empirical_metric,
+        null_metric_mean=null_mean,
+        null_metric_std=null_std,
+        p_value=p_val,
+        z_score=z_score,
+        n_null_runs=n_null_runs,
+        metric_name="map_log_probability",
+        null_values=null_scores,
+    )
+
+
 def run_analysis(
     filepath: str | Path,
     sequence_type: str = "blue",
@@ -99,24 +148,33 @@ def run_analysis(
     beta: float = 5.0,
     delta_val: float | None = None,
     sigma_val: float | None = None,
+    n_null_runs: int = 100,
     random_state: int | None = None,
+    _ikis_dict: dict[int, np.ndarray] | None = None,
     **kwargs: Any,
 ) -> ChunkingResult:
     """Run Rational Chunking analysis."""
     filepath = Path(filepath)
     df = load_srt_file(filepath)
     
-    # Filter only correct blocks (as per Step 1)
-    correct_mask = df.groupby("BlockNumber")["isHit"].transform("all")
-    df_correct = df[correct_mask].copy()
-    
-    ikis_all = extract_ikis(df_correct, sequence_type=sequence_type)
+    if _ikis_dict is not None:
+        ikis_all = _ikis_dict
+    else:
+        df = load_srt_file(filepath)
+        # Filter only correct blocks (as per Step 1)
+        correct_mask = df.groupby("BlockNumber")["isHit"].transform("all")
+        df_correct = df[correct_mask].copy()
+        ikis_all = extract_ikis(df_correct, sequence_type=sequence_type)
+
     if not ikis_all:
         raise ValueError(f"No valid correct blocks found for {sequence_type}")
         
     # Get error rates per block (from original df)
-    # error_rate = sum(isHit==0) / count
-    block_errors = df.groupby("BlockNumber")["isHit"].apply(lambda x: 1.0 - np.mean(x)).to_dict()
+    if _ikis_dict is None:
+        block_errors = df.groupby("BlockNumber")["isHit"].apply(lambda x: 1.0 - np.mean(x)).to_dict()
+    else:
+        # If we have _ikis_dict, we might not have the original df. Use 0 for now.
+        block_errors = {b: 0.0 for b in ikis_all}
     
     # Define windows
     block_ids = sorted(ikis_all.keys())
@@ -189,6 +247,7 @@ def run_analysis(
         boundary_probs = np.sum(all_masks * probs[:, np.newaxis], axis=0) # (7,)
         
         map_idx = np.argmax(probs)
+        map_log_prob = log_probs[map_idx]
         map_mask = all_masks[map_idx]
         map_boundaries = [i + 1 for i, val in enumerate(map_mask) if val]
         
@@ -196,7 +255,8 @@ def run_analysis(
             "center_block": w["center"],
             "exp_n_chunks": float(exp_n_chunks),
             "boundary_probs": boundary_probs.tolist(),
-            "map_boundaries": map_boundaries
+            "map_boundaries": map_boundaries,
+            "map_log_prob": float(map_log_prob)
         })
         
         # Map back to individual blocks
@@ -233,6 +293,18 @@ def run_analysis(
             "boundary_probs": r["boundary_probs"]
         })
         
+    # Perform statistical validation if this is the empirical run
+    validation_res: StatisticalValidation | None = None
+    if _ikis_dict is None and n_null_runs > 0:
+        validation_res = statistical_validation(
+            filepath, sequence_type, ikis_all,
+            n_null_runs=n_null_runs,
+            random_state=random_state,
+            window_size=window_size, step=step, min_blocks=min_blocks,
+            lam=lam, kappa=kappa, beta=beta,
+            delta_val=delta_val, sigma_val=sigma_val
+        )
+
     trials_df = pd.DataFrame(final_trial_rows)
     trials_df["source_file"] = str(filepath)
     trials_df["sequence_type"] = sequence_type
@@ -245,7 +317,16 @@ def run_analysis(
         "n_blocks": len(block_ids),
         "mean_n_chunks": float(trials_df["n_chunks"].mean()),
         "avg_boundary_probs": np.mean([r["boundary_probs"] for r in window_results], axis=0).tolist(),
+        "map_log_prob": float(np.mean([r["map_log_prob"] for r in window_results])),
     }
+
+    if validation_res:
+        summary_row.update({
+            "empirical_map_log_prob": validation_res.empirical_metric,
+            "null_map_log_prob_mean": validation_res.null_metric_mean,
+            "p_value": validation_res.p_value,
+            "z_score": validation_res.z_score,
+        })
 
     return ChunkingResult(
         method_name="rational_chunking",
@@ -260,10 +341,9 @@ def run_analysis(
             "kappa": kappa,
             "beta": beta,
             "window_size": window_size,
-            "step": step
+            "step": step,
+            "n_null_runs": n_null_runs
         },
-        validation={
-            "window_results": window_results
-        },
+        validation=validation_res.__dict__ if validation_res else None,
         algorithm_doc="algorithms/rational_chunking.md"
     )

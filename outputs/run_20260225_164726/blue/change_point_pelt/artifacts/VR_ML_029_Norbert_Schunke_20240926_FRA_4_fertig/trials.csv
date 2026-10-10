@@ -1,0 +1,9 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+84,8,81,110,95,1,[],SRT/VR_ML_029_Norbert_Schunke_20240926_FRA_4_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_4,4
+89,8,81,110,95,1,[],SRT/VR_ML_029_Norbert_Schunke_20240926_FRA_4_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_4,4
+92,8,81,110,95,1,[],SRT/VR_ML_029_Norbert_Schunke_20240926_FRA_4_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_4,4
+93,8,81,110,95,1,[],SRT/VR_ML_029_Norbert_Schunke_20240926_FRA_4_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_4,4
+95,8,81,110,95,1,[],SRT/VR_ML_029_Norbert_Schunke_20240926_FRA_4_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_4,4
+101,8,81,110,95,1,[],SRT/VR_ML_029_Norbert_Schunke_20240926_FRA_4_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_4,4
+105,8,81,110,95,1,[],SRT/VR_ML_029_Norbert_Schunke_20240926_FRA_4_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_4,4
+107,8,81,110,95,1,[],SRT/VR_ML_029_Norbert_Schunke_20240926_FRA_4_fertig.csv,blue,change_point_pelt,Norbert_Schunke,FRA_4,4

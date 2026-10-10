@@ -1,2 +1,0 @@
-source_file,sequence_type,method,n_blocks,n_windows_valid,mean_n_chunks,mean_window_n_chunks,mean_bootstrap_n_chunks,mean_boundary_entropy,mean_drift
-/home/ck/Code/analyse_SRT/SRT/GR_01_Fr_01_20250206_FRA_1_fertig.csv,blue,change_point_pelt,42,4,1.0,1.0,1.0,,0.0

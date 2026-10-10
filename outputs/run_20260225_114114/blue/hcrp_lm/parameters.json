@@ -1,0 +1,17 @@
+{
+  "method_name": "hcrp_lm",
+  "input_dir": "SRT_Test2",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "limit": null,
+  "random_state": 42,
+  "n_files_total": 21,
+  "n_files_success": 21,
+  "n_files_failed": 0,
+  "n_levels": 3,
+  "strength": 0.5,
+  "decay_constant": 50.0,
+  "n_samples": 5,
+  "threshold_z": 1.0,
+  "n_null_runs": 100
+}

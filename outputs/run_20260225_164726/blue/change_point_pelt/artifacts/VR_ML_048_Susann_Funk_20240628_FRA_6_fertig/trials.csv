@@ -1,0 +1,11 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+66,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+69,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+73,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+76,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+77,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+82,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+83,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+87,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+88,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6
+90,6,64,93,78,1,[],SRT/VR_ML_048_Susann_Funk_20240628_FRA_6_fertig.csv,blue,change_point_pelt,Susann_Funk,FRA_6,6

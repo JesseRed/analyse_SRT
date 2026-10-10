@@ -1,0 +1,22 @@
+[2026-02-25 10:41:14 UTC] [1/21] failed file='VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv' success=0 failed=1 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [2/21] failed file='VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv' success=0 failed=2 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [3/21] failed file='VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv' success=0 failed=3 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [4/21] failed file='VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv' success=0 failed=4 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [5/21] failed file='VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv' success=0 failed=5 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [6/21] failed file='VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv' success=0 failed=6 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [7/21] failed file='VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv' success=0 failed=7 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [8/21] failed file='VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv' success=0 failed=8 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [9/21] failed file='VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv' success=0 failed=9 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [10/21] failed file='VR_ML_026_Anja_Thomsen_20230911_FRA_1_fertig.csv' success=0 failed=10 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [11/21] failed file='VR_ML_026_Anja_Thomsen_20230912_FRA_2_fertig.csv' success=0 failed=11 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [12/21] failed file='VR_ML_026_Anja_Thomsen_20230913_FRA_3_fertig.csv' success=0 failed=12 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [13/21] failed file='VR_ML_026_Frank_Dittel_20231211_FRA_1_fertig.csv' success=0 failed=13 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [14/21] failed file='VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv' success=0 failed=14 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [15/21] failed file='VR_ML_026_Frank_Dittel_20231213_FRA_3_fertig.csv' success=0 failed=15 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [16/21] failed file='VR_ML_026_Kathy_Thümmig_20240513_FRA_1_fertig.csv' success=0 failed=16 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [17/21] failed file='VR_ML_026_Kathy_Thümmig_20240514_FRA_2_fertig.csv' success=0 failed=17 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [18/21] failed file='VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv' success=0 failed=18 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [19/21] failed file='VR_ML_027_Liska_Seidel_20231211_FRA_1_fertig.csv' success=0 failed=19 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [20/21] failed file='VR_ML_027_Liska_Seidel_20231212_FRA_2_fertig.csv' success=0 failed=20 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] [21/21] failed file='VR_ML_027_Liska_Seidel_20231213_FRA_3_fertig.csv' success=0 failed=21 elapsed=00:00:00 eta=00:00:00
+[2026-02-25 10:41:14 UTC] Batch finished success=0 failed=21 elapsed=00:00:00

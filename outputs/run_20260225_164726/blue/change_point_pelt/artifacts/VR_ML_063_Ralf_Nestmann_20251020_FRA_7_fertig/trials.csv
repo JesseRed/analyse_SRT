@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+14,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7
+21,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7
+22,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7
+23,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7
+31,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7
+34,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7
+36,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7
+38,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7
+40,1,14,43,28,1,[],SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_7_fertig.csv,blue,change_point_pelt,Ralf_Nestmann,FRA_7,7

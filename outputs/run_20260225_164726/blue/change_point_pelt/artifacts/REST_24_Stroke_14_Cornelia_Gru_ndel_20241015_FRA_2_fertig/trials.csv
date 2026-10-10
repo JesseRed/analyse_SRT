@@ -1,0 +1,9 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+138,13,131,160,145,1,[],SRT/REST_24_Stroke_14_Cornelia_Gründel_20241015_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_14_Cornelia_Gründel,FRA_2,2
+140,13,131,160,145,1,[],SRT/REST_24_Stroke_14_Cornelia_Gründel_20241015_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_14_Cornelia_Gründel,FRA_2,2
+141,13,131,160,145,1,[],SRT/REST_24_Stroke_14_Cornelia_Gründel_20241015_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_14_Cornelia_Gründel,FRA_2,2
+142,13,131,160,145,1,[],SRT/REST_24_Stroke_14_Cornelia_Gründel_20241015_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_14_Cornelia_Gründel,FRA_2,2
+147,13,131,160,145,1,[],SRT/REST_24_Stroke_14_Cornelia_Gründel_20241015_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_14_Cornelia_Gründel,FRA_2,2
+154,13,131,160,145,1,[],SRT/REST_24_Stroke_14_Cornelia_Gründel_20241015_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_14_Cornelia_Gründel,FRA_2,2
+155,13,131,160,145,1,[],SRT/REST_24_Stroke_14_Cornelia_Gründel_20241015_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_14_Cornelia_Gründel,FRA_2,2
+160,13,131,160,145,1,[],SRT/REST_24_Stroke_14_Cornelia_Gründel_20241015_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_14_Cornelia_Gründel,FRA_2,2

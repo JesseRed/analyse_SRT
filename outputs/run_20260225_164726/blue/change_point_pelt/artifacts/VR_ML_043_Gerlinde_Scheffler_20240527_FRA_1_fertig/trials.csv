@@ -1,0 +1,7 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+144,14,144,158,151,2,[5],SRT/VR_ML_043_Gerlinde_Scheffler_20240527_FRA_1_fertig.csv,blue,change_point_pelt,Gerlinde_Scheffler,FRA_1,1
+147,14,144,158,151,2,[5],SRT/VR_ML_043_Gerlinde_Scheffler_20240527_FRA_1_fertig.csv,blue,change_point_pelt,Gerlinde_Scheffler,FRA_1,1
+149,14,144,158,151,2,[5],SRT/VR_ML_043_Gerlinde_Scheffler_20240527_FRA_1_fertig.csv,blue,change_point_pelt,Gerlinde_Scheffler,FRA_1,1
+150,14,144,158,151,2,[5],SRT/VR_ML_043_Gerlinde_Scheffler_20240527_FRA_1_fertig.csv,blue,change_point_pelt,Gerlinde_Scheffler,FRA_1,1
+153,14,144,158,151,2,[5],SRT/VR_ML_043_Gerlinde_Scheffler_20240527_FRA_1_fertig.csv,blue,change_point_pelt,Gerlinde_Scheffler,FRA_1,1
+158,14,144,158,151,2,[5],SRT/VR_ML_043_Gerlinde_Scheffler_20240527_FRA_1_fertig.csv,blue,change_point_pelt,Gerlinde_Scheffler,FRA_1,1

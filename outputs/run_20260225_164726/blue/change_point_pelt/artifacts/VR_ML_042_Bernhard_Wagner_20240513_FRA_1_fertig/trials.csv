@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+82,7,79,93,86,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1
+83,7,79,93,86,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1
+85,7,79,93,86,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1
+87,7,79,93,86,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1
+134,12,129,143,136,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1
+135,12,129,143,136,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1
+136,12,129,143,136,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1
+138,12,129,143,136,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1
+140,12,129,143,136,1,[],SRT/VR_ML_042_Bernhard_Wagner_20240513_FRA_1_fertig.csv,blue,change_point_pelt,Bernhard_Wagner,FRA_1,1

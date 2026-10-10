@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+66,2,58,87,72,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1
+75,2,58,87,72,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1
+81,2,58,87,72,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1
+82,2,58,87,72,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1
+83,4,78,107,92,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1
+85,4,78,107,92,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1
+98,4,78,107,92,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1
+100,4,78,107,92,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1
+104,4,78,107,92,1,[],SRT/GR_25_Hr_25_20250718_FRA_1_fertig.csv,blue,change_point_pelt,GR_25_Hr_25,FRA_1,1

@@ -1,0 +1,5 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+138,12,138,157,147,1,[],SRT/VR_ML_029_Norbert _Schunke_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Norbert _Schunke,FRA_1,1
+141,12,138,157,147,1,[],SRT/VR_ML_029_Norbert _Schunke_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Norbert _Schunke,FRA_1,1
+147,12,138,157,147,1,[],SRT/VR_ML_029_Norbert _Schunke_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Norbert _Schunke,FRA_1,1
+153,12,138,157,147,1,[],SRT/VR_ML_029_Norbert _Schunke_20240923_FRA_1_fertig.csv,blue,change_point_pelt,Norbert _Schunke,FRA_1,1

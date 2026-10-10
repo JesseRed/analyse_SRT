@@ -1,0 +1,11 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+84,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+86,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+87,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+91,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+93,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+95,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+97,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+100,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+101,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2
+103,8,81,105,93,1,[],SRT/VR_ML_133_Gabriele_Weidner_20250909_FRA_2_fertig.csv,blue,change_point_pelt,Gabriele_Weidner,FRA_2,2

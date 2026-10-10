@@ -1,0 +1,6 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+69,6,62,86,74,2,[5],SRT/VR_ML_018_Julian _Körbs_20231106_FRA_1_fertig.csv,blue,change_point_pelt,Julian _Körbs,FRA_1,1
+73,6,62,86,74,2,[5],SRT/VR_ML_018_Julian _Körbs_20231106_FRA_1_fertig.csv,blue,change_point_pelt,Julian _Körbs,FRA_1,1
+76,6,62,86,74,2,[5],SRT/VR_ML_018_Julian _Körbs_20231106_FRA_1_fertig.csv,blue,change_point_pelt,Julian _Körbs,FRA_1,1
+83,6,62,86,74,2,[5],SRT/VR_ML_018_Julian _Körbs_20231106_FRA_1_fertig.csv,blue,change_point_pelt,Julian _Körbs,FRA_1,1
+85,6,62,86,74,2,[5],SRT/VR_ML_018_Julian _Körbs_20231106_FRA_1_fertig.csv,blue,change_point_pelt,Julian _Körbs,FRA_1,1

@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+53,3,53,82,67,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+56,3,53,82,67,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+60,3,53,82,67,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+69,3,53,82,67,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+73,4,63,92,77,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+75,4,63,92,77,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+76,4,63,92,77,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+77,4,63,92,77,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+81,4,63,92,77,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+82,4,63,92,77,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+87,4,63,92,77,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1
+91,4,63,92,77,1,[],SRT/VR_ML_035_Christine_Zander_20240304_FRA_1_fertig.csv,blue,change_point_pelt,Christine_Zander,FRA_1,1

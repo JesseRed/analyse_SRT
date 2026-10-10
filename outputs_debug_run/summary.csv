@@ -1,2 +1,0 @@
-source_file,sequence_type,method,n_blocks,mean_n_chunks,avg_boundary_probs,participant_id,session,day_index
-SRT_Test/VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv,blue,rational_chunking,50,1.0173295950981671,"[2.7351128360033076e-12, 4.768124679838951e-18, 5.51608718677848e-31, 0.06487423184697606, 0.00021739576495273739, 1.0067935502399e-10, 1.489440072581611e-48]",Egbert_Hausmann,FRA_1,1

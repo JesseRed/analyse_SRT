@@ -1,0 +1,10 @@
+block_number,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+18,1,[],SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1
+42,1,[],SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1
+84,1,[],SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1
+86,1,[],SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1
+98,1,[],SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1
+180,1,[],SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1
+184,3,"[3, 4]",SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1
+197,1,[],SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1
+205,1,[],SRT/GR_09_Hr_09_20250309_FRA_1_fertig.csv,blue,hsmm_chunking,GR_09_Hr_09,FRA_1,1

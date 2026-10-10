@@ -119,11 +119,25 @@ Erstelle eine `methods_config.json` mit den gewünschten Parametern für jede Me
 python -m src.chunking --method all --config methods_config.json --input-dir SRT
 ```
 
-- **Output:** Wenn `--output-dir` weggelassen wird, erstellt das Tool automatisch einen Ordner mit dem aktuellen Zeitstempel (z. B. `outputs_20260224_141944`).
-- **Benchmark-Logik:** Pro registrierte Methode wird ein Unterordner angelegt (`outputs_<timestamp>/blue/community_network/`, …).
 - **Zusammenführung:** Die Datei `benchmark_summary.csv` im Output-Verzeichnis enthält eine konsolidierte Tabelle aller Ergebnisse (eine Zeile pro Datei × Methode).
+- **Validierung im Benchmark:** Du kannst `--n-null-runs` auch im Benchmark-Modus verwenden, um alle Methoden gegen Null-Modelle zu prüfen.
 
-### 4. Verfügbare Methoden anzeigen
+### 4. Statistische Validierung (Null-Modelle)
+
+Alle Methoden unterstützen nun einen Vergleich gegen ein **Null-Modell** (zufällig permutierte IKIs). Dabei werden $p$-Werte und $z$-Scores berechnet, um zu zeigen, dass die gefundene Struktur (z. B. Modularität $Q$) signifikant über dem Zufallsniveau liegt.
+
+```bash
+python -m src.chunking \
+  --method community_network \
+  --input-file SRT/Beispiel.csv \
+  --n-null-runs 100 \
+  --output-dir outputs/validation_run
+```
+
+- `--n-null-runs`: Anzahl der Randomisierungen (Standard: 100). Setze auf 0, um die Validierung zu deaktivieren.
+- **Ergebnisse:** Die Metriken (`p_value`, `z_score`, `null_mean`, etc.) erscheinen in der `summary.csv` und detailliert in `validation.json` im Artefakt-Ordner des Probanden.
+
+### 5. Verfügbare Methoden anzeigen
 
 Aktuell sind folgende Methoden implementiert:
 1. **community_network**: Netzwerkbasierte Partitionierung (Wymbs/Mucha).
@@ -297,3 +311,51 @@ Notebooks können weiterhin `run_full_analysis` aus `src.chunking` verwenden (Le
 | Ausgabe verstehen | Siehe Abschnitt „Ausgabe“ (summary.csv, trials.csv, meta.json) |
 | Neue Methode einbauen | `algorithms/Implementierungsvoraussetzungen.md` + `methods/<name>.py` + Registry |
 | Algorithmen & Literatur | `algorithms/README.md`, `algorithms/community_network.md`, … |
+
+---
+
+## Docker & Portabilität
+
+Das Projekt ist vollständig dockerisiert, um eine konsistente Umgebung zu gewährleisten und die notwendigen Patches für Legacy-Abhängigkeiten (`pyhsmm`, `pybasicbayes`) automatisch anzuwenden.
+
+### 1. Einrichtung mit Docker
+```bash
+# Image bauen
+docker build -t analyse-srt .
+```
+
+### 2. Ausführung
+Am einfachsten über `docker compose` (nutzt die `docker-compose.yml` für Volume-Mounts):
+```bash
+docker compose run analyse-srt --method hcrp_lm --limit 5
+```
+*Hinweis: Lokale Ordner `SRT` und `outputs` werden automatisch in den Container gemountet.*
+
+### 3. Transfer auf einen anderen Rechner
+Es gibt zwei empfohlene Wege, das Projekt zu übertragen:
+
+**A. Quellcode-Transfer (Empfohlen für Entwicklung)**
+1. Kopiere den gesamten Projektordner (inkl. `Dockerfile`, `pyhsmm/`, `pybasicbayes/`, etc.) auf den Zielrechner.
+2. Führe dort `docker build -t analyse-srt .` aus.
+
+**B. Image-Export (Schnellstart ohne Build)**
+Hierbei wird das fertig gebaute und gepatchte Image als Datei übertragen:
+1. **Auf dem Quellrechner:**
+   ```bash
+   docker save analyse-srt | gzip > analyse-srt-image.tar.gz
+   ```
+2. **Datei übertragen** (per USB, SCP, etc.).
+3. **Auf dem Zielrechner:**
+   ```bash
+   docker load < analyse-srt-image.tar.gz
+   ```
+
+### 4. Troubleshooting
+Falls `docker compose` Plugins in deiner Umgebung (z. B. WSL2) fehlen, nutze den direkten `docker run` Befehl:
+```bash
+docker run --rm \
+  -v $(pwd)/SRT:/app/input \
+  -v $(pwd)/outputs:/app/outputs \
+  analyse-srt \
+  --method hcrp_lm --input-dir /app/input --output-dir /app/outputs/run1
+```

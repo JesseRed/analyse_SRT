@@ -1,0 +1,17 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+44,3,33,62,47,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+52,3,33,62,47,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+53,3,33,62,47,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+54,3,33,62,47,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+58,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+59,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+60,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+63,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+65,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+68,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+70,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+71,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+72,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+73,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+75,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4
+78,5,53,82,67,1,[],SRT/VR_ML_053_Steffi_Bosecker_20250410_FRA_4_fertig.csv,blue,change_point_pelt,Steffi_Bosecker,FRA_4,4

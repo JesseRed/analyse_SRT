@@ -1,0 +1,15 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+36,3,36,65,50,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+38,3,36,65,50,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+39,3,36,65,50,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+40,3,36,65,50,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+45,3,36,65,50,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+55,3,36,65,50,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+59,4,46,75,60,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+60,4,46,75,60,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+61,4,46,75,60,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+68,4,46,75,60,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+69,4,46,75,60,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+70,4,46,75,60,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+71,4,46,75,60,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7
+74,4,46,75,60,1,[],SRT/VR_ML_128_Angelika_Gerlach_20250714_FRA_7_fertig.csv,blue,change_point_pelt,Angelika_Gerlach,FRA_7,7

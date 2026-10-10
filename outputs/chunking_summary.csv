@@ -1,2 +1,0 @@
-source_file,sequence_type,n_blocks,mean_q_single_trial,mean_phi,mean_phi_normalized,mean_n_chunks,empirical_q_multitrial,null_q_multitrial_mean,p_value_permutation
-/home/ck/Code/analyse_SRT/SRT/GR_01_Fr_01_20250206_FRA_1_fertig.csv,blue,42,0.3796554033347818,2.773093798543211,-1.4142126623201398e-16,2.3333333333333335,183.65545466916637,182.95689258196114,0.6666666666666666

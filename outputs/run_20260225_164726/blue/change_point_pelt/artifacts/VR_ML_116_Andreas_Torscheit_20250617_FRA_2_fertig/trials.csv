@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+31,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+32,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+33,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+35,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+37,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+38,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+43,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+44,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+45,3,31,50,40,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+47,4,41,60,50,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+51,4,41,60,50,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2
+60,4,41,60,50,1,[],SRT/VR_ML_116_Andreas_Torscheit_20250617_FRA_2_fertig.csv,blue,change_point_pelt,Andreas_Torscheit,FRA_2,2

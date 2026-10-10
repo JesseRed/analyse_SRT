@@ -3,7 +3,8 @@
         "gamma": 0.9,
         "coupling": 0.03,
         "n_iter": 20,
-        "n_permutations": 20
+        "n_permutations": 20,
+        "n_null_runs": 100
     },
     "change_point_pelt": {
         "window_size": 30,
@@ -15,7 +16,8 @@
         "n_null_splits": 32,
         "penalty_grid_size": 80,
         "min_windows_reliable": 3,
-        "cost_model": "l2"
+        "cost_model": "l2",
+        "n_null_runs": 100
     },
     "hsmm_chunking": {
         "n_states": null,
@@ -25,14 +27,16 @@
         "min_blocks": 6,
         "min_windows_reliable": 3,
         "baseline_correction": true,
-        "n_gibbs_iter": 150
+        "n_gibbs_iter": 150,
+        "n_null_runs": 100
     },
     "hcrp_lm": {
         "n_levels": 3,
         "strength": 0.5,
         "decay_constant": 50.0,
         "n_samples": 5,
-        "threshold_z": 1.0
+        "threshold_z": 1.0,
+        "n_null_runs": 100
     },
     "rational_chunking": {
         "window_size": 30,
@@ -40,6 +44,7 @@
         "min_blocks": 6,
         "lam": 1.0,
         "kappa": 1.0,
-        "beta": 5.0
+        "beta": 5.0,
+        "n_null_runs": 100
     }
 }

@@ -1,0 +1,3 @@
+block_number,n_chunks,chunk_boundaries,surprisal_profile,source_file,sequence_type,method,participant_id,session,day_index
+58,2,[6],"[2.565790828393447, 3.872427769974555, 4.758197688106374, 2.013062659742851, 0.46553796436844286, 5.489876781179538, 4.072399375372641]",SRT/VR_ML_123_Wolfgang_Lange_20250701_FRA_2_fertig.csv,blue,hcrp_lm,Wolfgang_Lange,FRA_2,2
+100,3,"[1, 6]","[1.2556569616504172, 0.10381182170325781, 1.0828332594457795, 0.1464513609041903, 0.10276373799711055, 1.5324383673712731, 0.41831442006840863]",SRT/VR_ML_123_Wolfgang_Lange_20250701_FRA_2_fertig.csv,blue,hcrp_lm,Wolfgang_Lange,FRA_2,2

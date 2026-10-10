@@ -1,0 +1,17 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+76,7,74,98,86,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+83,7,74,98,86,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+90,7,74,98,86,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+91,7,74,98,86,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+92,7,74,98,86,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+93,7,74,98,86,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+95,7,74,98,86,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+99,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+100,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+101,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+102,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+104,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+105,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+108,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+117,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5
+118,9,94,118,106,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_5_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_5,5

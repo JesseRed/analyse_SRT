@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+76,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1
+77,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1
+81,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1
+83,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1
+85,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1
+88,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1
+89,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1
+90,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1
+91,7,72,96,84,1,[],SRT/VR_ML_057_Katrin_Vlad_20241021_FRA_1_fertig.csv,blue,change_point_pelt,Katrin_Vlad,FRA_1,1

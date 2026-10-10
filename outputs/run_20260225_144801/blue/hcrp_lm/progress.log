@@ -1,0 +1,55 @@
+[2026-02-25 15:01:48] INFO: [1/21] ok file='VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv' success=1 failed=0 elapsed=00:00:15 eta=00:05:09
+[2026-02-25 15:02:08] INFO: [2/21] ok file='VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv' success=2 failed=0 elapsed=00:00:35 eta=00:05:34
+[2026-02-25 15:02:26] INFO: [3/21] ok file='VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv' success=3 failed=0 elapsed=00:00:53 eta=00:05:19
+[2026-02-25 15:02:45] INFO: [4/21] ok file='VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv' success=4 failed=0 elapsed=00:01:12 eta=00:05:07
+[2026-02-25 15:03:02] INFO: [5/21] ok file='VR_ML_025_Fritz_Raschke_20230912_FRA_2_fertig.csv' success=5 failed=0 elapsed=00:01:29 eta=00:04:46
+[2026-02-25 15:03:19] INFO: [6/21] ok file='VR_ML_025_Fritz_Raschke_20230913_FRA_3_fertig.csv' success=6 failed=0 elapsed=00:01:46 eta=00:04:25
+[2026-02-25 15:03:26] INFO: [7/21] ok file='VR_ML_025_Liane_Rieger_20240415_FRA_1_fertig.csv' success=7 failed=0 elapsed=00:01:53 eta=00:03:47
+[2026-02-25 15:03:38] INFO: [8/21] ok file='VR_ML_025_Liane_Rieger_20240416_FRA_2_fertig.csv' success=8 failed=0 elapsed=00:02:05 eta=00:03:24
+[2026-02-25 15:03:46] INFO: [9/21] ok file='VR_ML_025_Liane_Rieger_20240417_FRA_3_fertig.csv' success=9 failed=0 elapsed=00:02:13 eta=00:02:57
+[2026-02-25 15:04:05] INFO: [10/21] ok file='VR_ML_026_Anja_Thomsen_20230911_FRA_1_fertig.csv' success=10 failed=0 elapsed=00:02:32 eta=00:02:47
+[2026-02-25 15:04:25] INFO: [11/21] ok file='VR_ML_026_Anja_Thomsen_20230912_FRA_2_fertig.csv' success=11 failed=0 elapsed=00:02:52 eta=00:02:36
+[2026-02-25 15:04:44] INFO: [12/21] ok file='VR_ML_026_Anja_Thomsen_20230913_FRA_3_fertig.csv' success=12 failed=0 elapsed=00:03:11 eta=00:02:23
+[2026-02-25 15:05:00] INFO: [13/21] ok file='VR_ML_026_Frank_Dittel_20231211_FRA_1_fertig.csv' success=13 failed=0 elapsed=00:03:27 eta=00:02:07
+[2026-02-25 15:05:20] INFO: [14/21] ok file='VR_ML_026_Frank_Dittel_20231212_FRA_2_fertig.csv' success=14 failed=0 elapsed=00:03:47 eta=00:01:53
+[2026-02-25 15:05:40] INFO: [15/21] ok file='VR_ML_026_Frank_Dittel_20231213_FRA_3_fertig.csv' success=15 failed=0 elapsed=00:04:07 eta=00:01:38
+[2026-02-25 15:05:50] INFO: [16/21] ok file='VR_ML_026_Kathy_Thümmig_20240513_FRA_1_fertig.csv' success=16 failed=0 elapsed=00:04:17 eta=00:01:20
+[2026-02-25 15:06:01] INFO: [17/21] ok file='VR_ML_026_Kathy_Thümmig_20240514_FRA_2_fertig.csv' success=17 failed=0 elapsed=00:04:28 eta=00:01:03
+[2026-02-25 15:06:15] INFO: [18/21] ok file='VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv' success=18 failed=0 elapsed=00:04:41 eta=00:00:46
+[2026-02-25 15:06:28] INFO: [19/21] ok file='VR_ML_027_Liska_Seidel_20231211_FRA_1_fertig.csv' success=19 failed=0 elapsed=00:04:54 eta=00:00:31
+[2026-02-25 15:06:46] INFO: [20/21] ok file='VR_ML_027_Liska_Seidel_20231212_FRA_2_fertig.csv' success=20 failed=0 elapsed=00:05:13 eta=00:00:15
+[2026-02-25 15:07:03] INFO: [21/21] ok file='VR_ML_027_Liska_Seidel_20231213_FRA_3_fertig.csv' success=21 failed=0 elapsed=00:05:30 eta=00:00:00
+[2026-02-25 15:07:03] ERROR: Failed to run method 'hcrp_lm': name 'log' is not defined
+[2026-02-25 15:07:03] ERROR: Traceback (most recent call last):
+  File "/home/ck/Code/analyse_SRT/src/chunking/run.py", line 480, in run_benchmark
+    result = run_batch(
+             ^^^^^^^^^^
+  File "/home/ck/Code/analyse_SRT/src/chunking/run.py", line 366, in run_batch
+    log(
+    ^^^
+NameError: name 'log' is not defined
+
+[2026-02-25 15:07:03] INFO: Running method: hsmm_chunking
+[2026-02-25 15:07:03] ERROR: Failed to run method 'hsmm_chunking': pyhsmm is required for hsmm_chunking. Install with: pip install pyhsmm
+[2026-02-25 15:07:03] ERROR: Traceback (most recent call last):
+  File "/home/ck/Code/analyse_SRT/src/chunking/methods/hsmm_chunking.py", line 15, in <module>
+    import pyhsmm
+ModuleNotFoundError: No module named 'pyhsmm'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ck/Code/analyse_SRT/src/chunking/run.py", line 480, in run_benchmark
+    result = run_batch(
+             ^^^^^^^^^^
+  File "/home/ck/Code/analyse_SRT/src/chunking/run.py", line 274, in run_batch
+    runner = get_runner(method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ck/Code/analyse_SRT/src/chunking/methods/__init__.py", line 38, in get_runner
+    from . import hsmm_chunking  # noqa: WPS433
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ck/Code/analyse_SRT/src/chunking/methods/hsmm_chunking.py", line 20, in <module>
+    raise ImportError(
+ImportError: pyhsmm is required for hsmm_chunking. Install with: pip install pyhsmm
+
+[2026-02-25 15:07:03] INFO: Running method: rational_chunking

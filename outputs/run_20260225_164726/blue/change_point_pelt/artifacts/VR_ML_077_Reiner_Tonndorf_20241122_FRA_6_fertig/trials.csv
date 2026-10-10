@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+22,2,21,50,35,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+30,2,21,50,35,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+31,2,21,50,35,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+32,2,21,50,35,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+33,2,21,50,35,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+34,2,21,50,35,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+36,2,21,50,35,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+40,2,21,50,35,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+44,3,31,60,45,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+48,3,31,60,45,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6
+52,3,31,60,45,1,[],SRT/VR_ML_077_Reiner_Tonndorf_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Reiner_Tonndorf,FRA_6,6

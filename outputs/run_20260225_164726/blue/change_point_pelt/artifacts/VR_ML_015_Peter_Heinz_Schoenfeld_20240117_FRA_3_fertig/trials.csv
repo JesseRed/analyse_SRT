@@ -1,0 +1,9 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+102,10,102,126,114,1,[],SRT/VR_ML_015_Peter_Heinz_Schoenfeld_20240117_FRA_3_fertig.csv,blue,change_point_pelt,Peter_Heinz_Schoenfeld,FRA_3,3
+103,10,102,126,114,1,[],SRT/VR_ML_015_Peter_Heinz_Schoenfeld_20240117_FRA_3_fertig.csv,blue,change_point_pelt,Peter_Heinz_Schoenfeld,FRA_3,3
+105,10,102,126,114,1,[],SRT/VR_ML_015_Peter_Heinz_Schoenfeld_20240117_FRA_3_fertig.csv,blue,change_point_pelt,Peter_Heinz_Schoenfeld,FRA_3,3
+114,10,102,126,114,1,[],SRT/VR_ML_015_Peter_Heinz_Schoenfeld_20240117_FRA_3_fertig.csv,blue,change_point_pelt,Peter_Heinz_Schoenfeld,FRA_3,3
+120,10,102,126,114,1,[],SRT/VR_ML_015_Peter_Heinz_Schoenfeld_20240117_FRA_3_fertig.csv,blue,change_point_pelt,Peter_Heinz_Schoenfeld,FRA_3,3
+121,10,102,126,114,1,[],SRT/VR_ML_015_Peter_Heinz_Schoenfeld_20240117_FRA_3_fertig.csv,blue,change_point_pelt,Peter_Heinz_Schoenfeld,FRA_3,3
+122,10,102,126,114,1,[],SRT/VR_ML_015_Peter_Heinz_Schoenfeld_20240117_FRA_3_fertig.csv,blue,change_point_pelt,Peter_Heinz_Schoenfeld,FRA_3,3
+125,10,102,126,114,1,[],SRT/VR_ML_015_Peter_Heinz_Schoenfeld_20240117_FRA_3_fertig.csv,blue,change_point_pelt,Peter_Heinz_Schoenfeld,FRA_3,3

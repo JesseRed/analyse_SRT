@@ -1,0 +1,9 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+23,2,22,36,29,1,[],SRT/VR_ML_022_Eva_Rogge_20240214_FRA_3_fertig.csv,blue,change_point_pelt,Eva_Rogge,FRA_3,3
+24,2,22,36,29,1,[],SRT/VR_ML_022_Eva_Rogge_20240214_FRA_3_fertig.csv,blue,change_point_pelt,Eva_Rogge,FRA_3,3
+29,2,22,36,29,1,[],SRT/VR_ML_022_Eva_Rogge_20240214_FRA_3_fertig.csv,blue,change_point_pelt,Eva_Rogge,FRA_3,3
+32,2,22,36,29,1,[],SRT/VR_ML_022_Eva_Rogge_20240214_FRA_3_fertig.csv,blue,change_point_pelt,Eva_Rogge,FRA_3,3
+33,2,22,36,29,1,[],SRT/VR_ML_022_Eva_Rogge_20240214_FRA_3_fertig.csv,blue,change_point_pelt,Eva_Rogge,FRA_3,3
+102,10,102,116,109,1,[],SRT/VR_ML_022_Eva_Rogge_20240214_FRA_3_fertig.csv,blue,change_point_pelt,Eva_Rogge,FRA_3,3
+105,10,102,116,109,1,[],SRT/VR_ML_022_Eva_Rogge_20240214_FRA_3_fertig.csv,blue,change_point_pelt,Eva_Rogge,FRA_3,3
+114,10,102,116,109,1,[],SRT/VR_ML_022_Eva_Rogge_20240214_FRA_3_fertig.csv,blue,change_point_pelt,Eva_Rogge,FRA_3,3

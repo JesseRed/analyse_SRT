@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+62,6,61,85,73,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,
+66,6,61,85,73,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,
+76,6,61,85,73,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,
+81,7,71,95,83,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,
+82,7,71,95,83,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,
+83,7,71,95,83,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,
+85,7,71,95,83,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,
+90,7,71,95,83,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,
+91,7,71,95,83,2,[5],SRT/VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig.csv,blue,change_point_pelt,VR_ML_051_Udo_Schneider_202040628_FRA_6_fertig,,

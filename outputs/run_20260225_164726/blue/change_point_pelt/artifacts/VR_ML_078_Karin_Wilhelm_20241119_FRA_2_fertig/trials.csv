@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+32,2,21,50,35,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+33,2,21,50,35,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+37,2,21,50,35,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+39,2,21,50,35,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+44,3,31,60,45,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+45,3,31,60,45,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+54,4,41,70,55,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+60,4,41,70,55,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+64,4,41,70,55,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+67,4,41,70,55,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+69,4,41,70,55,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2
+70,4,41,70,55,2,[5],SRT/VR_ML_078_Karin_Wilhelm_20241119_FRA_2_fertig.csv,blue,change_point_pelt,Karin_Wilhelm,FRA_2,2

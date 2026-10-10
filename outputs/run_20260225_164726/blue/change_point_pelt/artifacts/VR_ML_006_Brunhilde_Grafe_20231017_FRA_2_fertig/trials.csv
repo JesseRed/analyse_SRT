@@ -1,0 +1,5 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+70,5,68,77,72,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+73,5,68,77,72,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+74,5,68,77,72,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+76,5,68,77,72,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20231017_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2

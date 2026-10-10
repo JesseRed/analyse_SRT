@@ -1,0 +1,7 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+102,10,101,130,115,1,[],SRT_Test2/VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_3,3
+120,10,101,130,115,1,[],SRT_Test2/VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_3,3
+121,10,101,130,115,1,[],SRT_Test2/VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_3,3
+122,10,101,130,115,1,[],SRT_Test2/VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_3,3
+125,10,101,130,115,1,[],SRT_Test2/VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_3,3
+129,10,101,130,115,1,[],SRT_Test2/VR_ML_026_Kathy_Thümmig_20240515_FRA_3_fertig.csv,blue,change_point_pelt,Kathy_Thümmig,FRA_3,3

@@ -1,0 +1,16 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+29,2,25,54,39,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+30,2,25,54,39,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+31,2,25,54,39,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+39,2,25,54,39,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+43,2,25,54,39,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+44,2,25,54,39,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+51,3,35,64,49,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+54,3,35,64,49,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+60,4,45,74,59,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+64,4,45,74,59,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+67,4,45,74,59,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+68,4,45,74,59,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+69,4,45,74,59,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+70,4,45,74,59,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2
+73,4,45,74,59,1,[],SRT/VR_ML_037_Detlef_Silber_20241022_FRA_2_fertig.csv,blue,change_point_pelt,Detlef_Silber,FRA_2,2

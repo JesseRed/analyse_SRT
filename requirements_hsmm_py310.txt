@@ -1,0 +1,13 @@
+# HSMM env (Python 3.10)
+pip==23.3.2
+setuptools<70
+wheel
+numpy==1.26.4
+scipy
+matplotlib
+requests
+future
+cython
+nose
+# install pyhsmm from local clone or from github after Eigen fix
+# (we install pyhsmm separately via git clone + pip install .)

@@ -1,0 +1,6 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+36,3,35,59,47,1,[],SRT/VR_ML_087_Gerd_Baburek_20250210_FRA_7_fertig.csv,blue,change_point_pelt,Gerd_Baburek,FRA_7,7
+39,3,35,59,47,1,[],SRT/VR_ML_087_Gerd_Baburek_20250210_FRA_7_fertig.csv,blue,change_point_pelt,Gerd_Baburek,FRA_7,7
+40,3,35,59,47,1,[],SRT/VR_ML_087_Gerd_Baburek_20250210_FRA_7_fertig.csv,blue,change_point_pelt,Gerd_Baburek,FRA_7,7
+44,3,35,59,47,1,[],SRT/VR_ML_087_Gerd_Baburek_20250210_FRA_7_fertig.csv,blue,change_point_pelt,Gerd_Baburek,FRA_7,7
+52,3,35,59,47,1,[],SRT/VR_ML_087_Gerd_Baburek_20250210_FRA_7_fertig.csv,blue,change_point_pelt,Gerd_Baburek,FRA_7,7

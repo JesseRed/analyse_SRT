@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+31,3,31,60,45,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+32,3,31,60,45,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+44,3,31,60,45,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+48,3,31,60,45,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+52,4,41,70,55,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+53,4,41,70,55,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+54,4,41,70,55,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+58,4,41,70,55,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+59,4,41,70,55,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+60,4,41,70,55,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+63,4,41,70,55,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4
+68,4,41,70,55,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241010_FRA_4_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_4,4

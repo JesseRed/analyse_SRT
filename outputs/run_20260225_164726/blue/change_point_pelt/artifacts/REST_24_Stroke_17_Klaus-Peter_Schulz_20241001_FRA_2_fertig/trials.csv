@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+125,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+127,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+132,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+134,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+138,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+140,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+141,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+142,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+144,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+147,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+148,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2
+149,12,123,152,137,1,[],SRT/REST_24_Stroke_17_Klaus-Peter_Schulz_20241001_FRA_2_fertig.csv,blue,change_point_pelt,REST_24_Stroke_17_Klaus-Peter_Schulz,FRA_2,2

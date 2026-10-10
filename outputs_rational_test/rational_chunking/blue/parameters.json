@@ -1,7 +1,0 @@
-{
-  "lam": 1.0,
-  "kappa": 1.0,
-  "beta": 5.0,
-  "window_size": 30,
-  "step": 10
-}

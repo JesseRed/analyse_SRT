@@ -1,0 +1,8 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+72,7,72,96,84,1,[],SRT/VR_ML_001_Michael_Gebauer_20240206_FRA_2_fertig.csv,blue,change_point_pelt,Michael_Gebauer,FRA_2,2
+76,7,72,96,84,1,[],SRT/VR_ML_001_Michael_Gebauer_20240206_FRA_2_fertig.csv,blue,change_point_pelt,Michael_Gebauer,FRA_2,2
+78,7,72,96,84,1,[],SRT/VR_ML_001_Michael_Gebauer_20240206_FRA_2_fertig.csv,blue,change_point_pelt,Michael_Gebauer,FRA_2,2
+79,7,72,96,84,1,[],SRT/VR_ML_001_Michael_Gebauer_20240206_FRA_2_fertig.csv,blue,change_point_pelt,Michael_Gebauer,FRA_2,2
+80,7,72,96,84,1,[],SRT/VR_ML_001_Michael_Gebauer_20240206_FRA_2_fertig.csv,blue,change_point_pelt,Michael_Gebauer,FRA_2,2
+92,7,72,96,84,1,[],SRT/VR_ML_001_Michael_Gebauer_20240206_FRA_2_fertig.csv,blue,change_point_pelt,Michael_Gebauer,FRA_2,2
+95,7,72,96,84,1,[],SRT/VR_ML_001_Michael_Gebauer_20240206_FRA_2_fertig.csv,blue,change_point_pelt,Michael_Gebauer,FRA_2,2

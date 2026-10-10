@@ -1,0 +1,148 @@
+# Makefile — HSMM / pyhsmm setup (separate venv on Python 3.10 via pyenv)
+#
+# Usage examples:
+#   make hsmm-all
+#   make hsmm-test
+#   make hsmm-shell
+#   make -f Makefile.hsmm
+# 
+# Assumptions:
+# - Ubuntu/WSL (apt available)
+# - pyenv installed under ~/.pyenv (we can also install it via this Makefile)
+# - project root contains tools/patch_pyhsmm_stack.py
+
+SHELL := /usr/bin/env bash
+.ONESHELL:
+.SHELLFLAGS := -eu -o pipefail -c
+
+# --- Config ---------------------------------------------------------------
+
+PYTHON_VERSION ?= 3.10.14
+PYENV_ROOT ?= $(HOME)/.pyenv
+PYENV_PYTHON := $(PYENV_ROOT)/versions/$(PYTHON_VERSION)/bin/python
+
+HSMM_VENV ?= .venv_hsmm
+HSMM_ACT := source $(HSMM_VENV)/bin/activate
+
+PIP_PIN ?= pip==23.3.2
+SETUPTOOLS_PIN ?= "setuptools<70"
+NUMPY_PIN ?= numpy==1.26.4
+
+PYHSMM_BUILD_DIR ?= /tmp/pyhsmm_build
+PYHSMM_GIT ?= https://github.com/mattjj/pyhsmm.git
+
+# --- Helpers --------------------------------------------------------------
+
+define ensure_pyenv_init
+export PYENV_ROOT="$(PYENV_ROOT)";
+export PATH="$$PYENV_ROOT/bin:$$PATH";
+eval "$$($(PYENV_ROOT)/bin/pyenv init -)";
+eval "$$($(PYENV_ROOT)/bin/pyenv virtualenv-init -)";
+endef
+
+# --- Targets --------------------------------------------------------------
+
+.PHONY: help
+help:
+	@echo ""
+	@echo "HSMM setup targets:"
+	@echo "  hsmm-apt            Install system build deps (sudo apt-get)"
+	@echo "  hsmm-pyenv          Install pyenv + pyenv-virtualenv (git clone) + bashrc hints"
+	@echo "  hsmm-python         Build/install Python $(PYTHON_VERSION) via pyenv"
+	@echo "  hsmm-venv           Create $(HSMM_VENV) using pyenv python"
+	@echo "  hsmm-pins           Install pinned pip/setuptools/numpy + deps"
+	@echo "  hsmm-pyhsmm         Clone pyhsmm to $(PYHSMM_BUILD_DIR), link Eigen, install"
+	@echo "  hsmm-patch          Run tools/patch_pyhsmm_stack.py"
+	@echo "  hsmm-test           Import-test pyhsmm"
+	@echo "  hsmm-shell          Open a subshell with $(HSMM_VENV) activated"
+	@echo "  hsmm-all            Full pipeline: apt -> pyenv -> python -> venv -> pins -> pyhsmm -> patch -> test"
+	@echo ""
+
+.PHONY: hsmm-apt
+hsmm-apt:
+	sudo apt-get update
+	sudo apt-get install -y \
+	  build-essential gfortran libopenblas-dev liblapack-dev libeigen3-dev \
+	  make libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev \
+	  wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+	  libffi-dev liblzma-dev git
+
+.PHONY: hsmm-pyenv
+hsmm-pyenv:
+	@if [ ! -d "$(PYENV_ROOT)" ]; then \
+	  git clone https://github.com/pyenv/pyenv.git "$(PYENV_ROOT)"; \
+	else \
+	  echo "pyenv already present at $(PYENV_ROOT)"; \
+	fi
+	@if [ ! -d "$(PYENV_ROOT)/plugins/pyenv-virtualenv" ]; then \
+	  git clone https://github.com/pyenv/pyenv-virtualenv.git "$(PYENV_ROOT)/plugins/pyenv-virtualenv"; \
+	else \
+	  echo "pyenv-virtualenv already present"; \
+	fi
+	@echo ""
+	@echo "Add this to ~/.bashrc if not present:"
+	@echo '  export PYENV_ROOT="$(HOME)/.pyenv"'
+	@echo '  export PATH="$$PYENV_ROOT/bin:$$PATH"'
+	@echo '  eval "$$(pyenv init -)"'
+	@echo '  eval "$$(pyenv virtualenv-init -)"'
+	@echo ""
+
+.PHONY: hsmm-python
+hsmm-python:
+	$(ensure_pyenv_init)
+	@if [ ! -x "$(PYENV_PYTHON)" ]; then \
+	  pyenv install -s "$(PYTHON_VERSION)"; \
+	else \
+	  echo "Python $(PYTHON_VERSION) already installed: $(PYENV_PYTHON)"; \
+	fi
+
+.PHONY: hsmm-venv
+hsmm-venv:
+	$(ensure_pyenv_init)
+	@if [ ! -d "$(HSMM_VENV)" ]; then \
+	  "$(PYENV_PYTHON)" -m venv "$(HSMM_VENV)"; \
+	  echo "Created venv: $(HSMM_VENV)"; \
+	else \
+	  echo "Venv already exists: $(HSMM_VENV)"; \
+	fi
+
+.PHONY: hsmm-pins
+hsmm-pins:
+	$(HSMM_ACT)
+	pip install -U "pip<24"  # ensure legacy flags exist
+	pip install $(PIP_PIN)
+	pip install $(SETUPTOOLS_PIN) wheel
+	pip install $(NUMPY_PIN)
+	pip install scipy matplotlib requests future cython nose
+
+.PHONY: hsmm-pyhsmm
+hsmm-pyhsmm:
+	$(HSMM_ACT)
+	rm -rf "$(PYHSMM_BUILD_DIR)"
+	git clone --recursive "$(PYHSMM_GIT)" "$(PYHSMM_BUILD_DIR)"
+	cd "$(PYHSMM_BUILD_DIR)"
+	mkdir -p deps
+	ln -sf /usr/include/eigen3/Eigen deps/Eigen
+	# install via legacy build path
+	pip install --no-build-isolation --no-use-pep517 .
+
+.PHONY: hsmm-patch
+hsmm-patch:
+	$(HSMM_ACT)
+	python tools/patch_pyhsmm_stack.py
+
+.PHONY: hsmm-test
+hsmm-test:
+	$(HSMM_ACT)
+	python -c "import numpy as np; print('numpy', np.__version__)"
+	python -c "import pyhsmm; print('pyhsmm import ok')"
+
+.PHONY: hsmm-shell
+hsmm-shell:
+	@echo "Entering shell with $(HSMM_VENV) activated. Exit to return."
+	@bash -lc 'source "$(HSMM_VENV)/bin/activate"; exec $$SHELL -i'
+
+.PHONY: hsmm-all
+hsmm-all: hsmm-apt hsmm-pyenv hsmm-python hsmm-venv hsmm-pins hsmm-pyhsmm hsmm-patch hsmm-test
+	@echo ""
+	@echo "✅ HSMM setup complete."

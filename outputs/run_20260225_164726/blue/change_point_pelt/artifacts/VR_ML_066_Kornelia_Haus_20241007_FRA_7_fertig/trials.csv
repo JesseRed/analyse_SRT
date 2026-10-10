@@ -1,0 +1,13 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+52,2,49,63,56,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+59,2,49,63,56,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+60,2,49,63,56,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+71,4,69,83,76,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+74,4,69,83,76,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+76,4,69,83,76,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+79,4,69,83,76,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+81,4,69,83,76,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+102,7,99,113,106,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+104,7,99,113,106,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+108,7,99,113,106,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7
+109,7,99,113,106,1,[],SRT/VR_ML_066_Kornelia_Haus_20241007_FRA_7_fertig.csv,blue,change_point_pelt,Kornelia_Haus,FRA_7,7

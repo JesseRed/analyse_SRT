@@ -1,0 +1,16 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+31,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+32,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+33,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+34,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+38,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+40,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+45,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+46,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+48,3,31,60,45,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+52,4,41,70,55,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+55,4,41,70,55,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+59,4,41,70,55,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+60,4,41,70,55,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+61,4,41,70,55,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7
+68,4,41,70,55,1,[],SRT/VR_ML_101_Heike_Lorenz_20250423_FRA_7_fertig.csv,blue,change_point_pelt,Heike_Lorenz,FRA_7,7

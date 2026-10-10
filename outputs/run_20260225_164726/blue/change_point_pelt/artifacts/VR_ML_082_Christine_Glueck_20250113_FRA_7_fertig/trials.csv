@@ -1,0 +1,10 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+38,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7
+40,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7
+44,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7
+46,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7
+48,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7
+52,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7
+55,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7
+59,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7
+60,2,33,62,47,1,[],SRT/VR_ML_082_Christine_Glueck_20250113_FRA_7_fertig.csv,blue,change_point_pelt,Christine_Glueck,FRA_7,7

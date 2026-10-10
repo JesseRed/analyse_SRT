@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+51,4,49,78,63,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+61,4,49,78,63,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+62,4,49,78,63,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+69,5,59,88,73,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+75,5,59,88,73,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+77,5,59,88,73,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+81,6,69,98,83,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+82,6,69,98,83,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+88,6,69,98,83,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+90,6,69,98,83,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1
+98,6,69,98,83,1,[],SRT/VR_ML_034_Klaus_Rosenkranz_20240902_FRA_1_fertig.csv,blue,change_point_pelt,Klaus_Rosenkranz,FRA_1,1

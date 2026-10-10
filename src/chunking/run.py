@@ -11,10 +11,40 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
-from pandas.errors import EmptyDataError
+import logging
+import sys
+import traceback
 
 from ._base import ChunkingResult, result_to_summary_row, result_to_trials_df
 from .methods import get_runner, list_methods
+
+
+def setup_logging(output_dir: Path, log_name: str = "run.log") -> logging.Logger:
+    """Configure dual logging to console and a file in output_dir."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    log_path = output_dir / log_name
+
+    logger = logging.getLogger("chunking")
+    logger.setLevel(logging.INFO)
+    # Clear existing handlers to avoid duplicates in interactive environments
+    logger.handlers.clear()
+
+    formatter = logging.Formatter(
+        "[%(asctime)s] %(levelname)s: %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+
+    # Console handler
+    ch = logging.StreamHandler(sys.stdout)
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
+
+    # File handler
+    fh = logging.FileHandler(log_path, encoding="utf-8")
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
+
+    return logger
 
 
 def _sanitize_name(text: str) -> str:
@@ -143,61 +173,77 @@ def run_single_file(
     output_dir: str | Path,
     sequence_type: str = "blue",
     **method_params: Any,
-) -> ChunkingResult:
+) -> ChunkingResult | None:
     """
     Run one chunking method on one file and write results to output_dir.
 
     Creates output_dir if needed; writes meta.json, parameters.json,
-    summary.csv, trials.csv, errors.csv (empty if success).
+    summary.csv, trials.csv, errors.csv (empty if success), and run.log.
     """
     filepath = Path(filepath)
     out_path = Path(output_dir)
-    out_path.mkdir(parents=True, exist_ok=True)
+    logger = setup_logging(out_path, "run.log")
 
-    runner = get_runner(method_name)
-    result = runner(
-        filepath,
-        sequence_type=sequence_type,
-        **method_params,
-    )
-
-    summary_row = _augment_summary_row_meta(result_to_summary_row(result))
-    trials_df = _augment_trials_df_meta(result_to_trials_df(result))
-
-    meta = {
-        "method_name": result.method_name,
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-        "git_commit": _git_commit(),
-        "input_file": str(filepath),
-        "sequence_type": sequence_type,
-        "n_blocks": result.n_blocks,
-    }
-    (out_path / "meta.json").write_text(
-        json.dumps(meta, indent=2), encoding="utf-8"
-    )
-    (out_path / "parameters.json").write_text(
-        json.dumps(result.parameters, indent=2), encoding="utf-8"
-    )
-    pd.DataFrame([summary_row]).to_csv(out_path / "summary.csv", index=False)
-    trials_df.to_csv(out_path / "trials.csv", index=False)
-    pd.DataFrame(columns=["source_file", "error"]).to_csv(
-        out_path / "errors.csv", index=False
-    )
-    if result.validation:
-        (out_path / "validation.json").write_text(
-            json.dumps(result.validation, indent=2),
-            encoding="utf-8",
+    try:
+        logger.info(f"Starting analysis: method={method_name} file={filepath.name}")
+        runner = get_runner(method_name)
+        result = runner(
+            filepath,
+            sequence_type=sequence_type,
+            **method_params,
         )
 
-    # Subject-wise trials (new requirement for better longitudinal analysis)
-    if method_name in {"hcrp_lm", "hsmm_chunking", "community_network", "change_point_pelt", "rational_chunking"}:
-        _write_trials_artifact(
-            output_dir=out_path,
-            source_file=str(filepath),
-            trials_df=trials_df,
-        )
+        summary_row = _augment_summary_row_meta(result_to_summary_row(result))
+        trials_df = _augment_trials_df_meta(result_to_trials_df(result))
 
-    return result
+        meta = {
+            "method_name": result.method_name,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "git_commit": _git_commit(),
+            "input_file": str(filepath),
+            "sequence_type": sequence_type,
+            "n_blocks": result.n_blocks,
+        }
+        (out_path / "meta.json").write_text(
+            json.dumps(meta, indent=2), encoding="utf-8"
+        )
+        (out_path / "parameters.json").write_text(
+            json.dumps(result.parameters, indent=2), encoding="utf-8"
+        )
+        pd.DataFrame([summary_row]).to_csv(out_path / "summary.csv", index=False)
+        trials_df.to_csv(out_path / "trials.csv", index=False)
+        pd.DataFrame(columns=["source_file", "error"]).to_csv(
+            out_path / "errors.csv", index=False
+        )
+        if result.validation:
+            (out_path / "validation.json").write_text(
+                json.dumps(result.validation, indent=2),
+                encoding="utf-8",
+            )
+            _write_validation_artifact(
+                output_dir=out_path,
+                source_file=str(filepath),
+                validation=result.validation,
+            )
+
+        # Subject-wise trials (new requirement for better longitudinal analysis)
+        if method_name in {"hcrp_lm", "hsmm_chunking", "community_network", "change_point_pelt", "rational_chunking"}:
+            _write_trials_artifact(
+                output_dir=out_path,
+                source_file=str(filepath),
+                trials_df=trials_df,
+            )
+
+        logger.info("Analysis successfully completed.")
+        return result
+
+    except Exception as exc:
+        logger.error(f"Analysis failed: {exc}")
+        logger.error(traceback.format_exc())
+        pd.DataFrame([{"source_file": str(filepath), "error": str(exc)}]).to_csv(
+            out_path / "errors.csv", index=False
+        )
+        return None
 
 
 def run_batch(
@@ -229,19 +275,9 @@ def run_batch(
     summary_rows = []
     trial_frames = []
     error_rows = []
-    progress_log_path = out_path / "progress.log" if progress_log else None
-    if progress_log_path and progress_log_path.exists():
-        progress_log_path.unlink()
-
     total_files = len(files)
     start_time = time.time()
-
-    def log(msg: str) -> None:
-        ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-        line = f"[{ts}] {msg}\n"
-        if progress_log_path:
-            progress_log_path.open("a", encoding="utf-8").write(line)
-        print(msg)
+    logger = setup_logging(out_path, "progress.log")
 
     # Inject per-file random_state if method accepts it
     for idx, file_path in enumerate(files, start=1):
@@ -249,6 +285,7 @@ def run_batch(
         if "random_state" in params and params["random_state"] is not None:
             params["random_state"] = params["random_state"] + idx
 
+        status = "failed"
         try:
             result = runner(
                 file_path,
@@ -272,11 +309,13 @@ def run_batch(
             status = "ok"
         except Exception as exc:
             error_rows.append({"source_file": str(file_path), "error": str(exc)})
-            status = "failed"
+            logger.error(f"Failed file='{file_path.name}': {exc}")
+            logger.debug(traceback.format_exc())
 
         elapsed = time.time() - start_time
-        eta = (total_files - idx) / (idx / elapsed) if idx else 0
-        log(
+        avg_speed = idx / elapsed if elapsed > 0 else 0
+        eta = (total_files - idx) / avg_speed if avg_speed > 0 else 0
+        logger.info(
             f"[{idx}/{total_files}] {status} file='{file_path.name}' "
             f"success={len(summary_rows)} failed={len(error_rows)} "
             f"elapsed={_format_seconds(elapsed)} eta={_format_seconds(eta)}"
@@ -312,18 +351,19 @@ def run_batch(
         "elapsed_seconds": time.time() - start_time,
     }
 
-    (out_path / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    meta_path = out_path / "meta.json"
+    meta_path.write_text(json.dumps(meta, indent=2), encoding="utf-8")
     (out_path / "parameters.json").write_text(
         json.dumps(full_params, indent=2), encoding="utf-8"
     )
     summary_df.to_csv(out_path / "summary.csv", index=False)
     trial_df.to_csv(out_path / "trials.csv", index=False)
     errors_df.to_csv(out_path / "errors.csv", index=False)
-    if progress_log_path:
-        log(
-            f"Batch finished success={len(summary_df)} failed={len(errors_df)} "
-            f"elapsed={_format_seconds(time.time() - start_time)}"
-        )
+    
+    logger.info(
+        f"Batch finished success={len(summary_df)} failed={len(errors_df)} "
+        f"elapsed={_format_seconds(time.time() - start_time)}"
+    )
 
     return {
         "summary_path": str(out_path / "summary.csv"),
@@ -347,19 +387,34 @@ def merge_sequence_summaries(method_output_dir: str | Path) -> str:
         <method_output_dir>/yellow/summary.csv
     """
     base = Path(method_output_dir)
+    # 1. Look for sequences
     seq_paths = {seq: base / seq / "summary.csv" for seq in ("blue", "green", "yellow")}
-    missing = [seq for seq, path in seq_paths.items() if not path.exists()]
-    if missing:
+    active_seqs = [seq for seq, path in seq_paths.items() if path.exists()]
+
+    # 2. Fallback: Check if summary.csv is in the root (for flat structures)
+    direct_sum = base / "summary.csv"
+    if not active_seqs and direct_sum.exists():
+        # Try to infer sequence from file content or use 'default'
+        try:
+            df = pd.read_csv(direct_sum)
+            seq = df["sequence_type"].iloc[0] if "sequence_type" in df.columns and not df.empty else "unknown"
+        except Exception:
+            seq = "unknown"
+        active_seqs = [seq]
+        seq_paths = {seq: direct_sum}
+
+    if not active_seqs:
         raise FileNotFoundError(
-            f"Missing summary.csv for sequences {missing} in {base}."
+            f"No summary.csv found in subdirectories or root of {base}."
         )
 
     keys = ["source_file", "participant_id", "session", "day_index"]
     merged: pd.DataFrame | None = None
-    for seq in ("blue", "green", "yellow"):
+    from pandas.errors import EmptyDataError
+    for seq in active_seqs:
         try:
             df = pd.read_csv(seq_paths[seq])
-        except EmptyDataError:
+        except (EmptyDataError, pd.errors.ParserError):
             continue
         if df.empty:
             continue
@@ -369,8 +424,11 @@ def merge_sequence_summaries(method_output_dir: str | Path) -> str:
         keep_cols = keys
         metric_cols = [c for c in df.columns if c not in keep_cols + ["sequence_type", "method"]]
         seq_df = df[keep_cols + metric_cols].copy()
-        rename_map = {col: f"{col}_{seq}" for col in metric_cols}
-        seq_df = seq_df.rename(columns=rename_map)
+        # Only rename if we have multiple sequences or it's a known sequence
+        if len(active_seqs) > 1 or seq != "unknown":
+            rename_map = {col: f"{col}_{seq}" for col in metric_cols}
+            seq_df = seq_df.rename(columns=rename_map)
+        
         if merged is None:
             merged = seq_df
         else:
@@ -414,12 +472,13 @@ def run_benchmark(
     """
     input_path = Path(input_dir)
     base_out = Path(output_dir)
-    base_out.mkdir(parents=True, exist_ok=True)
+    logger = setup_logging(base_out, "benchmark.log")
 
     methods = method_list if method_list is not None else list_methods()
     if not methods:
         raise ValueError("No chunking methods registered.")
 
+    logger.info(f"Starting benchmark: input_dir={input_path} methods={methods}")
     all_summary_rows = []
     run_results = {}
 
@@ -432,6 +491,7 @@ def run_benchmark(
             params.update(per_method_params[method_name])
             
         try:
+            logger.info(f"Running method: {method_name}")
             result = run_batch(
                 method_name=method_name,
                 input_dir=input_path,
@@ -449,14 +509,17 @@ def run_benchmark(
                 summary_df = pd.read_csv(result["summary_path"])
                 all_summary_rows.append(summary_df)
         except Exception as exc:
-            print(f"Warning: Failed to run method '{method_name}': {exc}")
+            logger.error(f"Failed to run method '{method_name}': {exc}")
+            logger.error(traceback.format_exc())
             run_results[method_name] = {"error": str(exc)}
 
     if combine_summary and all_summary_rows:
         combined = pd.concat(all_summary_rows, ignore_index=True)
         combined_path = base_out / "benchmark_summary.csv"
         combined.to_csv(combined_path, index=False)
+        logger.info(f"Combined benchmark summary written to {combined_path}")
 
+    logger.info("Benchmark completed.")
     return {
         "output_dir": str(base_out),
         "methods": methods,

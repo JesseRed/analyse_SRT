@@ -1,0 +1,22 @@
+{
+  "method_name": "change_point_pelt",
+  "input_dir": "SRT_Test2",
+  "pattern": "*.csv",
+  "sequence_type": "blue",
+  "limit": null,
+  "random_state": 42,
+  "n_files_total": 21,
+  "n_files_success": 17,
+  "n_files_failed": 4,
+  "window_size": 30,
+  "step": 10,
+  "min_blocks": 6,
+  "n_bootstrap": 500,
+  "fpr_target": 0.05,
+  "mean_cp_target": 0.1,
+  "n_null_splits": 32,
+  "penalty_grid_size": 80,
+  "min_windows_reliable": 3,
+  "cost_model": "l2",
+  "n_null_runs": 100
+}

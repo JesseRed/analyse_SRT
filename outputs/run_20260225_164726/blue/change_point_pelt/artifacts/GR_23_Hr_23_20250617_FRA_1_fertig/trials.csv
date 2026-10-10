@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+52,4,51,80,65,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+53,4,51,80,65,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+56,4,51,80,65,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+60,4,51,80,65,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+73,5,61,90,75,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+77,5,61,90,75,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+81,5,61,90,75,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+82,5,61,90,75,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+83,5,61,90,75,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+85,5,61,90,75,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1
+90,5,61,90,75,1,[],SRT/GR_23_Hr_23_20250617_FRA_1_fertig.csv,blue,change_point_pelt,GR_23_Hr_23,FRA_1,1

@@ -1,0 +1,17 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+71,6,70,99,84,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+72,6,70,99,84,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+73,6,70,99,84,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+76,6,70,99,84,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+79,6,70,99,84,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+80,6,70,99,84,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+84,6,70,99,84,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+85,6,70,99,84,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+92,7,80,109,94,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+95,7,80,109,94,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+99,7,80,109,94,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+100,7,80,109,94,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+101,7,80,109,94,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+105,7,80,109,94,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+108,7,80,109,94,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2
+109,7,80,109,94,1,[],SRT/VR_ML_006_Brunhilde_Grafe_20240123_FRA_2_fertig.csv,blue,change_point_pelt,Brunhilde_Grafe,FRA_2,2

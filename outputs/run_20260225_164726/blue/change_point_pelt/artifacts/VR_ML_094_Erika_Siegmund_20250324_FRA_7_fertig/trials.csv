@@ -1,0 +1,4 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+48,3,47,61,54,1,[],SRT/VR_ML_094_Erika_Siegmund_20250324_FRA_7_fertig.csv,blue,change_point_pelt,Erika_Siegmund,FRA_7,7
+52,3,47,61,54,1,[],SRT/VR_ML_094_Erika_Siegmund_20250324_FRA_7_fertig.csv,blue,change_point_pelt,Erika_Siegmund,FRA_7,7
+60,3,47,61,54,1,[],SRT/VR_ML_094_Erika_Siegmund_20250324_FRA_7_fertig.csv,blue,change_point_pelt,Erika_Siegmund,FRA_7,7

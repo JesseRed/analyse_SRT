@@ -1,0 +1,9 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+73,7,73,102,87,1,[],SRT/VR_ML_051_Dirk_Janik_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Dirk_Janik,FRA_3,3
+81,7,73,102,87,1,[],SRT/VR_ML_051_Dirk_Janik_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Dirk_Janik,FRA_3,3
+82,7,73,102,87,1,[],SRT/VR_ML_051_Dirk_Janik_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Dirk_Janik,FRA_3,3
+89,7,73,102,87,1,[],SRT/VR_ML_051_Dirk_Janik_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Dirk_Janik,FRA_3,3
+91,7,73,102,87,1,[],SRT/VR_ML_051_Dirk_Janik_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Dirk_Janik,FRA_3,3
+92,7,73,102,87,1,[],SRT/VR_ML_051_Dirk_Janik_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Dirk_Janik,FRA_3,3
+97,7,73,102,87,1,[],SRT/VR_ML_051_Dirk_Janik_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Dirk_Janik,FRA_3,3
+98,7,73,102,87,1,[],SRT/VR_ML_051_Dirk_Janik_20250409_FRA_3_fertig.csv,blue,change_point_pelt,Dirk_Janik,FRA_3,3

@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+94,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+96,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+98,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+100,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+101,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+102,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+107,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+108,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+109,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+114,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7
+115,9,93,117,105,1,[],SRT/VR_ML_069_Sabine_Tauscher_20241209_FRA_7_fertig.csv,blue,change_point_pelt,Sabine_Tauscher,FRA_7,7

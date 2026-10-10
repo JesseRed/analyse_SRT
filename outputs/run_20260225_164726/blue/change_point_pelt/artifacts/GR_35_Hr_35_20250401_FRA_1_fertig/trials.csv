@@ -1,0 +1,6 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+19,1,16,30,23,1,[],SRT/GR_35_Hr_35_20250401_FRA_1_fertig.csv,blue,change_point_pelt,GR_35_Hr_35,FRA_1,1
+20,1,16,30,23,1,[],SRT/GR_35_Hr_35_20250401_FRA_1_fertig.csv,blue,change_point_pelt,GR_35_Hr_35,FRA_1,1
+21,1,16,30,23,1,[],SRT/GR_35_Hr_35_20250401_FRA_1_fertig.csv,blue,change_point_pelt,GR_35_Hr_35,FRA_1,1
+25,1,16,30,23,1,[],SRT/GR_35_Hr_35_20250401_FRA_1_fertig.csv,blue,change_point_pelt,GR_35_Hr_35,FRA_1,1
+27,1,16,30,23,1,[],SRT/GR_35_Hr_35_20250401_FRA_1_fertig.csv,blue,change_point_pelt,GR_35_Hr_35,FRA_1,1

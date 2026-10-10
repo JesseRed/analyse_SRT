@@ -1,0 +1,12 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+5,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+6,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+8,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+9,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+11,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+12,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+13,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+14,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+21,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+22,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6
+23,0,2,31,16,1,[],SRT/VR_ML_040_Remo_Kuntze_20250117_FRA_6_fertig.csv,blue,change_point_pelt,Remo_Kuntze,FRA_6,6

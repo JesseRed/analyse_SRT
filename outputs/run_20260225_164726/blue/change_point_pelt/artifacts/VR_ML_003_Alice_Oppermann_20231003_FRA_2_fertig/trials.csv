@@ -1,0 +1,8 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+23,2,22,41,31,1,[],SRT/VR_ML_003_Alice_Oppermann_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Alice_Oppermann,FRA_2,2
+25,2,22,41,31,1,[],SRT/VR_ML_003_Alice_Oppermann_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Alice_Oppermann,FRA_2,2
+27,2,22,41,31,1,[],SRT/VR_ML_003_Alice_Oppermann_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Alice_Oppermann,FRA_2,2
+28,2,22,41,31,1,[],SRT/VR_ML_003_Alice_Oppermann_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Alice_Oppermann,FRA_2,2
+35,2,22,41,31,1,[],SRT/VR_ML_003_Alice_Oppermann_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Alice_Oppermann,FRA_2,2
+38,2,22,41,31,1,[],SRT/VR_ML_003_Alice_Oppermann_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Alice_Oppermann,FRA_2,2
+39,2,22,41,31,1,[],SRT/VR_ML_003_Alice_Oppermann_20231003_FRA_2_fertig.csv,blue,change_point_pelt,Alice_Oppermann,FRA_2,2

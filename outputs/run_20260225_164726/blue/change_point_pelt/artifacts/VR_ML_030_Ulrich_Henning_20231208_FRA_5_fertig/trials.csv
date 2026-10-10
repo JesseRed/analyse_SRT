@@ -1,0 +1,7 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+94,9,94,113,103,1,[],SRT/VR_ML_030_Ulrich_Henning_20231208_FRA_5_fertig.csv,blue,change_point_pelt,Ulrich_Henning,FRA_5,5
+96,9,94,113,103,1,[],SRT/VR_ML_030_Ulrich_Henning_20231208_FRA_5_fertig.csv,blue,change_point_pelt,Ulrich_Henning,FRA_5,5
+97,9,94,113,103,1,[],SRT/VR_ML_030_Ulrich_Henning_20231208_FRA_5_fertig.csv,blue,change_point_pelt,Ulrich_Henning,FRA_5,5
+107,9,94,113,103,1,[],SRT/VR_ML_030_Ulrich_Henning_20231208_FRA_5_fertig.csv,blue,change_point_pelt,Ulrich_Henning,FRA_5,5
+110,9,94,113,103,1,[],SRT/VR_ML_030_Ulrich_Henning_20231208_FRA_5_fertig.csv,blue,change_point_pelt,Ulrich_Henning,FRA_5,5
+111,9,94,113,103,1,[],SRT/VR_ML_030_Ulrich_Henning_20231208_FRA_5_fertig.csv,blue,change_point_pelt,Ulrich_Henning,FRA_5,5

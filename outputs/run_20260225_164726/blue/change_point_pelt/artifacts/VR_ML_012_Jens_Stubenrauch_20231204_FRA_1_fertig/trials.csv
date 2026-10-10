@@ -1,0 +1,9 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+56,4,54,83,68,1,[],SRT/VR_ML_012_Jens_Stubenrauch_20231204_FRA_1_fertig.csv,blue,change_point_pelt,Jens_Stubenrauch,FRA_1,1
+61,4,54,83,68,1,[],SRT/VR_ML_012_Jens_Stubenrauch_20231204_FRA_1_fertig.csv,blue,change_point_pelt,Jens_Stubenrauch,FRA_1,1
+75,5,64,93,78,1,[],SRT/VR_ML_012_Jens_Stubenrauch_20231204_FRA_1_fertig.csv,blue,change_point_pelt,Jens_Stubenrauch,FRA_1,1
+76,5,64,93,78,1,[],SRT/VR_ML_012_Jens_Stubenrauch_20231204_FRA_1_fertig.csv,blue,change_point_pelt,Jens_Stubenrauch,FRA_1,1
+81,5,64,93,78,1,[],SRT/VR_ML_012_Jens_Stubenrauch_20231204_FRA_1_fertig.csv,blue,change_point_pelt,Jens_Stubenrauch,FRA_1,1
+83,5,64,93,78,1,[],SRT/VR_ML_012_Jens_Stubenrauch_20231204_FRA_1_fertig.csv,blue,change_point_pelt,Jens_Stubenrauch,FRA_1,1
+85,5,64,93,78,1,[],SRT/VR_ML_012_Jens_Stubenrauch_20231204_FRA_1_fertig.csv,blue,change_point_pelt,Jens_Stubenrauch,FRA_1,1
+88,5,64,93,78,1,[],SRT/VR_ML_012_Jens_Stubenrauch_20231204_FRA_1_fertig.csv,blue,change_point_pelt,Jens_Stubenrauch,FRA_1,1

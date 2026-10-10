@@ -1,0 +1,7 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+44,4,42,66,54,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_6,6
+48,4,42,66,54,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_6,6
+52,4,42,66,54,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_6,6
+55,4,42,66,54,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_6,6
+59,4,42,66,54,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_6,6
+61,4,42,66,54,1,[],SRT/VR_ML_074_Wolfram_Koenig_20241122_FRA_6_fertig.csv,blue,change_point_pelt,Wolfram_Koenig,FRA_6,6

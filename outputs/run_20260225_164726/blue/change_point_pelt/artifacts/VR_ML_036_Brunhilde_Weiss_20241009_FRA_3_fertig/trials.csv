@@ -1,0 +1,17 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+56,5,54,83,68,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+65,5,54,83,68,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+66,5,54,83,68,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+68,5,54,83,68,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+69,5,54,83,68,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+70,5,54,83,68,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+71,5,54,83,68,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+73,5,54,83,68,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+76,6,64,93,78,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+82,6,64,93,78,1,[],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+89,7,74,103,88,2,[5],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+91,7,74,103,88,2,[5],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+92,7,74,103,88,2,[5],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+96,7,74,103,88,2,[5],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+97,7,74,103,88,2,[5],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3
+98,7,74,103,88,2,[5],SRT/VR_ML_036_Brunhilde_Weiss_20241009_FRA_3_fertig.csv,blue,change_point_pelt,Brunhilde_Weiss,FRA_3,3

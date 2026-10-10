@@ -1,0 +1,24 @@
+source_file,error
+SRT/GR_09_Hr_09_20250310_FRA_2_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/REST_24_Stroke_09_Petra_Tavangarian_20210521_FRA_1_fertig.csv,No valid windows for the selected sequence under current settings (min_blocks/window_size/step).
+SRT/VR_ML_006_Brunhilde_Grafe_20231016_FRA_1_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_006_Brunhilde_Grafe_20231018_FRA_3_fertig.csv,No valid windows for the selected sequence under current settings (min_blocks/window_size/step).
+SRT/VR_ML_031_Eberhardt_Zorn_20240712_FRA_6_fertig.csv,No valid windows for the selected sequence under current settings (min_blocks/window_size/step).
+SRT/VR_ML_034_Klaus_Rosenkranz_20240906_FRA_6_fertig.csv,No valid windows for the selected sequence under current settings (min_blocks/window_size/step).
+SRT/VR_ML_039_Werner_Roedger_20250113_FRA_1_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_039_Werner_Roedger_20250113_FRA_7_fertig.csv,No valid blocks found for sequence='blue'.
+SRT/VR_ML_039_Werner_Roedger_20250114_FRA_2_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_052_Volker_Siegmund_20250328_FRA_6_fertig.csv,No valid blocks found for sequence='blue'.
+SRT/VR_ML_060_Wolfgang _Eisenberg_20240923_FRA_7_fertig.csv,No valid blocks found for sequence='blue'.
+SRT/VR_ML_063_Ralf_Nestmann_20251020_FRA_1_fertig.csv,No valid windows for the selected sequence under current settings (min_blocks/window_size/step).
+SRT/VR_ML_076_Reinhilde_Riebow_20241118_FRA_1_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_090_Karin_Kiessling_20250224_FRA_1_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_111_Gabriele_Lienig_20250602_FRA_1_fertig.csv,No valid blocks found for sequence='blue'.
+SRT/VR_ML_121_Monika_Mueller_20250630_FRA_7_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_123_Wolfgang_Lange_20250630_FRA_1_fertig.csv,No valid yellow blocks found for baseline correction.
+SRT/VR_ML_123_Wolfgang_Lange_20250630_FRA_7_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_123_Wolfgang_Lange_20250701_FRA_2_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_123_Wolfgang_Lange_20250703_FRA_4_fertig.csv,No valid yellow blocks found for baseline correction.
+SRT/VR_ML_123_Wolfgang_Lange_20250704_FRA_5_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.
+SRT/VR_ML_123_Wolfgang_Lange_20250704_FRA_6_fertig.csv,No valid windows for the selected sequence under current settings (min_blocks/window_size/step).
+SRT/VR_ML_131_Friedhelm_Henning_20250908_FRA_1_fertig.csv,No valid yellow windows for penalty calibration. Try smaller min_blocks/window_size.

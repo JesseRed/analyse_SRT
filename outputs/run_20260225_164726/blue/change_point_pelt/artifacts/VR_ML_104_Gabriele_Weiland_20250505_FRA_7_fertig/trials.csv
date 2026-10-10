@@ -1,0 +1,14 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+34,3,34,63,48,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+40,3,34,63,48,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+44,3,34,63,48,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+45,3,34,63,48,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+46,3,34,63,48,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+48,3,34,63,48,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+55,3,34,63,48,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+60,5,54,83,68,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+61,5,54,83,68,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+65,5,54,83,68,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+69,5,54,83,68,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+70,5,54,83,68,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7
+79,5,54,83,68,1,[],SRT/VR_ML_104_Gabriele_Weiland_20250505_FRA_7_fertig.csv,blue,change_point_pelt,Gabriele_Weiland,FRA_7,7

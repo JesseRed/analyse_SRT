@@ -1,0 +1,7 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+1,0,1,20,10,2,[5],SRT/VR_ML_002_Philipp_Arndt_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Philipp_Arndt,FRA_4,4
+5,0,1,20,10,2,[5],SRT/VR_ML_002_Philipp_Arndt_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Philipp_Arndt,FRA_4,4
+8,0,1,20,10,2,[5],SRT/VR_ML_002_Philipp_Arndt_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Philipp_Arndt,FRA_4,4
+11,0,1,20,10,2,[5],SRT/VR_ML_002_Philipp_Arndt_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Philipp_Arndt,FRA_4,4
+18,0,1,20,10,2,[5],SRT/VR_ML_002_Philipp_Arndt_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Philipp_Arndt,FRA_4,4
+19,0,1,20,10,2,[5],SRT/VR_ML_002_Philipp_Arndt_20231116_FRA_4_fertig.csv,blue,change_point_pelt,Philipp_Arndt,FRA_4,4

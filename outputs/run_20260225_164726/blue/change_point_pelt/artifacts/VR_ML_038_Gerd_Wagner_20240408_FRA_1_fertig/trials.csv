@@ -1,0 +1,8 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+120,11,114,143,128,1,[],SRT/VR_ML_038_Gerd_Wagner_20240408_FRA_1_fertig.csv,blue,change_point_pelt,Gerd_Wagner,FRA_1,1
+122,11,114,143,128,1,[],SRT/VR_ML_038_Gerd_Wagner_20240408_FRA_1_fertig.csv,blue,change_point_pelt,Gerd_Wagner,FRA_1,1
+126,11,114,143,128,1,[],SRT/VR_ML_038_Gerd_Wagner_20240408_FRA_1_fertig.csv,blue,change_point_pelt,Gerd_Wagner,FRA_1,1
+133,11,114,143,128,1,[],SRT/VR_ML_038_Gerd_Wagner_20240408_FRA_1_fertig.csv,blue,change_point_pelt,Gerd_Wagner,FRA_1,1
+138,11,114,143,128,1,[],SRT/VR_ML_038_Gerd_Wagner_20240408_FRA_1_fertig.csv,blue,change_point_pelt,Gerd_Wagner,FRA_1,1
+140,11,114,143,128,1,[],SRT/VR_ML_038_Gerd_Wagner_20240408_FRA_1_fertig.csv,blue,change_point_pelt,Gerd_Wagner,FRA_1,1
+143,11,114,143,128,1,[],SRT/VR_ML_038_Gerd_Wagner_20240408_FRA_1_fertig.csv,blue,change_point_pelt,Gerd_Wagner,FRA_1,1

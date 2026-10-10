@@ -1,0 +1,16 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+87,8,87,106,96,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+88,8,87,106,96,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+89,8,87,106,96,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+98,8,87,106,96,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+100,8,87,106,96,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+104,8,87,106,96,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+138,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+141,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+142,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+144,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+147,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+149,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+150,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+151,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1
+153,13,137,156,146,1,[],SRT/REST_24_Stroke_03_Thomas_Brüggert_20240409_FRA_1_fertig.csv,blue,change_point_pelt,REST_24_Stroke_03_Thomas_Brüggert,FRA_1,1

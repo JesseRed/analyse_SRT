@@ -1,0 +1,5 @@
+block_number,window_index,window_start_block,window_end_block,window_center_block,n_chunks,chunk_boundaries,source_file,sequence_type,method,participant_id,session,day_index
+133,10,129,138,133,1,[],SRT/VR_ML_005_1_1_Karl_Christian_Danz_20240308_FRA_1_fertig.csv,blue,change_point_pelt,1_1_Karl_Christian_Danz,FRA_1,1
+134,10,129,138,133,1,[],SRT/VR_ML_005_1_1_Karl_Christian_Danz_20240308_FRA_1_fertig.csv,blue,change_point_pelt,1_1_Karl_Christian_Danz,FRA_1,1
+136,10,129,138,133,1,[],SRT/VR_ML_005_1_1_Karl_Christian_Danz_20240308_FRA_1_fertig.csv,blue,change_point_pelt,1_1_Karl_Christian_Danz,FRA_1,1
+138,10,129,138,133,1,[],SRT/VR_ML_005_1_1_Karl_Christian_Danz_20240308_FRA_1_fertig.csv,blue,change_point_pelt,1_1_Karl_Christian_Danz,FRA_1,1

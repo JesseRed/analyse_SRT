@@ -1,0 +1,4 @@
+[2026-02-25 13:33:19 UTC] [1/21] ok file='VR_ML_025_Egbert_Hausmann_20231127_FRA_1_fertig.csv' success=1 failed=0 elapsed=00:00:14 eta=00:04:55
+[2026-02-25 13:33:37 UTC] [2/21] ok file='VR_ML_025_Egbert_Hausmann_20231128_FRA_2_fertig.csv' success=2 failed=0 elapsed=00:00:33 eta=00:05:18
+[2026-02-25 13:33:54 UTC] [3/21] ok file='VR_ML_025_Egbert_Hausmann_20231129_FRA_3_fertig.csv' success=3 failed=0 elapsed=00:00:50 eta=00:05:02
+[2026-02-25 13:34:13 UTC] [4/21] ok file='VR_ML_025_Fritz_Raschke_20230911_FRA_1_fertig.csv' success=4 failed=0 elapsed=00:01:09 eta=00:04:55
