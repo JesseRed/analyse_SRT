@@ -17,3 +17,7 @@ venv/
 pybasicbayes/
 pyhsmm/
 .venv_hsmm/
+
+# Simulation: full tier is reproducible from configs/simulation/full.yaml (seeded)
+simulations/full/
+outputs/sim_*

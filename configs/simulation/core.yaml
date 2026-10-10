@@ -1,0 +1,15 @@
+# Kernset: kleiner, committeter Datensatz (Smoke-Test, Demo, schnelle Methodenentwicklung).
+# Alle Zellen sind enthalten, aber mit wenigen Probanden -> keine belastbaren Inferenzen.
+# Erzeugen: python -m src.simulation generate --config configs/simulation/core.yaml
+tier: core
+output_dir: simulations/core
+base_seed: 20261010
+calibration: configs/simulation/empirical_calibration.json
+start_date: "2025-01-06"
+families:
+  A_null:      {n_participants: 10, n_sessions: 2}   # 5 Zellen  -> 100 Dateien
+  B_static:    {n_participants: 2,  n_sessions: 2}   # 54 Zellen -> 216 Dateien
+  C_dynamics:  {n_participants: 3,  n_sessions: 5}   # 8 Zellen  -> 120 Dateien
+  D_groups:    {n_participants: 6,  n_sessions: 2}   # 4 Zellen  ->  48 Dateien
+  E_realistic: {n_participants: 12, n_sessions: 5}   # 1 Zelle   ->  60 Dateien
+  F_quality:   {n_participants: 6,  n_sessions: 2}   # 4 Zellen  ->  48 Dateien

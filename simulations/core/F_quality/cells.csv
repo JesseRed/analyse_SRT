@@ -1,0 +1,5 @@
+cell_index,cell,variant,effect,n_blocks,error_scale,lapse_prob,lapse_mean,drop_block_frac
+0,F1-120blocks,F1-120blocks,0.3,120.0,,,,
+1,F2-higherrors,F2-higherrors,0.3,,3.0,,,
+2,F3-lapses,F3-lapses,0.3,,,0.05,1.0,
+3,F4-missingblocks,F4-missingblocks,0.3,,,,,0.15

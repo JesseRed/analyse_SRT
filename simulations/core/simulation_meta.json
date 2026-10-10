@@ -1,0 +1,75 @@
+{
+  "tier": "core",
+  "base_seed": 20261010,
+  "calibration": "configs/simulation/empirical_calibration.json",
+  "families": {
+    "A_null": {
+      "n_participants": 10,
+      "n_sessions": 2,
+      "n_reps": 1,
+      "cells": null
+    },
+    "B_static": {
+      "n_participants": 2,
+      "n_sessions": 2,
+      "n_reps": 1,
+      "cells": null
+    },
+    "C_dynamics": {
+      "n_participants": 3,
+      "n_sessions": 5,
+      "n_reps": 1,
+      "cells": null
+    },
+    "D_groups": {
+      "n_participants": 6,
+      "n_sessions": 2,
+      "n_reps": 1,
+      "cells": null
+    },
+    "E_realistic": {
+      "n_participants": 12,
+      "n_sessions": 5,
+      "n_reps": 1,
+      "cells": null
+    },
+    "F_quality": {
+      "n_participants": 6,
+      "n_sessions": 2,
+      "n_reps": 1,
+      "cells": null
+    }
+  },
+  "generated": {
+    "A_null": {
+      "n_cells": 5,
+      "n_files": 100,
+      "n_blocks": 16000
+    },
+    "B_static": {
+      "n_cells": 54,
+      "n_files": 216,
+      "n_blocks": 34560
+    },
+    "C_dynamics": {
+      "n_cells": 8,
+      "n_files": 120,
+      "n_blocks": 19200
+    },
+    "D_groups": {
+      "n_cells": 4,
+      "n_files": 48,
+      "n_blocks": 7680
+    },
+    "E_realistic": {
+      "n_cells": 1,
+      "n_files": 60,
+      "n_blocks": 9600
+    },
+    "F_quality": {
+      "n_cells": 4,
+      "n_files": 48,
+      "n_blocks": 6912
+    }
+  }
+}

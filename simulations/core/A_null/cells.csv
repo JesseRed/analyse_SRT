@@ -1,0 +1,6 @@
+cell_index,cell,variant,effect,motor,trends,seq_speedup,heterogeneity,noise
+0,A1-pure,A1-pure,0.0,False,False,False,,
+1,A2-motor,A2-motor,0.0,True,False,False,,
+2,A3-trends,A3-trends,0.0,True,True,False,,
+3,A4-hetero,A4-hetero,0.0,True,True,False,1.0,high
+4,A5-seqspeedup,A5-seqspeedup,0.0,True,True,True,,

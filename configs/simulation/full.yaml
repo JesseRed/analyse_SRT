@@ -1,0 +1,18 @@
+# Vollständiger Datensatz für inferenzielle Aussagen (nicht in Git, per Seed reproduzierbar).
+# Umfang so gewählt, dass die Monte-Carlo-Standardfehler klein sind:
+#   A: 100 Probanden x 5 Sitzungen je Zelle -> Fehlalarmrate auf Dateiebene MCSE ~0.01
+#   B: 20 Probanden x 5 Sitzungen = 100 Dateien je Zelle (54 Zellen)
+#   D: 5 Replikate x 20 Probanden je Gruppe -> Teststärke-Schätzung für Gruppeneffekte
+# Erzeugen: python -m src.simulation generate --config configs/simulation/full.yaml --jobs 14
+tier: full
+output_dir: simulations/full
+base_seed: 20261011
+calibration: configs/simulation/empirical_calibration.json
+start_date: "2025-01-06"
+families:
+  A_null:      {n_participants: 100, n_sessions: 5}             # 2500 Dateien
+  B_static:    {n_participants: 20,  n_sessions: 5}             # 5400 Dateien
+  C_dynamics:  {n_participants: 20,  n_sessions: 5}             #  800 Dateien
+  D_groups:    {n_participants: 20,  n_sessions: 2, n_reps: 5}  #  800 Dateien
+  E_realistic: {n_participants: 60,  n_sessions: 5}             #  300 Dateien
+  F_quality:   {n_participants: 25,  n_sessions: 4}             #  400 Dateien
