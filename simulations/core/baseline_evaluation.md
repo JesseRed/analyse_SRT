@@ -103,3 +103,34 @@ Beim Niveau-Kanal erkennt Rational zwar, *dass* Struktur da ist (AUC 0,98). Es s
    - **Fehlalarmrate ≤ 5 % in A2–A5**, ausdrücklich auch bei Green.
    - Steigender Recall über δ.
    - Den wahren Gruppenunterschied in D erkennen.
+
+---
+
+## 5. Nach den Korrekturen an PELT und HSMM (Kernset, 2026-10-11)
+
+**Korrekturen**
+- **PELT:** Die Penalty wird jetzt an zentrierten Bootstrap-Replikaten des analysierten Signals kalibriert (`penalty_null = "bootstrap"`). Das ergibt dieselbe Blockzahl und dieselbe Kovarianz wie das Signal selbst. Bisher wurden Yellow-Halbierungen mit je etwa 3–4 Blöcken verwendet.
+- **HSMM:** Der Duration-Prior hat jetzt eine mittlere Dauer von 2 IKIs statt 8, und der Emissions-Prior wird an die Daten skaliert.
+- Die alten Einstellungen bleiben über `penalty_null = "yellow_split"` bzw. `duration_prior_mean = None, emission_prior = "fixed"` reproduzierbar.
+- Die alten Ergebnisse liegen in `outputs/sim_core_legacy/`, die alten Kennzahlen in `baseline_evaluation_summary.csv`. Die neuen stehen in `baseline_evaluation_summary_fixed.csv`.
+
+| Blue | PELT alt | PELT neu | HSMM alt | HSMM neu |
+|---|---|---|---|---|
+| Fehlalarmrate A1–A5 | 0,00–0,01 | 0,01–0,04 | 0,00 | **0,13–0,21** |
+| Fehlalarmrate Green / Yellow (A) | 0,00–0,03 | 0,00–0,07 | – | – |
+| AUC Spike, δ = 0,5 | 0,61 | **0,88** | 0,52 | **0,85** |
+| AUC Niveau, δ = 0,5 | 0,73 | 0,84 | 0,54 | **0,97** |
+| AUC Korrelation, δ = 0,5 | 0,71 | 0,51 | 0,61 | 0,53 |
+| Recall Spike, δ = 0,5 | 0,02 | 0,09 | 0,00 | 0,09 |
+| Recall Niveau, δ = 0,5 | 0,15 | 0,25 | 0,00 | 0,26 |
+| F1 E_realistic | 0,02 | 0,04 | 0,02 | 0,08 |
+
+**Bewertung**
+- **PELT** ist jetzt **richtig kalibriert**: Die Fehlalarmrate liegt im Rahmen des Ziels von 5 %, und die Methode reagiert auf starke Effekte (AUC 0,88). Der Recall bleibt aber gering. Das liegt nicht mehr an der Penalty, sondern am **Signal**: Das Profil Ziel − Yellow enthält systematische Tastenpaar-Unterschiede zwischen Blue und dem Yellow-Pool, und die sind so groß wie der Chunk-Effekt (±0,2–0,4 log). Ein einzelner Spike hebt sich davon kaum ab.
+- **HSMM** reagiert jetzt auf Chunking (AUC bis 0,97 beim Niveau-Signal). Es meldet aber **in 13–21 % der chunkfreien Blöcke Grenzen** und findet pro Block nur wenige der wahren. Das Modell kennt keine Positionen und bündelt nicht über Blöcke. Es muss also in jedem einzelnen Block mit 7 Werten entscheiden, und das ist bei realistischem Rauschen kaum möglich.
+- **Gruppen (D):** weiterhin keine Teststärke (alle p > 0,28 bei 6 Probanden pro Gruppe).
+
+**Nächste sinnvolle Schritte**
+1. PELT und Rational: Die Yellow-Baseline durch eine **Motorik-Baseline aus geschätzten Tastenpaar- und Positionseffekten** ersetzen. Sie lässt sich aus allen Sequenzen schätzen, Yellow inklusive.
+2. HSMM: positionsbewusste Variante (z. B. Links-rechts-Modell über die 7 Positionen mit gemeinsamen Parametern über die Blöcke) oder Auswertung der Posterior über viele Gibbs-Samples statt nur des letzten.
+3. Belastbare Zahlen liefert erst das volle Set (`scripts/run_simulation_benchmark.sh full`).

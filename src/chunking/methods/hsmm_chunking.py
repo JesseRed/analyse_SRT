@@ -75,6 +75,13 @@ DEFAULT_STEP = 10
 DEFAULT_MIN_BLOCKS = 6
 DEFAULT_MIN_WINDOWS_RELIABLE = 3
 DEFAULT_N_GIBBS_ITER = 150
+# Duration prior (pyhsmm PoissonDuration: d = 1 + Poisson(lambda), lambda ~ Gamma(alpha_0, rate beta_0)).
+# Default: mean duration 2 IKIs (a boundary IKI is a 1-IKI segment, within-chunk segments are
+# typically 1-3 IKIs), weak (strength = 2 pseudo-segments). The legacy prior
+# Gamma(2*max_duration, 2) implied a mean duration of 1 + max_duration = 8 IKIs, i.e. longer
+# than a block (7 IKIs), and strongly favoured a single segment per block.
+DEFAULT_DURATION_PRIOR_MEAN = 2.0
+DEFAULT_DURATION_PRIOR_STRENGTH = 2.0
 SEQ_LEN = 7  # 7 IKIs per block
 
 # Observation dimension (log-IKI per step)
@@ -121,22 +128,49 @@ def _build_pyhsmm_model(
     obs_dim: int,
     max_duration: int,
     random_state: int | None,
+    *,
+    duration_prior_mean: float | None = DEFAULT_DURATION_PRIOR_MEAN,
+    duration_prior_strength: float = DEFAULT_DURATION_PRIOR_STRENGTH,
+    emission_prior: str = "data",
+    data: np.ndarray | None = None,
 ):
     """Build WeakLimitHDPHSMM (Python backend) with Gaussian emissions and Poisson durations (1-indexed).
-    Uses WeakLimitHDPHSMMPython to avoid C-extension assertion on short sequences."""
+    Uses WeakLimitHDPHSMMPython to avoid C-extension assertion on short sequences.
+
+    duration_prior_mean=None restores the legacy prior Gamma(2*max_duration, 2).
+    emission_prior="data" centres the emission prior on the data and sets its expected
+    state variance to half the data variance; "fixed" is the legacy N(0, I) prior.
+    """
     if random_state is not None:
         np.random.seed(random_state)
 
-    obs_hypparams = {
-        "mu_0": np.zeros(obs_dim),
-        "sigma_0": np.eye(obs_dim),
-        "kappa_0": 0.3,
-        "nu_0": obs_dim + 5,
-    }
-    dur_hypparams = {
-        "alpha_0": 2 * max_duration,
-        "beta_0": 2.0,
-    }
+    nu_0 = obs_dim + 5
+    if emission_prior == "data" and data is not None and data.size > 1:
+        obs_hypparams = {
+            "mu_0": np.full(obs_dim, float(np.mean(data))),
+            # E[Sigma] = sigma_0 / (nu_0 - d - 1) = 0.5 * Var(data)
+            "sigma_0": np.eye(obs_dim) * float(np.var(data)) * 0.5 * (nu_0 - obs_dim - 1),
+            "kappa_0": 0.3,
+            "nu_0": nu_0,
+        }
+    elif emission_prior in ("fixed", "data"):
+        obs_hypparams = {
+            "mu_0": np.zeros(obs_dim),
+            "sigma_0": np.eye(obs_dim),
+            "kappa_0": 0.3,
+            "nu_0": nu_0,
+        }
+    else:
+        raise ValueError("emission_prior must be 'data' or 'fixed'.")
+    if duration_prior_mean is None:
+        dur_hypparams = {"alpha_0": 2 * max_duration, "beta_0": 2.0}
+    else:
+        if duration_prior_mean <= 1.0 or duration_prior_strength <= 0:
+            raise ValueError("duration_prior_mean must be > 1 and duration_prior_strength > 0.")
+        dur_hypparams = {
+            "alpha_0": (duration_prior_mean - 1.0) * duration_prior_strength,
+            "beta_0": duration_prior_strength,
+        }
     obs_distns = [distributions.Gaussian(**obs_hypparams) for _ in range(n_max_states)]
     dur_distns = [distributions.PoissonDuration(**dur_hypparams) for _ in range(n_max_states)]
 
@@ -258,6 +292,9 @@ def run_analysis(
     min_windows_reliable: int = DEFAULT_MIN_WINDOWS_RELIABLE,
     baseline_correction: bool = True,
     n_gibbs_iter: int = DEFAULT_N_GIBBS_ITER,
+    duration_prior_mean: float | None = DEFAULT_DURATION_PRIOR_MEAN,
+    duration_prior_strength: float = DEFAULT_DURATION_PRIOR_STRENGTH,
+    emission_prior: str = "data",
     n_null_runs: int = 100,
     random_state: int | None = None,
     _ikis_dict: dict[int, np.ndarray] | None = None,
@@ -301,6 +338,10 @@ def run_analysis(
         obs_dim=OBS_DIM,
         max_duration=max_duration,
         random_state=None,  # already set above
+        duration_prior_mean=duration_prior_mean,
+        duration_prior_strength=duration_prior_strength,
+        emission_prior=emission_prior,
+        data=np.concatenate(sequences),
     )
 
     # Add each block as a separate sequence so segment boundaries cannot cross blocks
@@ -330,7 +371,10 @@ def run_analysis(
             window_size=window_size, step=step, min_blocks=min_blocks,
             min_windows_reliable=min_windows_reliable,
             baseline_correction=baseline_correction,
-            n_gibbs_iter=n_gibbs_iter
+            n_gibbs_iter=n_gibbs_iter,
+            duration_prior_mean=duration_prior_mean,
+            duration_prior_strength=duration_prior_strength,
+            emission_prior=emission_prior,
         )
 
     # State sequence per block -> chunk_boundaries per block
@@ -436,6 +480,9 @@ def run_analysis(
         "baseline_correction": baseline_correction,
         "random_state": random_state,
         "n_gibbs_iter": n_gibbs_iter,
+        "duration_prior_mean": duration_prior_mean,
+        "duration_prior_strength": duration_prior_strength,
+        "emission_prior": emission_prior,
     }
 
     return ChunkingResult(

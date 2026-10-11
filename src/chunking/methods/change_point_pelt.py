@@ -32,6 +32,11 @@ DEFAULT_N_NULL_SPLITS = 32
 DEFAULT_PENALTY_GRID_SIZE = 80
 DEFAULT_MIN_WINDOWS_RELIABLE = 3
 DEFAULT_FALLBACK_PENALTY = 1.0
+# "bootstrap": calibrate the penalty on centred bootstrap replicates of the analysed signal
+# (same block counts as the signal). "yellow_split": legacy calibration on yellow
+# half-split differences (~3-4 blocks per half), which overestimates the noise of the
+# signal and makes the penalty far too conservative (see README, Bekannte Einschränkungen).
+DEFAULT_PENALTY_NULL = "bootstrap"
 
 
 @dataclass
@@ -349,6 +354,52 @@ def _build_null_signals_from_yellow(
     return signals
 
 
+def _build_bootstrap_null_signals(
+    target_ikis: dict[int, np.ndarray],
+    yellow_ikis: dict[int, np.ndarray] | None,
+    window_specs: list[dict],
+    *,
+    sequence_type: str,
+    min_blocks: int,
+    n_per_window: int,
+    random_state: int | None,
+) -> list[np.ndarray]:
+    """Null signals with exactly the sampling noise of the analysed signal.
+
+    For every valid window the signal (median target profile, minus the median yellow
+    profile for blue/green) is recomputed on bootstrap resamples of *the same* blocks;
+    subtracting the bootstrap mean removes the systematic profile and leaves the
+    sampling noise of the actual estimator (same block counts, same covariance). The
+    penalty is then calibrated so that this noise alone produces change points in at
+    most ``fpr_target`` of the profiles.
+    """
+    rng = np.random.default_rng(random_state)
+    signals: list[np.ndarray] = []
+    for spec in window_specs:
+        start, end = int(spec["start_block"]), int(spec["end_block"])
+        target_window = _select_blocks_in_window(target_ikis, start, end)
+        if len(target_window) < min_blocks:
+            continue
+        t_mat = np.vstack([np.log(np.asarray(target_window[b], dtype=float)) for b in sorted(target_window)])
+        y_mat = None
+        if sequence_type != "yellow":
+            if yellow_ikis is None:
+                continue
+            yellow_window = _select_blocks_in_window(yellow_ikis, start, end)
+            if len(yellow_window) < min_blocks:
+                continue
+            y_mat = np.vstack([np.log(np.asarray(yellow_window[b], dtype=float)) for b in sorted(yellow_window)])
+        boot = []
+        for _ in range(n_per_window):
+            sig = np.median(t_mat[rng.integers(0, t_mat.shape[0], t_mat.shape[0])], axis=0)
+            if y_mat is not None:
+                sig = sig - np.median(y_mat[rng.integers(0, y_mat.shape[0], y_mat.shape[0])], axis=0)
+            boot.append(sig)
+        boot_arr = np.vstack(boot)
+        signals.extend(list(boot_arr - boot_arr.mean(axis=0)))
+    return signals
+
+
 def _map_blocks_to_nearest_windows(
     block_ids: list[int],
     windows: list[WindowAnalysis],
@@ -477,6 +528,7 @@ def run_analysis(
     fallback_penalty: float | None = None,
     cost_model: str = "l2",
     rbf_gamma: float | None = None,
+    penalty_null: str = DEFAULT_PENALTY_NULL,
     n_null_runs: int = 100,
     random_state: int | None = None,
     _ikis_dict: dict[int, np.ndarray] | None = None,
@@ -519,6 +571,7 @@ def run_analysis(
                 fallback_penalty=fallback_penalty,
                 cost_model=cost_model,
                 rbf_gamma=rbf_gamma,
+                penalty_null=penalty_null,
                 n_null_runs=n_null_runs,
                 random_state=random_state,
                 _ikis_dict=target_ikis,
@@ -568,12 +621,15 @@ def _run_analysis_single_attempt(
     fallback_penalty: float | None = None,
     cost_model: str = "l2",
     rbf_gamma: float | None = None,
+    penalty_null: str = DEFAULT_PENALTY_NULL,
     n_null_runs: int = 100,
     random_state: int | None = None,
     _ikis_dict: dict[int, np.ndarray] | None = None,
     _yellow_ikis_dict: dict[int, np.ndarray] | None = None,
 ) -> ChunkingResult:
     """Core PELT analysis logic for a single set of parameters."""
+    if penalty_null not in ("bootstrap", "yellow_split"):
+        raise ValueError("penalty_null must be 'bootstrap' or 'yellow_split'.")
     filepath = Path(filepath)
     seq = _validate_sequence_type(sequence_type)
     if cost_model not in ("l2", "rbf"):
@@ -714,6 +770,26 @@ def _run_analysis_single_attempt(
             )
 
     penalty = penalty_yellow if seq == "yellow" else penalty_structured
+    bootstrap_cal_meta: dict | None = None
+    if penalty_null == "bootstrap":
+        boot_null = _build_bootstrap_null_signals(
+            target_ikis,
+            yellow_ikis,
+            window_specs,
+            sequence_type=seq,
+            min_blocks=min_blocks,
+            n_per_window=max(n_null_splits, 32),
+            random_state=None if random_state is None else random_state + 7,
+        )
+        if boot_null:
+            penalty, bootstrap_cal_meta = _calibrate_penalty(
+                boot_null,
+                fpr_target=fpr_target,
+                mean_cp_target=mean_cp_target,
+                grid_size=penalty_grid_size,
+                cost_model=cost_model,
+                rbf_gamma=rbf_gamma,
+            )
     windows = _fit_windows_for_sequence(
         seq,
         target_ikis=target_ikis,
@@ -741,7 +817,7 @@ def _run_analysis_single_attempt(
             min_windows_reliable=min_windows_reliable,
             allow_fallback_penalty=allow_fallback_penalty,
             fallback_penalty=fallback_penalty, cost_model=cost_model,
-            rbf_gamma=rbf_gamma
+            rbf_gamma=rbf_gamma, penalty_null=penalty_null,
         )
     if not windows:
         raise ValueError(
@@ -803,6 +879,7 @@ def _run_analysis_single_attempt(
         "entropy_by_window": entropy_by_window,
         "penalty_yellow": float(penalty_yellow),
         "penalty_structured": float(penalty_structured),
+        "penalty_selected": float(penalty),
     }
 
     parameters = {
@@ -826,6 +903,8 @@ def _run_analysis_single_attempt(
         "penalty_fallback_used": bool(penalty_fallback_used),
         "penalty_calibration_yellow": yellow_cal_meta,
         "penalty_calibration_structured": struct_cal_meta,
+        "penalty_null": penalty_null,
+        "penalty_calibration_bootstrap": bootstrap_cal_meta,
     }
 
     return ChunkingResult(

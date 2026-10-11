@@ -187,7 +187,7 @@ python -m src.chunking --method community_network --input-file SRT/Beispiel.csv 
 | **Auflösung** | pro Block (Multilayer über alle Blöcke) | pro Fenster (30 Blöcke, Schritt 10) | pro Block | pro Block | pro Fenster (30/10) |
 | **Grenz-Konvention** | Segment-Change-Point 1–6 | Segment-Change-Point 1–6 | Segment-Change-Point 1–6 | Grenz-IKI 1–7 | Grenz-IKI 1–7 |
 | **Nullmodell** | IKIs im Block mischen → Modularität Q | Ziel-IKIs mischen → `mean_n_chunks` | IKIs mischen → Log-Likelihood | Tastenfolge mischen → −Surprisal | IKIs mischen → MAP-Log-Wahrscheinlichkeit |
-| **Laufzeit/Datei** (ohne Nullmodell) | ~5 s | ~6 s | ~45 s | ~1 s | < 0,1 s |
+| **Laufzeit/Datei** (Blue, 160 Blöcke, ohne Nullmodell) | ~24 s | ~10 s | ~30 s | ~1 s | < 0,1 s |
 | **Abhängigkeiten** | `leidenalg`, `python-igraph` | `ruptures` | `pyhsmm` (gepatcht) | – | – |
 
 **Grenz-Konventionen.** In `chunk_boundaries` bedeutet die Zahl *k* je nach Methode etwas anderes:
@@ -234,7 +234,8 @@ Doku: [`algorithms/community_network.md`](algorithms/community_network.md)
 1. Die Blöcke werden in gleitende Fenster aufgeteilt (`window_size` Blöcke, Schritt `step`).
 2. Pro Fenster: Median-log-IKI-Profil (7 Werte) der Zielsequenz **minus** Yellow-Profil im selben Fenster.
 3. PELT (`ruptures`, Kosten `l2` = stückweise konstanter Mittelwert, oder `rbf`) segmentiert dieses Profil.
-4. Die Penalty wird **an Yellow-gegen-Yellow-Halbierungen kalibriert**: der kleinste Wert, bei dem im Null höchstens `fpr_target` der Profile überhaupt einen Change Point haben und im Mittel höchstens `mean_cp_target` Change Points auftreten.
+4. Die Penalty wird an einem **Nullmodell desselben Signals** kalibriert (`penalty_null = "bootstrap"`, Standard). Pro Fenster wird das Profil auf Bootstrap-Stichproben *derselben* Blöcke neu berechnet. Davon wird der Bootstrap-Mittelwert abgezogen, sodass reines Stichprobenrauschen mit exakt passender Blockzahl bleibt. Gewählt wird der kleinste Wert, bei dem dieses Rauschen in höchstens `fpr_target` der Profile überhaupt einen Change Point erzeugt und im Mittel höchstens `mean_cp_target` Change Points.
+   - Die frühere Kalibrierung an Yellow-gegen-Yellow-Halbierungen (je etwa 3–4 Blöcke) ist weiter über `penalty_null = "yellow_split"` verfügbar. Sie hat das Rauschen stark überschätzt und eine viel zu hohe Penalty geliefert.
 5. Ein Bootstrap über die Blöcke liefert Grenzwahrscheinlichkeiten.
 6. Wenn die Kalibrierung scheitert, wird automatisch mit kleineren Fenstern wiederholt.
 
@@ -247,6 +248,7 @@ Doku: [`algorithms/community_network.md`](algorithms/community_network.md)
 | `n_null_splits` | 32 | `--n-null-splits` | Yellow-Halbierungen für die Kalibrierung |
 | `penalty_grid_size` | 80 | `--penalty-grid-size` | Kandidaten der Penalty |
 | `cost_model` | `l2` | `--cost-model l2\|rbf` (`--rbf-gamma`) | Kostenfunktion |
+| `penalty_null` | `bootstrap` | `--penalty-null bootstrap\|yellow_split` | Nullmodell der Penalty-Kalibrierung (s. o.) |
 | Presets | – | `--penalty-sensitive` (0,10/0,2), `--short-session` (20/5/4) | weniger konservativ bzw. kurze Sitzungen |
 | Fallback | aus | `--allow-fallback-penalty`, `--fallback-penalty` | feste Penalty, falls die Kalibrierung unmöglich ist |
 
@@ -266,7 +268,9 @@ Doku: [`algorithms/change_point_pelt.md`](algorithms/change_point_pelt.md)
 **Prinzip** (Johnson & Willsky 2013; Yu 2010)
 - Ein bayessches HDP-HSMM (`pyhsmm`, Weak-Limit-Approximation, Gibbs-Sampling) mit Gauß-Emissionen auf log-IKIs.
 - Für Blue/Green wird standardmäßig der Yellow-Median pro Position abgezogen.
-- Die Zustandsdauern sind Poisson-verteilt.
+- Die Zustandsdauern sind Poisson-verteilt: Dauer = 1 + Poisson(λ), λ ~ Gamma(α₀, Rate β₀).
+- Der Duration-Prior hat standardmäßig eine mittlere Dauer von 2 IKIs mit der Stärke von 2 Pseudo-Segmenten. Eine Grenz-IKI ist ein Segment der Länge 1, Segmente innerhalb eines Chunks sind typisch 1–3 IKIs lang.
+- Der Emissions-Prior ist auf die Daten zentriert; die erwartete Zustandsvarianz beträgt die Hälfte der Datenvarianz.
 - Jeder Block ist eine eigene Sequenz, Segmente können also keine Blockgrenzen überschreiten.
 - Chunk-Grenze = Zustandswechsel innerhalb eines Blocks.
 - Fenster dienen nur der Zusammenfassung (Heatmap, Drift).
@@ -277,6 +281,9 @@ Doku: [`algorithms/change_point_pelt.md`](algorithms/change_point_pelt.md)
 | `max_duration` | 7 | `--max-duration` | maximale Dauer; bestimmt auch den Duration-Prior |
 | `baseline_correction` | an | `--no-baseline-correction` | Yellow-Median abziehen |
 | `n_gibbs_iter` | 150 | `--n-gibbs-iter` | Gibbs-Iterationen |
+| `duration_prior_mean` | 2,0 | `--hsmm-duration-prior-mean` (0 = alt) | mittlere Segmentdauer im Prior (IKIs) |
+| `duration_prior_strength` | 2,0 | `--hsmm-duration-prior-strength` | Stärke des Priors (Pseudo-Segmente) |
+| `emission_prior` | `data` | `--hsmm-emission-prior data\|fixed` | datenskaliert bzw. alt N(0, I) |
 | `window_size`/`step`/`min_blocks` | 30/10/6 | wie PELT | nur für die Zusammenfassung |
 
 **Outputs:** `trials.csv` mit `chunk_boundaries` je Block. `summary.csv` mit `mean_n_chunks`, `mean_drift`, `reliable` und `log_likelihood`.
@@ -347,7 +354,7 @@ Doku: [`algorithms/rational_chunking.md`](algorithms/rational_chunking.md)
 
 ## Bekannte Einschränkungen und offene Punkte
 
-Diese Punkte sind dokumentiert, aber **noch nicht behoben**. Sie wurden bei der Code-Durchsicht und mit den Simulationsdaten gefunden. Die Auswirkungen lassen sich mit dem [Simulations-Framework](#simulation--validierung) messen.
+Diese Punkte sind dokumentiert und – sofern nicht als **behoben** markiert – **noch offen**. Sie wurden bei der Code-Durchsicht und mit den Simulationsdaten gefunden. Die Auswirkungen lassen sich mit dem [Simulations-Framework](#simulation--validierung) messen.
 
 | Methode | Punkt | Folge |
 |---|---|---|
@@ -355,11 +362,12 @@ Diese Punkte sind dokumentiert, aber **noch nicht behoben**. Sie wurden bei der 
 | Community Network | Echte Daten bekommen den besten von `n_iter` Leiden-Läufen, das Nullmodell nur 1 Lauf | Q echt systematisch höher, p-Werte zu liberal |
 | Community Network | Normierung pro Block mit `d_max` | auch reines Rauschen ergibt etwa 2 Communities |
 | Community Network | `methods_config.json` enthält noch den veralteten Schlüssel `n_permutations` | `--method community_network --config methods_config.json` bricht ab |
-| PELT | Die Penalty wird an Yellow-Halbierungen mit nur etwa 3–4 Blöcken kalibriert, das Signal nutzt etwa 15 Blue-Blöcke | Penalty zu hoch, fast immer 1 Chunk |
+| PELT | ~~Die Penalty wird an Yellow-Halbierungen mit nur etwa 3–4 Blöcken kalibriert~~ **behoben** (`penalty_null = "bootstrap"`) | Penalty jetzt etwa halb so groß; die Empfindlichkeit bleibt gering, weil das Signal Blue − Yellow Tastenpaar-Unterschiede enthält (s. u.) |
+| PELT | Das Signal Ziel − Yellow enthält systematische Unterschiede der Tastenpaare zwischen Blue und dem Yellow-Pool (±0,2–0,4 log) | Spikes heben sich kaum ab; eine Motorik-Baseline aus Tastenpaar-Effekten wäre nötig |
 | PELT | Im Nullmodell bleibt das Yellow-Profil erhalten (gemischtes Ziel − ungemischtes Yellow) | Nullmodell nicht strukturfrei |
 | PELT | Bei 120 Blöcken haben 30er-Fenster oft weniger als 6 Yellow-Blöcke | viele ungültige Fenster, Retry mit kleineren Fenstern |
 | PELT, HSMM | Yellow als Baseline enthält selbst Struktur (Pool inklusive Blue-Sequenz) | Baseline nicht neutral |
-| HSMM | Duration-Prior Gamma(α₀ = 2·max_duration = 14, β₀ = 2) hat seinen Mittelwert bei 7 = Sequenzlänge | begünstigt 1 Chunk |
+| HSMM | ~~Duration-Prior mit mittlerer Dauer 1 + 14/2 = 8 IKIs (länger als ein Block)~~ **behoben** (Mittel 2, datenskalierter Emissions-Prior) | es werden wieder Grenzen gefunden (AUC bis 0,97), aber mit 13–21 % Fehlalarmen und geringem Recall, weil das Modell keine Positionen kennt und nicht über Blöcke bündelt |
 | HSMM | Mischen innerhalb des Blocks lässt die Emissionsverteilung unverändert | schwaches Nullmodell |
 | Rational | Der `kappa`-Term ist für alle Partitionen gleich | Fehler beeinflussen das Ergebnis nicht |
 | Rational | μ enthält die Grenz-IKIs, δ kommt aus einer Heuristik (Fallback 0,5) | erst große Effekte erkennbar |

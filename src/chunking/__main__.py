@@ -191,6 +191,13 @@ def _build_parser() -> argparse.ArgumentParser:
         help="RBF kernel bandwidth (change_point_pelt). If unset, ruptures uses median heuristic.",
     )
     parser.add_argument(
+        "--penalty-null",
+        choices=["bootstrap", "yellow_split"],
+        default="bootstrap",
+        help="Null for penalty calibration (change_point_pelt): 'bootstrap' = centred bootstrap of the "
+        "analysed signal (same block counts, default); 'yellow_split' = legacy yellow half-splits.",
+    )
+    parser.add_argument(
         "--merge-summaries",
         action="store_true",
         help="After --sequence-type all, write combined_summary.csv (blue/green/yellow merge).",
@@ -225,6 +232,24 @@ def _build_parser() -> argparse.ArgumentParser:
         type=int,
         default=150,
         help="Number of Gibbs sampling iterations for pyhsmm HDP-HSMM (hsmm_chunking).",
+    )
+    parser.add_argument(
+        "--hsmm-duration-prior-mean",
+        type=float,
+        default=2.0,
+        help="Prior mean segment duration in IKIs (hsmm_chunking); 0 = legacy prior Gamma(2*max_duration, 2).",
+    )
+    parser.add_argument(
+        "--hsmm-duration-prior-strength",
+        type=float,
+        default=2.0,
+        help="Strength (pseudo-segments) of the duration prior (hsmm_chunking).",
+    )
+    parser.add_argument(
+        "--hsmm-emission-prior",
+        choices=["data", "fixed"],
+        default="data",
+        help="Emission prior (hsmm_chunking): 'data' = centred/scaled on the data, 'fixed' = legacy N(0, I).",
     )
     # Method-specific (hcrp_lm)
     parser.add_argument(
@@ -319,6 +344,7 @@ def main(argv: list[str] | None = None) -> int:
             "fallback_penalty": args.fallback_penalty,
             "cost_model": args.cost_model,
             "rbf_gamma": args.rbf_gamma,
+            "penalty_null": args.penalty_null,
             "n_null_runs": args.n_null_runs,
             "random_state": args.seed,
         }
@@ -333,6 +359,9 @@ def main(argv: list[str] | None = None) -> int:
             "baseline_correction": args.baseline_correction,
             "random_state": args.seed,
             "n_gibbs_iter": args.n_gibbs_iter,
+            "duration_prior_mean": args.hsmm_duration_prior_mean or None,
+            "duration_prior_strength": args.hsmm_duration_prior_strength,
+            "emission_prior": args.hsmm_emission_prior,
             "n_null_runs": args.n_null_runs,
         }
     elif args.method == "hcrp_lm":

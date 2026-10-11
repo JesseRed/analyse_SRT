@@ -17,7 +17,8 @@
         "penalty_grid_size": 80,
         "min_windows_reliable": 3,
         "cost_model": "l2",
-        "n_null_runs": 100
+        "n_null_runs": 100,
+        "penalty_null": "bootstrap"
     },
     "hsmm_chunking": {
         "n_states": null,
@@ -28,7 +29,10 @@
         "min_windows_reliable": 3,
         "baseline_correction": true,
         "n_gibbs_iter": 150,
-        "n_null_runs": 100
+        "n_null_runs": 100,
+        "duration_prior_mean": 2.0,
+        "duration_prior_strength": 2.0,
+        "emission_prior": "data"
     },
     "hcrp_lm": {
         "n_levels": 3,
