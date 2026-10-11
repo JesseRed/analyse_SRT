@@ -11,8 +11,16 @@ Commands
 
 from __future__ import annotations
 
-import argparse
-from pathlib import Path
+import os
+
+# The commands parallelise over processes; multi-threaded BLAS inside every worker
+# oversubscribes the CPU massively (observed load > 100 on 16 cores). Must be set
+# before numpy is imported.
+for _var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
+    os.environ.setdefault(_var, "1")
+
+import argparse  # noqa: E402
+from pathlib import Path  # noqa: E402
 
 
 def _csv(value):

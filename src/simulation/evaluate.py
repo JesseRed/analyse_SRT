@@ -286,8 +286,16 @@ def static_power(scores: pd.DataFrame) -> pd.DataFrame:
                 "effect": eff, "auc_vs_null": _auc(pos["mean_pred"].to_numpy(), null) if eff > 0 else float("nan"),
                 "recall_conv": rec, "n_files_pos": len(pos), "n_files_null": len(null),
             })
+        # d50 is only meaningful if the method stays below 50 % recall without any effect
+        # and its recall actually rises with the effect (>= 0.25 from smallest to largest
+        # effect); otherwise random crossings of 0.5 would be reported, e.g. for methods
+        # that always report boundaries.
         d50 = float("nan")
-        for (e0, r0), (e1, r1) in zip(rec_curve, rec_curve[1:]):
+        baseline = dict(rec_curve).get(0.0, float("nan"))
+        top = rec_curve[-1][1] if rec_curve else float("nan")
+        valid_curve = (not np.isnan(baseline) and not np.isnan(top)
+                       and baseline < 0.5 and top - baseline >= 0.25)
+        for (e0, r0), (e1, r1) in (zip(rec_curve, rec_curve[1:]) if valid_curve else []):
             if not np.isnan(r0) and not np.isnan(r1) and r0 < 0.5 <= r1:
                 d50 = e0 + (0.5 - r0) * (e1 - e0) / (r1 - r0)
                 break
